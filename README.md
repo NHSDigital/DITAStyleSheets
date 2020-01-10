@@ -13,8 +13,8 @@ This repository and project are for the development of a consistent WCAG 2.1 AA 
 ## Target releases
 
 |Release|Features|Status|
-|:------|:-------|------|
-|Alpha|Basic branding|:Complete|
+|:------|:-------|:-----|
+|Alpha|Basic branding|Complete|
 |Private Beta - Early February|Web Accessible to WCAG 2.1 AA||
 ||Hosted on Beta Data Dictionary domain||
 |Public Beta - Early March|Web Accessible to WCAG 2.1 AA and Schema.org||
