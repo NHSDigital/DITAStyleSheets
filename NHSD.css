@@ -1,6 +1,8 @@
 @charset "utf-8";
 /*  Nicholas' customisation for Data Dictionary */
 /* Declare colours and charactaristics */
+/*  for backgrounds */
+/*  for backgrounds */
 /*  Fonts */
 /* Tiles */
 /* Page colours */
@@ -11,6 +13,17 @@ body {
   background: #f0f4f5;
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Data Dictionary styles */
+element {
+  color: #006747;
+}
+attribute {
+  color: #330072;
+}
+class {
+  color: #8a1538;
+}
+/*  Oxygen styles */
 /* Title and logo bar
  * 
  */
