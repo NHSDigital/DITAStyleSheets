@@ -16,13 +16,43 @@ body {
 /* Data Dictionary styles */
 .element {
   color: #006747;
+  font-weight: bold;
 }
+/* 
+.element:before {
+    color:white;
+    background-color: @DarkGreen;
+    content: 'e';
+    border-radius:5px;
+    padding-left: 3px;
+    padding-right: 3px;
+}  */
 .attribute {
   color: #330072;
+  font-weight: bold;
 }
 .class {
   color: #8a1538;
+  font-weight: bold;
 }
+.dataSet {
+  color: #ed8b00;
+  font-weight: bold;
+}
+.businessDefinition {
+  color: #003087;
+  font-weight: bold;
+}
+/* 
+.businessDefinition:before {
+    color:white;
+    background-color: @NHSDarkBlue;
+    content: 'bd';
+    border-radius:5px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+ */
 /*  Oxygen styles */
 /* Title and logo bar
  * 
