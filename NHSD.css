@@ -13,6 +13,10 @@ body {
   background: #f0f4f5;
   font-family: Arial, Helvetica, sans-serif;
 }
+/*  Set the defailt colour for links to NHS blue */
+a {
+  color: #005eb8;
+}
 .ISOcert {
   float: right;
   margin: 30px;
