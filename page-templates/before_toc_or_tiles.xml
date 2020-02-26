@@ -1,0 +1,29 @@
+<div class="container-fluid">
+<div class="row">
+  <p> </p>
+</div>
+  <div class="row">
+    
+    <div class="col-md-9">
+      <h2>Welcome to the NHS Data Model and Dictionary for England.</h2>
+      <p>If you would like to:</p>
+      <ul>
+        <li>know more about us or need help using the NHS Data Model and Dictionary, see the Help
+          pages</li>
+        <li>view our Frequently Asked Questions, see Frequently Asked Questions.</li>
+        <li>The NHS Data Model and Dictionary provides a reference point for approved Information
+          Standards Notices to support health care activities within the NHS in England. It has been
+          developed for everyone who is actively involved in the collection of data and the
+          management of information in the NHS.</li>
+      </ul>
+      <p>The NHS Data Model and Dictionary is maintained and published by the NHS Data Model and
+        Dictionary Service and all changes are governed by the Data Coordination Board (DCB)
+        process. Changes are published as Information Standards Notices (ISN) and Data Dictionary
+        Change Notices (DDCN). </p>
+    </div>
+    <div class="col-md-3 col-sm-hidden">
+      <img src="oxygen-webhelp/template/resources/images/4pics.gif" alt="NHS Data Dictionary images"
+      />
+    </div>
+  </div>
+</div>

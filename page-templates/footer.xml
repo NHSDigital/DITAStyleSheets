@@ -1,7 +1,14 @@
+
+  
+<div>
+  <img class="ISOcert" alt="ISO 9001 CERTIFICATION EUROPE" onerror="this.src='oxygen-webhelp/template/resources/images/iso-9001-certification-europe-v1.png'; this.onerror=null;" src="oxygen-webhelp/template/resources/images/iso-9001-certification-europe-v1.svg" id="iso-9001" />
+    
 <footer class="navbar navbar-default wh_footer" xmlns="http://www.w3.org/1999/xhtml"
   xmlns:whc="http://www.oxygenxml.com/webhelp/components"
   whc:version="21.1">
   <div class=" footer-container mx-auto ">
-    <whc:include_html href="${webhelp.fragment.footer}"/>
+    
+   <!-- <whc:include_html href="${webhelp.fragment.footer}"/> -->
   </div>
 </footer>
+</div>

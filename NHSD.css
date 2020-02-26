@@ -13,6 +13,10 @@ body {
   background: #f0f4f5;
   font-family: Arial, Helvetica, sans-serif;
 }
+.ISOcert {
+  float: right;
+  margin: 30px;
+}
 /* Data Dictionary styles */
 .element {
   color: #006747;
@@ -79,8 +83,10 @@ body {
 .wh_publication_title > a:hover {
   color: #ffe8b4;
 }
-.wh_logo {
-  padding: 12px;
+.wh_logo img {
+  width: 73px;
+  height: 30px;
+  margin: 30px;
 }
 /*
  * ------------------------------------------------------------------

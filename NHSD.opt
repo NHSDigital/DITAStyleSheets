@@ -3,7 +3,7 @@
     <name>NHS Digital</name>
     <description>Basic NHS Digital Website</description>
     <webhelp>
-        <preview-image file="sky-tiles.png"/>
+        <preview-image file="NHSDD.png"/>
         <html-page-layout-files>
             <page-layout-file page="search" file="page-templates/wt_search.html"/>
             <page-layout-file page="topic" file="page-templates/wt_topic.html"/>
@@ -17,6 +17,10 @@
             <parameter name="args.figurelink.style" value="TITLE"/>
             <parameter name="args.tablelink.style" value="TITLE"/>
             <parameter name="force-unique" value="true"/>
+            <parameter name="webhelp.fragment.before.toc_or_tiles" value="page-templates/before_toc_or_tiles.xml"/>
+                       <parameter name="webhelp.fragment.welcome" value="page-templates/welcome.xml"/>
+            <parameter name="webhelp.fragment.header" value="page-templates/header.xml"/>
+            <parameter name="webhelp.fragment.footer" value="page-templates/footer.xml"/>
         </parameters>
         <resources>
             <css file="NHSD.css"/>
