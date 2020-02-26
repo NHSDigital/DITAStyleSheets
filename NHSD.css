@@ -14,13 +14,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 /* Data Dictionary styles */
-element {
+.element {
   color: #006747;
 }
-attribute {
+.attribute {
   color: #330072;
 }
-class {
+.class {
   color: #8a1538;
 }
 /*  Oxygen styles */
