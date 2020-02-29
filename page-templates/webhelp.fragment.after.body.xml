@@ -1,0 +1,61 @@
+<script>
+    
+    <!--
+
+    var collapsibleSections = {
+
+        /* Selectors for the nodes that contain an expand/collapse button. */
+
+        "expand_buttons" : [
+
+            /* Table caption */
+
+            "table > caption > .wh_expand_btn",
+
+            /* Article title */
+
+            ".topic > .title > .wh_expand_btn",
+
+            /* Section title */
+
+            ".sectiontitle > .wh_expand_btn",
+
+            /* Index terms groups */
+
+            ".wh_term_group > .wh_first_letter > .wh_expand_btn"
+
+        ]
+
+    };
+
+
+
+    $(document).ready(function () {
+
+        /* Collapse selected nodes. */
+
+        collapsibleSections.expand_buttons.forEach(
+
+            function(selector) {
+
+                var matchedNodes =  $(document).find(selector);
+
+                // Change the button state
+
+                matchedNodes.toggleClass("expanded");
+
+                // Will collapse the siblings of the parent node, excepting the ones that were marked otherwise
+
+                var siblings = matchedNodes.parent().siblings(':not(.wh_not_expandable)');
+
+                siblings.toggle();
+
+            }
+
+        );
+
+    });
+
+    //-->
+    
+</script>

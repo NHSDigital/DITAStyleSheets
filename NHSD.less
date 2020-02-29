@@ -29,6 +29,11 @@ body {
 a {
     color: @NHSBlue;
 }
+a:hover {
+    color: @NHSDarkBlue;
+    text-decoration:underline;
+}
+
 .ISOcert {
     float: right;
     margin:30px;
@@ -39,7 +44,7 @@ a {
     color:@DarkGreen;
     font-weight:bold;
 }
-/* 
+
 .element:before {
     color:white;
     background-color: @DarkGreen;
@@ -47,7 +52,7 @@ a {
     border-radius:5px;
     padding-left: 3px;
     padding-right: 3px;
-}  */
+} 
 .attribute {
     color:@Purple;
     font-weight:bold;
@@ -58,7 +63,7 @@ a {
 }
 
 .dataSet {
-        color:@NHSOrange;
+    color:@NHSOrange;
     font-weight:bold;
 }
 
@@ -66,8 +71,13 @@ a {
     color:@NHSDarkBlue;
     font-weight:bold;
 }
-/* 
-.businessDefinition:before {
+.retired {
+    background-color:@NHSGrey4;
+    color: black;
+    font-weight:normal;
+}
+
+.businessDefinition:after {
     color:white;
     background-color: @NHSDarkBlue;
     content: 'bd';
@@ -75,7 +85,7 @@ a {
     padding-left: 3px;
     padding-right: 3px;
 }
- */
+
  
 /*  Oxygen styles */
 
@@ -87,6 +97,16 @@ a {
   background-color: #ffffff;
   color: @NHSBlue;
 }
+
+/* Webhelp mobile burger menu 
+ * 
+ */
+
+.wh_toggle_button {
+    background-color:@NHSDarkBlue;
+    color: white;
+}
+
 /*
  * ------------------------------------------------------------------
  *  

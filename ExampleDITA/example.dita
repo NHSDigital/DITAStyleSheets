@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="classes.GENERAL_MEDICAL_PRACTITIONER.general_medical_practitioner">
+  <title>GENERAL MEDICAL PRACTITIONER</title>
+  <titlealts>
+    <searchtitle>Class: GENERAL MEDICAL PRACTITIONER</searchtitle>
+  </titlealts>
+  <shortdesc>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+    ullamco laboris nisi </shortdesc>
+  <prolog>
+    <metadata>
+      <othermeta name="name" content="GENERAL MEDICAL PRACTITIONER"/>
+      <othermeta name="metaclass"
+        content="groovy.lang.MetaClassImpl@71f53cf3[class ox.softeng.cataloguetools.nhsd.datadictionary.DDClass]"/>
+      <othermeta name="Data_Dictionary_Profile_x__y_DD_Model_x__y_baseVersion"
+        content="Version 3.0&lt;;&gt;3.1.0 CR=849&lt;;&gt;3.0.0&lt;;&gt;3.0.0"/>
+      <othermeta name="stereotype" content="DD Class"/>
+      <othermeta name="Data_Dictionary_Profile_x__y_DD_Alias_x__y_aliasPlural"
+        content="GENERAL MEDICAL PRACTITIONERS"/>
+      <othermeta name="sourceURI"
+        content="file:/Users/steveh/nhsdd-preprocessing/December_2019_Release/transformedoutput/Data_Dictionary/Classes/G/GENERAL_MEDICAL_PRACTITIONER.txaClass20"/>
+      <othermeta name="sourceVersion" content="Tue Feb 25 07:34:26 GMT 2020"/>
+      <othermeta name="sourceType" content="DerivedDD_html"/>
+      <othermeta name="topicCreationDate" content="??"/>
+      <othermeta name="topicVersion" content="??"/>
+      <othermeta name="originalCase" content="GENERAL MEDICAL PRACTITIONER"/>
+    </metadata>
+  </prolog>
+
+  <body>
+
+    <section>
+      <title>Description</title><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.</p>
+      <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et
+        commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.
+        Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec
+        lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est
+        euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec
+        fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget,
+        consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing
+        sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu.
+        Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean
+        magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea
+        dictumst.</p>
+      <b>This class is also known by these names:</b>
+      <simpletable relcolwidth="1* 2*" outputclass="table table-striped table-sm">
+        <sthead outputclass="thead-light">
+          <stentry>Context</stentry>
+          <stentry>Alias</stentry>
+        </sthead>
+        <strow>
+          <stentry>Also known as</stentry>
+          <stentry>MEDICAL DOCTOR</stentry>
+        </strow>
+        <strow>
+          <stentry>Plural</stentry>
+          <stentry>GENERAL MEDICAL PRACTITIONERS</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>Attributes</title>
+      <simpletable relcolwidth="3* 2*" outputclass="table table-striped table-sm">
+        <sthead outputclass="thead-light">
+          <stentry>Attribute Name</stentry>
+          <stentry>Attribute Type</stentry>
+        </sthead>
+        <strow>
+          <stentry>GENERAL MEDICAL COUNCIL REFERENCE NUMBER</stentry>
+          <stentry>Default String</stentry>
+        </strow>
+        <strow>
+          <stentry>GENERAL MEDICAL PRACTITIONER PPD CODE</stentry>
+          <stentry>Default String</stentry>
+        </strow>
+        <strow>
+          <stentry>DOCTOR INDEX NUMBER</stentry>
+          <stentry>Default String</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>Relationships</title>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et
+        commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.
+        Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec
+        lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est
+        euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec
+        fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget,
+        consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing
+        sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu.
+        Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean
+        magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea
+        dictumst.</p>
+    </section>
+    <section>
+      <title>Where Used</title>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et
+        commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.
+        Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec
+        lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est
+        euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec
+        fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget,
+        consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing
+        sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu.
+        Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean
+        magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea
+        dictumst.</p>
+    </section>
+  </body>
+</topic>
