@@ -1,11 +1,14 @@
 <div class="container-fluid">
-<div class="row">
-  <p> </p>
-</div>
   <div class="row">
-    
-    <div class="col-md-9">
+    <p> </p>
+  </div>
+  <div class="row">
+
+    <div class="col-md-8 col-sm-12">
       <h2>Welcome to the NHS Data Model and Dictionary for England.</h2>
+      <p>This is an alpha publication derived from the NHS Data Dictionary. The authoratitive source
+        of data definitions remains the published data dictionary. You should not rely on this
+        publications for operational purposes.</p>
       <p>If you would like to:</p>
       <ul>
         <li>know more about us or need help using the NHS Data Model and Dictionary, see the Help
@@ -21,7 +24,7 @@
         process. Changes are published as Information Standards Notices (ISN) and Data Dictionary
         Change Notices (DDCN). </p>
     </div>
-    <div class="col-md-3 col-sm-hidden">
+    <div class="col-md-4 col-sm-hidden DDpics">
       <img src="oxygen-webhelp/template/resources/images/4pics.gif" alt="NHS Data Dictionary images"
       />
     </div>

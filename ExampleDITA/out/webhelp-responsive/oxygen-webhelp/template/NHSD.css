@@ -4,14 +4,31 @@
 /*  for backgrounds */
 /*  for backgrounds */
 /*  Fonts */
+@font-face {
+  font-family: 'Frutiger W01';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.eot?#iefix);
+  src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.eot?#iefix) format("eot"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.woff2) format("woff2"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.woff) format("woff"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.ttf) format("truetype"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.svg#7def0e34-f28d-434f-b2ec-472bde847115) format("svg");
+}
+@font-face {
+  font-family: 'Frutiger W01';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.eot?#iefix);
+  src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.eot?#iefix) format("eot"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff2) format("woff2"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff) format("woff"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.ttf) format("truetype"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.svg#eae74276-dd78-47e4-9b27-dac81c3411ca) format("svg");
+}
 /* Tiles */
 /* Page colours */
 /* Main Header Bar */
 /* Search Bar */
 /* Breadcrumbs */
+/*  Fonts */
 body {
   background: #f0f4f5;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Frutiger W01, Helvetica, Arial, Sans-serif;
 }
 /*  Set the defailt colour for links to NHS blue */
 a {
@@ -24,6 +41,9 @@ a:hover {
 .ISOcert {
   float: right;
   margin: 30px;
+}
+.DDpics {
+  text-align: center;
 }
 /* Data Dictionary styles */
 .element {
@@ -89,16 +109,17 @@ a:hover {
  *  
  */
 .wh_publication_title {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Frutiger W01, Helvetica, Arial, Sans-serif;
   text-transform: none;
   font-size: 28px;
 }
 .wh_publication_title > a {
   font-size: 1.5em;
   text-decoration: none;
+  color: #005eb8;
 }
 .wh_publication_title > a:hover {
-  color: #ffe8b4;
+  color: #003087;
 }
 .wh_logo img {
   width: 73px;
@@ -221,13 +242,13 @@ a:hover {
 }
 .wh_tile_shortdesc {
   margin-top: 0.5em;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Frutiger W01, Helvetica, Arial, Sans-serif;
   text-align: left;
   color: #425563;
 }
 .wh_tile_title {
   color: #425563;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Frutiger W01, Helvetica, Arial, Sans-serif;
   text-align: left;
   font-size: 1.1em;
   text-decoration: none;
@@ -301,6 +322,17 @@ Example:
 }
 .ui-menu-item .ui-state-active {
   background-color: #346ec5;
+}
+/*  Nicholas: burger menu toggler */
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.custom-toggler {
+  border-color: #ffb81c;
+}
+.navbar-dark .navbar-toggler {
+  color: #005eb8;
+  border-color: #005eb8;
 }
 /* Search relative path */
 .searchresult li .relativePath a {
@@ -401,7 +433,7 @@ Example:
 }
 .related-links a,
 .related-links a:visited {
-  color: #5185cb;
+  color: #005eb8;
   padding-bottom: .3em;
   display: inline-block;
 }
@@ -415,7 +447,7 @@ Example:
   list-style: none;
 }
 .searchresult li a {
-  color: #346ec5;
+  color: #003087;
 }
 .searchresult .shortdesclink {
   margin: .3em .5em 0 0;
@@ -430,7 +462,7 @@ Example:
  * 
  */
 .wh_index_terms span.wh_first_letter {
-  color: #346ec5;
+  color: #003087;
 }
 .wh_index_terms #indexList {
   padding: 0;
