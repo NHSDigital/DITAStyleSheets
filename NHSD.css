@@ -42,9 +42,6 @@ a:hover {
   float: right;
   margin: 30px;
 }
-.DDpics {
-  text-align: center;
-}
 /* Data Dictionary styles */
 .element {
   color: #006747;
@@ -63,6 +60,10 @@ a:hover {
   font-weight: bold;
 }
 .class {
+  color: #8a1538;
+  font-weight: bold;
+}
+a[data-id*="classes"] {
   color: #8a1538;
   font-weight: bold;
 }

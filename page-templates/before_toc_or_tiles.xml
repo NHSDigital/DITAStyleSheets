@@ -24,9 +24,10 @@
         process. Changes are published as Information Standards Notices (ISN) and Data Dictionary
         Change Notices (DDCN). </p>
     </div>
-    <div class="col-md-4 col-sm-hidden DDpics">
-      <img src="oxygen-webhelp/template/resources/images/4pics.gif" alt="NHS Data Dictionary images"
-      />
+    <div class="col-md-4 col-sm-hidden align-self-center">
+      <div class="my-auto">
+        <img class="card card-block mx-auto" src="oxygen-webhelp/template/resources/images/4pics.gif" alt="NHS Data Dictionary images" />
+      </div>
     </div>
   </div>
 </div>
