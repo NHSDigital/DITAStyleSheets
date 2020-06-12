@@ -3,6 +3,13 @@
 /* Declare colours and charactaristics */
 /*  for backgrounds */
 /*  for backgrounds */
+/* 
+ * Logo position - left hand side
+ * 15px margin all sides (half height of 30px)
+ */
+/* 
+ * Breadcrumbs font-size 16px line height 24px
+ */
 /*  Fonts */
 @font-face {
   font-family: 'Frutiger W01';
@@ -30,7 +37,7 @@ body {
   background: #f0f4f5;
   font-family: Frutiger W01, Helvetica, Arial, Sans-serif;
 }
-/*  Set the defailt colour for links to NHS blue */
+/*  Set the default colour for links to NHS blue */
 a {
   color: #005eb8;
 }
