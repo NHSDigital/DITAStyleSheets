@@ -1,7 +1,5 @@
 <script>
     
-    <!--
-
     var collapsibleSections = {
 
         /* Selectors for the nodes that contain an expand/collapse button. */
@@ -55,7 +53,5 @@
         );
 
     });
-
-    //-->
     
 </script>

@@ -1,19 +1,19 @@
 @charset "utf-8";
 /*  Nicholas' customisation for Data Dictionary */
 /* Declare colours and charactaristics */
-@NHSBlue: #005eb8;
-@NHSBlue3: #d4e4f3; /*  for backgrounds */
+@NHSBlue: #005EB8;
+@NHSBlue3: #D4E4F3; /*  for backgrounds */
 @NHSDarkBlue: #003087;
 @DarkGreen: #006747;
 @DarkRed: #8A1538;
 @Purple: #330072;
 @DarkGrey: #425563;
-@NHSGrey4: #dfe2e5;  /*  for backgrounds */
+@NHSGrey4: #DFE2E5;  /*  for backgrounds */
 @NHSOrange: #ED8B00;
 @NHSPink: #AE2573;
-@NHSDBackground: #f0f4f5;
+@NHSDBackground: #F0F4F5;
 @NHSWarmYellow: #FFB81C;
-
+@NHSWhite: #FFFFFF;
 /* 
  * Logo position - left hand side
  * 15px margin all sides (half height of 30px)
@@ -29,23 +29,26 @@
  
 
 /*  Fonts */
-@font-face {
+
+@font-face: {
     font-family: 'Frutiger W01';
-    font-display:swap;font-style: normal;
+    font-display:swap;
+    font-style: normal;
     font-weight: 400;
     src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.eot?#iefix);
     src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.eot?#iefix) format("eot"),url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.woff2) format("woff2"),url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.woff) format("woff"),url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.ttf) format("truetype"),url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.svg#7def0e34-f28d-434f-b2ec-472bde847115) format("svg")
-}
+};
 
-@font-face {
+@font-face: {
     font-family: 'Frutiger W01';
-    font-display:swap;font-style: normal;
+    font-display:swap;
+    font-style: normal;
     font-weight: 600;
     src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.eot?#iefix);
     src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.eot?#iefix) format("eot"),url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff2) format("woff2"),url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff) format("woff"),url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.ttf) format("truetype"),url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.svg#eae74276-dd78-47e4-9b27-dac81c3411ca) format("svg")
-}
+};
 
-@BodyFont: Frutiger W01,Helvetica,Arial,Sans-serif;
+@BodyFont: 'Frutiger W01',Helvetica,Arial,Sans-serif;
 @HeadingFont: @BodyFont;
 /* Tiles */
 /* Page colours */
@@ -59,14 +62,17 @@
 body {
   background: @NHSDBackground;
   font-family: @BodyFont;
+  text-rendering :optimizeLegibility;
 }
 
 /*  Set the default colour for links to NHS blue */
 a {
     color: @NHSBlue;
+    text-decoration: underline;
 }
 a:hover {
-    color: @NHSDarkBlue;
+    color: @NHSDarkBlue !important;
+    background:@NHSWarmYellow !important;
     text-decoration:underline;
 }
 
@@ -83,7 +89,7 @@ a:hover {
     font-weight:bold;
 }
 
-.element:before {
+.element:after {
     color:white;
     background-color: @DarkGreen;
     content: 'e';
@@ -137,8 +143,9 @@ a[data-id*="classes"] {
  * 
  */
 .wh_header {
-  background-color: #ffffff;
+  background-color: @NHSWhite;
   color: @NHSBlue;
+  padding:0em;
 }
 
 /* Webhelp mobile burger menu 
@@ -165,6 +172,7 @@ a[data-id*="classes"] {
   font-size: 1.5em;
   text-decoration: none;
   color: @NHSBlue;
+  margin: 0em;
 }
 .wh_publication_title > a:hover {
   color: @NHSDarkBlue;
@@ -185,14 +193,14 @@ a[data-id*="classes"] {
  */
 .wh_top_menu {
   font-size: 1.1em;
-  margin: .4em 0;
+  margin: 0.4em 0;
   color: @NHSBlue;
 }
 .wh_top_menu > a {
   color: @NHSBlue;
 }
 .wh_top_menu > a:hover {
-  color: #ffffff;
+  color: @NHSWhite;
 }
 /* The submenus */
 .wh_top_menu ul ul {
@@ -201,26 +209,26 @@ a[data-id*="classes"] {
 }
 .wh_top_menu ul ul > a {
   background: @NHSDarkBlue;
-  color: #ffffff;
+  color: @NHSWhite;
 }
 .wh_top_menu ul li a {
   color: @NHSBlue;
 }
 .wh_top_menu ul li a:hover {
   background: @NHSDarkBlue;
-  color: #ffffff;
+  color: @NHSWhite;
 }
 .wh_top_menu ul ul li a:hover {
   background: @NHSDarkBlue;
-  color: #ffffff;
+  color: @NHSWhite;
 }
 .wh_top_menu ul ul li {
   background: @NHSDarkBlue;
-  color: #ffffff;
+  color: @NHSWhite;
 }
 .wh_top_menu ul ul li a {
   background: @NHSDarkBlue;
-  color: #ffffff;
+  color: @NHSWhite;
 }
 /*
  * ------------------------------------------------------------------
@@ -244,14 +252,15 @@ a[data-id*="classes"] {
  */
 .wh_breadcrumb ol {
   background-color: @NHSDarkBlue;
-  color: #ffffff;
+  color: @NHSWhite;
+  font-weight:bold;
 }
 .wh_breadcrumb ol a {
-  color: #ffffff;
+  color: @NHSWhite;
 }
 .wh_breadcrumb ol .active {
   background-color: @NHSDarkBlue;
-  color: #ffe8b4;
+  color: @NHSWarmYellow;
 }
 /*
  * ------------------------------------------------------------------
@@ -275,9 +284,16 @@ a[data-id*="classes"] {
 .wh_navigation_links a:hover:before,
 .wh_navigation_links a:active:before,
 .wh_navigation_links a:visited:before {
-  color: #FFB81C;
+  color: @NHSWarmYellow;
   text-decoration: none;
 }
+
+/* Introductory Text Before ToC or Tiles */
+.before_toc_or_tiles {
+ 
+    padding: 2em;
+}
+
 /*
  * ------------------------------------------------------------------
  *  
@@ -289,16 +305,16 @@ a[data-id*="classes"] {
   border-color: @NHSBlue;
   border-style: solid;
   border-width: 8px;
-  background-color: #ffffff;
+  background-color: @NHSWhite;
 }
 .wh_tile_shortdesc {
   margin-top: 0.5em;
   font-family: @BodyFont;
   text-align: left;
-  color: #425563;
+  color: @DarkGrey;
 }
 .wh_tile_title {
-  color: #425563;
+  color: @DarkGrey;
   font-family: @BodyFont;
   text-align: left;
   font-size: 1.1em;
@@ -306,7 +322,7 @@ a[data-id*="classes"] {
   font-weight: bold;
 }
 .wh_tile_title a {
-  color: #425563;
+  color: @DarkGrey;
 }
 .wh_tile_shortdesc {
   text-align: left;
@@ -336,36 +352,36 @@ Example:
   background-color: @NHSBlue;
   color: white;
   margin: 0 0;
-  padding: 2em;
+  padding: 0.4em;
   border-color: @NHSBlue;
 }
 .wh_welcome:not(:empty) {
   font-size: 1em;
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
-  padding: 0 0 .5em 0;
+  padding: 0 0 0.5em 0;
   text-shadow: none;
   color: white;
 }
 .wh_search_textfield {
-  color: #425563;
+  color: @DarkGrey;
   background-color: white;
   border: solid 4px @NHSDarkBlue;
   border-radius: 0;
-  padding: 0 .5em;
+  padding: 0 0.5em;
   font-size: 1.2em;
   line-height: 2em;
   height: auto;
 }
 .wh_search_textfield:focus {
-  border: solid 4px #ffe8b4;
+  border: solid 4px @NHSWarmYellow;
 }
 .wh_search_button {
   border: solid 4px @NHSDarkBlue;
   border-radius: 0 0 0 0;
   padding: 0.5em 1em;
   background-color: @NHSDarkBlue;
-  color: #ffffff;
+  color: @NHSWhite;
 }
 /* Search autocomplete */
 .ui-menu-item {
@@ -465,7 +481,7 @@ Example:
   text-align: center;
   padding: 1em;
   clear: both;
-  background-color: #425563;
+  background-color: @DarkGrey;
   color: white;
   width: 100%;
 }
@@ -490,7 +506,7 @@ Example:
 .related-links a,
 .related-links a:visited {
   color: @NHSBlue;
-  padding-bottom: .3em;
+  padding-bottom:0.3em;
   display: inline-block;
 }
 /*
@@ -506,7 +522,7 @@ Example:
   color: @NHSDarkBlue;
 }
 .searchresult .shortdesclink {
-  margin: .3em .5em 0 0;
+  margin: 0.3em 0.5em 0 0;
 }
 .wh_search_expression {
   font-weight: bold;
@@ -529,3 +545,83 @@ Example:
  * Tree TOC for the main page.
  * 
  */
+/* 
+ * 
+ * Additional section styles
+ * 
+ */
+section.section {
+  border: 1px solid @DarkGrey;
+  padding: 0.5em 1em 1em 1em;
+  background-color: white;
+}
+h2.sectiontitle {
+  font-size: 150%;
+  font-weight: normal;
+  margin-bottom: 1em;
+  margin-top: 0.2em;
+}
+span.wh_expand_btn {
+  left: 1.2em;
+}
+/* 
+ * 
+ * Additional table styles 
+ * 
+ */
+.table {
+  border: 1px solid @DarkGrey !important;
+  margin-left: 0;
+}
+.table .thead-light {
+  background-color: #003087 !important;
+  color: white;
+  border: 1px solid @DarkGrey !important;
+}
+.table .thead-light th {
+  background-color: #003087 !important;
+  color: white;
+  border: 1px solid @DarkGrey !important;
+}
+/* 
+ * 
+ * Additional title styles
+ * 
+ */
+h1.title {
+  border: 1px solid @DarkGrey;
+  background: white;
+  padding: 0.5em;
+  font-weight: normal;
+  color: black;
+}
+h1.element::after {
+  color: #006747;
+  content: '(Data Element)';
+  float: right;
+  font-weight: normal;
+}
+h1.attribute::after {
+  color: #330072;
+  content: '(Attribute)';
+  float: right;
+  font-weight: normal;
+}
+h1.class::after {
+  color: @DarkRed;
+  content: '(Class)';
+  float: right;
+  font-weight: normal;
+}
+h1.dataSet::after {
+  color: #ED8B00;
+  content: '(Data Set)';
+  float: right;
+  font-weight: normal;
+}
+h1.businessDefinition::after {
+  color: #003087;
+  content: '(Business Definition)';
+  float: right;
+  font-weight: normal;
+}

@@ -83,36 +83,6 @@
 						<list>
 							<ditaParameter>
 								<field name="name">
-									<String>args.xhtml.classattr</String>
-								</field>
-								<field name="description">
-									<null/>
-								</field>
-								<field name="value">
-									<String>yes</String>
-								</field>
-								<field name="defaultValue">
-									<String>yes</String>
-								</field>
-								<field name="type">
-									<Integer>4</Integer>
-								</field>
-								<field name="possibleValues">
-									<String-array>
-										<String>yes</String>
-										<String>no</String>
-										<null/>
-									</String-array>
-								</field>
-								<field name="possibleValuesDescriptions">
-									<String-array>
-										<String></String>
-										<String></String>
-									</String-array>
-								</field>
-							</ditaParameter>
-							<ditaParameter>
-								<field name="name">
 									<String>force-unique</String>
 								</field>
 								<field name="description">
@@ -143,27 +113,239 @@
 							</ditaParameter>
 							<ditaParameter>
 								<field name="name">
-									<String>webhelp.fragment.before.toc_or_tiles</String>
+									<String>args.copycss</String>
 								</field>
 								<field name="description">
 									<null/>
 								</field>
 								<field name="value">
-									<String>C:\Users\Nicholas\source\repos\DITAStyleSheets\page-templates\before_toc_or_tiles.xml</String>
+									<String>yes</String>
 								</field>
 								<field name="defaultValue">
-									<String></String>
+									<String>no</String>
+								</field>
+								<field name="type">
+									<Integer>4</Integer>
+								</field>
+								<field name="possibleValues">
+									<String-array>
+										<String>yes</String>
+										<String>no</String>
+										<null/>
+									</String-array>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<String-array>
+										<String></String>
+										<String></String>
+									</String-array>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>args.gen.default.meta</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>yes</String>
+								</field>
+								<field name="defaultValue">
+									<String>no</String>
+								</field>
+								<field name="type">
+									<Integer>4</Integer>
+								</field>
+								<field name="possibleValues">
+									<String-array>
+										<String>yes</String>
+										<String>no</String>
+										<null/>
+									</String-array>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<String-array>
+										<String></String>
+										<String></String>
+									</String-array>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>args.outext</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>html</String>
+								</field>
+								<field name="defaultValue">
+									<String>html</String>
+								</field>
+								<field name="type">
+									<Integer>0</Integer>
+								</field>
+								<field name="possibleValues">
+									<String-array>
+										<String>html</String>
+									</String-array>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<String-array>
+										<String></String>
+									</String-array>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>args.xhtml.classattr</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>yes</String>
+								</field>
+								<field name="defaultValue">
+									<String>yes</String>
+								</field>
+								<field name="type">
+									<Integer>4</Integer>
+								</field>
+								<field name="possibleValues">
+									<String-array>
+										<String>yes</String>
+										<String>no</String>
+										<null/>
+									</String-array>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<String-array>
+										<String></String>
+										<String></String>
+									</String-array>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>webhelp.logo.image</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>C:\Users\Nicholas\source\repos\DITAStyleSheets\resources\images\NHS-Logo.svg</String>
+								</field>
+								<field name="defaultValue">
+									<null/>
 								</field>
 								<field name="type">
 									<Integer>2</Integer>
 								</field>
 								<field name="possibleValues">
+									<null/>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<null/>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>webhelp.logo.image.target.url</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>https://www.nhs.uk</String>
+								</field>
+								<field name="defaultValue">
+									<null/>
+								</field>
+								<field name="type">
+									<Integer>0</Integer>
+								</field>
+								<field name="possibleValues">
+									<null/>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<null/>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>webhelp.logo.image.alt</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>National Health Service</String>
+								</field>
+								<field name="defaultValue">
+									<null/>
+								</field>
+								<field name="type">
+									<Integer>0</Integer>
+								</field>
+								<field name="possibleValues">
+									<null/>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<null/>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>webhelp.fragment.welcome</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>C:\Users\Nicholas\source\repos\DITAStyleSheets\page-templates\welcome.xml</String>
+								</field>
+								<field name="defaultValue">
+									<null/>
+								</field>
+								<field name="type">
+									<Integer>2</Integer>
+								</field>
+								<field name="possibleValues">
+									<null/>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<null/>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>webhelp.show.indexterms.link</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>yes</String>
+								</field>
+								<field name="defaultValue">
+									<String>yes</String>
+								</field>
+								<field name="type">
+									<Integer>4</Integer>
+								</field>
+								<field name="possibleValues">
 									<String-array>
-										<String></String>
+										<String>yes</String>
+										<String>no</String>
+										<null/>
 									</String-array>
 								</field>
 								<field name="possibleValuesDescriptions">
 									<String-array>
+										<String></String>
 										<String></String>
 									</String-array>
 								</field>
@@ -232,94 +414,90 @@
 							</ditaParameter>
 							<ditaParameter>
 								<field name="name">
-									<String>webhelp.fragment.welcome</String>
+									<String>webhelp.fragment.before.toc_or_tiles</String>
 								</field>
 								<field name="description">
 									<null/>
 								</field>
 								<field name="value">
-									<String>C:\Users\Nicholas\source\repos\DITAStyleSheets\page-templates\welcome.xml</String>
+									<String>C:\Users\Nicholas\source\repos\DITAStyleSheets\page-templates\before_toc_or_tiles.xml</String>
 								</field>
 								<field name="defaultValue">
-									<null/>
+									<String></String>
 								</field>
 								<field name="type">
 									<Integer>2</Integer>
 								</field>
 								<field name="possibleValues">
-									<null/>
+									<String-array>
+										<String></String>
+									</String-array>
 								</field>
 								<field name="possibleValuesDescriptions">
-									<null/>
+									<String-array>
+										<String></String>
+									</String-array>
 								</field>
 							</ditaParameter>
 							<ditaParameter>
 								<field name="name">
-									<String>webhelp.logo.image</String>
+									<String>webhelp.search.page.numberOfItems</String>
 								</field>
 								<field name="description">
 									<null/>
 								</field>
 								<field name="value">
-									<String>C:\Users\Nicholas\source\repos\DITAStyleSheets\resources\images\NHS-Logo.svg</String>
+									<String>25</String>
 								</field>
 								<field name="defaultValue">
-									<null/>
-								</field>
-								<field name="type">
-									<Integer>2</Integer>
-								</field>
-								<field name="possibleValues">
-									<null/>
-								</field>
-								<field name="possibleValuesDescriptions">
-									<null/>
-								</field>
-							</ditaParameter>
-							<ditaParameter>
-								<field name="name">
-									<String>webhelp.logo.image.alt</String>
-								</field>
-								<field name="description">
-									<null/>
-								</field>
-								<field name="value">
-									<String>National Health Service</String>
-								</field>
-								<field name="defaultValue">
-									<null/>
+									<String>10</String>
 								</field>
 								<field name="type">
 									<Integer>0</Integer>
 								</field>
 								<field name="possibleValues">
-									<null/>
+									<String-array>
+										<String>5</String>
+										<String>10</String>
+										<String>20</String>
+									</String-array>
 								</field>
 								<field name="possibleValuesDescriptions">
-									<null/>
+									<String-array>
+										<String></String>
+										<String></String>
+										<String></String>
+									</String-array>
 								</field>
 							</ditaParameter>
 							<ditaParameter>
 								<field name="name">
-									<String>webhelp.logo.image.target.url</String>
+									<String>webhelp.default.collection.type.sequence</String>
 								</field>
 								<field name="description">
 									<null/>
 								</field>
 								<field name="value">
-									<String>https://www.nhs.uk</String>
+									<String>yes</String>
 								</field>
 								<field name="defaultValue">
-									<null/>
+									<String>no</String>
 								</field>
 								<field name="type">
-									<Integer>0</Integer>
+									<Integer>4</Integer>
 								</field>
 								<field name="possibleValues">
-									<null/>
+									<String-array>
+										<String>no</String>
+										<String>yes</String>
+										<null/>
+									</String-array>
 								</field>
 								<field name="possibleValuesDescriptions">
-									<null/>
+									<String-array>
+										<String></String>
+										<String></String>
+									</String-array>
 								</field>
 							</ditaParameter>
 						</list>
@@ -349,7 +527,7 @@
 						<null/>
 					</field>
 					<field name="name">
-						<String>the_wedding (WebHelp Responsive)</String>
+						<String>NHS Data Dictionary (GIT)</String>
 					</field>
 					<field name="baseURL">
 						<null/>

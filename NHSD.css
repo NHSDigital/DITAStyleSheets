@@ -11,22 +11,6 @@
  * Breadcrumbs font-size 16px line height 24px
  */
 /*  Fonts */
-@font-face {
-  font-family: 'Frutiger W01';
-  font-display: swap;
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.eot?#iefix);
-  src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.eot?#iefix) format("eot"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.woff2) format("woff2"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.woff) format("woff"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.ttf) format("truetype"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.svg#7def0e34-f28d-434f-b2ec-472bde847115) format("svg");
-}
-@font-face {
-  font-family: 'Frutiger W01';
-  font-display: swap;
-  font-style: normal;
-  font-weight: 600;
-  src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.eot?#iefix);
-  src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.eot?#iefix) format("eot"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff2) format("woff2"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff) format("woff"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.ttf) format("truetype"), url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.svg#eae74276-dd78-47e4-9b27-dac81c3411ca) format("svg");
-}
 /* Tiles */
 /* Page colours */
 /* Main Header Bar */
@@ -35,14 +19,17 @@
 /*  Fonts */
 body {
   background: #f0f4f5;
-  font-family: Frutiger W01, Helvetica, Arial, Sans-serif;
+  font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
+  text-rendering: optimizeLegibility;
 }
 /*  Set the default colour for links to NHS blue */
 a {
   color: #005eb8;
+  text-decoration: underline;
 }
 a:hover {
-  color: #003087;
+  color: #003087 !important;
+  background: #ffb81c !important;
   text-decoration: underline;
 }
 .ISOcert {
@@ -54,7 +41,7 @@ a:hover {
   color: #006747;
   font-weight: bold;
 }
-.element:before {
+.element:after {
   color: white;
   background-color: #006747;
   content: 'e';
@@ -102,6 +89,7 @@ a[data-id*="classes"] {
 .wh_header {
   background-color: #ffffff;
   color: #005eb8;
+  padding: 0em;
 }
 /* Webhelp mobile burger menu 
  * 
@@ -117,7 +105,7 @@ a[data-id*="classes"] {
  *  
  */
 .wh_publication_title {
-  font-family: Frutiger W01, Helvetica, Arial, Sans-serif;
+  font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
   text-transform: none;
   font-size: 28px;
 }
@@ -125,6 +113,7 @@ a[data-id*="classes"] {
   font-size: 1.5em;
   text-decoration: none;
   color: #005eb8;
+  margin: 0em;
 }
 .wh_publication_title > a:hover {
   color: #003087;
@@ -142,7 +131,7 @@ a[data-id*="classes"] {
  */
 .wh_top_menu {
   font-size: 1.1em;
-  margin: .4em 0;
+  margin: 0.4em 0;
   color: #005eb8;
 }
 .wh_top_menu > a {
@@ -202,13 +191,14 @@ a[data-id*="classes"] {
 .wh_breadcrumb ol {
   background-color: #003087;
   color: #ffffff;
+  font-weight: bold;
 }
 .wh_breadcrumb ol a {
   color: #ffffff;
 }
 .wh_breadcrumb ol .active {
   background-color: #003087;
-  color: #ffe8b4;
+  color: #ffb81c;
 }
 /*
  * ------------------------------------------------------------------
@@ -232,8 +222,12 @@ a[data-id*="classes"] {
 .wh_navigation_links a:hover:before,
 .wh_navigation_links a:active:before,
 .wh_navigation_links a:visited:before {
-  color: #FFB81C;
+  color: #ffb81c;
   text-decoration: none;
+}
+/* Introductory Text Before ToC or Tiles */
+.before_toc_or_tiles {
+  padding: 2em;
 }
 /*
  * ------------------------------------------------------------------
@@ -250,13 +244,13 @@ a[data-id*="classes"] {
 }
 .wh_tile_shortdesc {
   margin-top: 0.5em;
-  font-family: Frutiger W01, Helvetica, Arial, Sans-serif;
+  font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
   text-align: left;
   color: #425563;
 }
 .wh_tile_title {
   color: #425563;
-  font-family: Frutiger W01, Helvetica, Arial, Sans-serif;
+  font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
   text-align: left;
   font-size: 1.1em;
   text-decoration: none;
@@ -293,14 +287,14 @@ Example:
   background-color: #005eb8;
   color: white;
   margin: 0 0;
-  padding: 2em;
+  padding: 0.4em;
   border-color: #005eb8;
 }
 .wh_welcome:not(:empty) {
   font-size: 1em;
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
-  padding: 0 0 .5em 0;
+  padding: 0 0 0.5em 0;
   text-shadow: none;
   color: white;
 }
@@ -309,13 +303,13 @@ Example:
   background-color: white;
   border: solid 4px #003087;
   border-radius: 0;
-  padding: 0 .5em;
+  padding: 0 0.5em;
   font-size: 1.2em;
   line-height: 2em;
   height: auto;
 }
 .wh_search_textfield:focus {
-  border: solid 4px #ffe8b4;
+  border: solid 4px #ffb81c;
 }
 .wh_search_button {
   border: solid 4px #003087;
@@ -442,7 +436,7 @@ Example:
 .related-links a,
 .related-links a:visited {
   color: #005eb8;
-  padding-bottom: .3em;
+  padding-bottom: 0.3em;
   display: inline-block;
 }
 /*
@@ -458,7 +452,7 @@ Example:
   color: #003087;
 }
 .searchresult .shortdesclink {
-  margin: .3em .5em 0 0;
+  margin: 0.3em 0.5em 0 0;
 }
 .wh_search_expression {
   font-weight: bold;
@@ -481,3 +475,83 @@ Example:
  * Tree TOC for the main page.
  * 
  */
+/* 
+ * 
+ * Additional section styles
+ * 
+ */
+section.section {
+  border: 1px solid #425563;
+  padding: 0.5em 1em 1em 1em;
+  background-color: white;
+}
+h2.sectiontitle {
+  font-size: 150%;
+  font-weight: normal;
+  margin-bottom: 1em;
+  margin-top: 0.2em;
+}
+span.wh_expand_btn {
+  left: 1.2em;
+}
+/* 
+ * 
+ * Additional table styles 
+ * 
+ */
+.table {
+  border: 1px solid #425563 !important;
+  margin-left: 0;
+}
+.table .thead-light {
+  background-color: #003087 !important;
+  color: white;
+  border: 1px solid #425563 !important;
+}
+.table .thead-light th {
+  background-color: #003087 !important;
+  color: white;
+  border: 1px solid #425563 !important;
+}
+/* 
+ * 
+ * Additional title styles
+ * 
+ */
+h1.title {
+  border: 1px solid #425563;
+  background: white;
+  padding: 0.5em;
+  font-weight: normal;
+  color: black;
+}
+h1.element::after {
+  color: #006747;
+  content: '(Data Element)';
+  float: right;
+  font-weight: normal;
+}
+h1.attribute::after {
+  color: #330072;
+  content: '(Attribute)';
+  float: right;
+  font-weight: normal;
+}
+h1.class::after {
+  color: #8a1538;
+  content: '(Class)';
+  float: right;
+  font-weight: normal;
+}
+h1.dataSet::after {
+  color: #ED8B00;
+  content: '(Data Set)';
+  float: right;
+  font-weight: normal;
+}
+h1.businessDefinition::after {
+  color: #003087;
+  content: '(Business Definition)';
+  float: right;
+  font-weight: normal;
+}
