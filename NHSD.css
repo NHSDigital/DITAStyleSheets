@@ -82,6 +82,10 @@ a[data-id*="classes"] {
   padding-left: 3px;
   padding-right: 3px;
 }
+.shortdesc {
+  background-color: #d4e4f3;
+  padding: 1em 1em 1em 1em;
+}
 /*  Oxygen styles */
 /* Title and logo bar
  * 
@@ -117,6 +121,7 @@ a[data-id*="classes"] {
 }
 .wh_publication_title > a:hover {
   color: #003087;
+  background: #ffb81c;
 }
 .wh_logo img {
   width: 73px;
@@ -481,9 +486,9 @@ Example:
  * 
  */
 section.section {
-  border: 1px solid #425563;
+  border: none
   padding: 0.5em 1em 1em 1em;
-  background-color: white;
+  background-color: inherit;
 }
 h2.sectiontitle {
   font-size: 150%;
@@ -492,7 +497,10 @@ h2.sectiontitle {
   margin-top: 0.2em;
 }
 span.wh_expand_btn {
-  left: 1.2em;
+  left: 0.7em;
+  color: #ffb81c;
+  border: none;
+  font-weight: 800;
 }
 /* 
  * 
@@ -519,8 +527,8 @@ span.wh_expand_btn {
  * 
  */
 h1.title {
-  border: 1px solid #425563;
-  background: white;
+  /*  border: 1px solid @DarkGrey;
+  background: white;*/
   padding: 0.5em;
   font-weight: normal;
   color: black;

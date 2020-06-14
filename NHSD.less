@@ -136,6 +136,11 @@ a[data-id*="classes"] {
 }
 
  
+.shortdesc {
+    background-color:@NHSBlue3;
+    padding: 1em 1em 1em 1em;
+} 
+ 
 /*  Oxygen styles */
 
 
@@ -175,8 +180,8 @@ a[data-id*="classes"] {
   margin: 0em;
 }
 .wh_publication_title > a:hover {
-  color: @NHSDarkBlue;
-  
+    color: @NHSDarkBlue;
+    background:@NHSWarmYellow;
 }
 
 
@@ -551,9 +556,9 @@ Example:
  * 
  */
 section.section {
-  border: 1px solid @DarkGrey;
+  border: none
   padding: 0.5em 1em 1em 1em;
-  background-color: white;
+  background-color: inherit;
 }
 h2.sectiontitle {
   font-size: 150%;
@@ -562,7 +567,10 @@ h2.sectiontitle {
   margin-top: 0.2em;
 }
 span.wh_expand_btn {
-  left: 1.2em;
+  left: 0.7em;
+  color: @NHSWarmYellow;
+  border: none;
+ font-weight:800;
 }
 /* 
  * 
@@ -589,8 +597,8 @@ span.wh_expand_btn {
  * 
  */
 h1.title {
-  border: 1px solid @DarkGrey;
-  background: white;
+/*  border: 1px solid @DarkGrey;
+  background: white;*/
   padding: 0.5em;
   font-weight: normal;
   color: black;
