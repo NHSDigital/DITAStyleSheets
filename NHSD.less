@@ -175,7 +175,7 @@ a[data-id*="classes"] {
 }
 .wh_publication_title > a {
   font-size: 1.5em;
-  text-decoration: none;
+  text-decoration: underline;
   color: @NHSBlue;
   margin: 0em;
 }
@@ -218,6 +218,7 @@ a[data-id*="classes"] {
 }
 .wh_top_menu ul li a {
   color: @NHSBlue;
+  text-decoration: underline;
 }
 .wh_top_menu ul li a:hover {
   background: @NHSDarkBlue;
@@ -290,7 +291,7 @@ a[data-id*="classes"] {
 .wh_navigation_links a:active:before,
 .wh_navigation_links a:visited:before {
   color: @NHSWarmYellow;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /* Introductory Text Before ToC or Tiles */
@@ -328,9 +329,6 @@ a[data-id*="classes"] {
 }
 .wh_tile_title a {
   color: @DarkGrey;
-}
-.wh_tile_shortdesc {
-  text-align: left;
 }
 .wh_tile_text:after {
   background: linear-gradient(to bottom, rgba(238, 238, 238, 0), #eeeeee 50%);
@@ -483,11 +481,11 @@ Example:
  * 
  */
 .wh_footer {
-  text-align: center;
-  padding: 1em;
+  text-align: left;
+  padding: 0.5em;
   clear: both;
-  background-color: @DarkGrey;
-  color: white;
+  background-color: @NHSBlue3;
+  color: @NHSDarkBlue;
   width: 100%;
 }
 /*

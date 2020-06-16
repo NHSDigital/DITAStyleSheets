@@ -115,7 +115,7 @@ a[data-id*="classes"] {
 }
 .wh_publication_title > a {
   font-size: 1.5em;
-  text-decoration: none;
+  text-decoration: underline;
   color: #005eb8;
   margin: 0em;
 }
@@ -156,6 +156,7 @@ a[data-id*="classes"] {
 }
 .wh_top_menu ul li a {
   color: #005eb8;
+  text-decoration: underline;
 }
 .wh_top_menu ul li a:hover {
   background: #003087;
@@ -228,7 +229,7 @@ a[data-id*="classes"] {
 .wh_navigation_links a:active:before,
 .wh_navigation_links a:visited:before {
   color: #ffb81c;
-  text-decoration: none;
+  text-decoration: underline;
 }
 /* Introductory Text Before ToC or Tiles */
 .before_toc_or_tiles {
@@ -263,9 +264,6 @@ a[data-id*="classes"] {
 }
 .wh_tile_title a {
   color: #425563;
-}
-.wh_tile_shortdesc {
-  text-align: left;
 }
 .wh_tile_text:after {
   background: linear-gradient(to bottom, rgba(238, 238, 238, 0), #eeeeee 50%);
@@ -413,11 +411,11 @@ Example:
  * 
  */
 .wh_footer {
-  text-align: center;
-  padding: 1em;
+  text-align: left;
+  padding: 0.5em;
   clear: both;
-  background-color: #425563;
-  color: white;
+  background-color: #d4e4f3;
+  color: #003087;
   width: 100%;
 }
 /*

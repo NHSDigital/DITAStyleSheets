@@ -57,10 +57,10 @@
 					<field name="publishingTemplateDataPO">
 						<publishingTemplate>
 							<field name="templateRoot">
-								<String>C:\Users\Nicholas\source\repos\DITAStyleSheets\NHSDD.zip</String>
+								<String>C:/Users/Nicholas/source/repos/DITAStyleSheets/</String>
 							</field>
 							<field name="descriptorRelativePath">
-								<String>NHS Data Dictionary (GIT).opt</String>
+								<String>NHSD.opt</String>
 							</field>
 							<field name="isCustomTemplate">
 								<Boolean>true</Boolean>
@@ -81,36 +81,6 @@
 					</field>
 					<field name="ditaParams">
 						<list>
-							<ditaParameter>
-								<field name="name">
-									<String>force-unique</String>
-								</field>
-								<field name="description">
-									<null/>
-								</field>
-								<field name="value">
-									<String>true</String>
-								</field>
-								<field name="defaultValue">
-									<String>false</String>
-								</field>
-								<field name="type">
-									<Integer>4</Integer>
-								</field>
-								<field name="possibleValues">
-									<String-array>
-										<String>true</String>
-										<String>false</String>
-										<null/>
-									</String-array>
-								</field>
-								<field name="possibleValuesDescriptions">
-									<String-array>
-										<String></String>
-										<String></String>
-									</String-array>
-								</field>
-							</ditaParameter>
 							<ditaParameter>
 								<field name="name">
 									<String>args.xhtml.classattr</String>
@@ -141,10 +111,40 @@
 									</String-array>
 								</field>
 							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>force-unique</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>true</String>
+								</field>
+								<field name="defaultValue">
+									<String>false</String>
+								</field>
+								<field name="type">
+									<Integer>4</Integer>
+								</field>
+								<field name="possibleValues">
+									<String-array>
+										<String>true</String>
+										<String>false</String>
+										<null/>
+									</String-array>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<String-array>
+										<String></String>
+										<String></String>
+									</String-array>
+								</field>
+							</ditaParameter>
 						</list>
 					</field>
 					<field name="jvmArgs">
-						<String>-Xmx2048m</String>
+						<String>-Xmx384m</String>
 					</field>
 					<field name="useCustomJavaHome">
 						<Boolean>false</Boolean>
