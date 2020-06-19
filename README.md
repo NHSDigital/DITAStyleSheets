@@ -15,10 +15,11 @@ This repository and project are for the development of a consistent WCAG 2.1 AA 
 |Release|Features|Status|
 |:------|:-------|:-----|
 |Alpha|Basic branding|Complete|
-|Private Beta - Early February|Web Accessible to WCAG 2.1 AA|Completed|
-||Hosted on Beta Data Dictionary domain|Blocking|
-|Public Beta - Early March|Web Accessible to WCAG 2.1 AA and Schema.org|Blocked|
-|                         |Refactored navigation||
+|Private Beta|Web Accessible to WCAG 2.1 AA|Completed|
+||Hosted on Beta Data Dictionary domain|Completed|
+|Public Beta|Web Accessible to WCAG 2.1 AA|Completed|
+||Schema.org metadata|in development|
+||Refactored navigation|Pending development|
 |Live|In line with user feedback||
 ## Background information
 ### File types
