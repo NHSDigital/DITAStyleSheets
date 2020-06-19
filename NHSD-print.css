@@ -1,9 +1,4 @@
 @charset "utf-8";
-body {
-    background-color: white;
-    color: black;
-    font-family: 'Asap', sans-serif;
-}
 @page {
     size: A4;
     margin: 1in;
@@ -11,9 +6,6 @@ body {
 }
 @page :left {
     margin-right: 1.5in;
-    @bottom-left-corner {
-        content: url("qr.svg");
-    }
     @bottom-left {
         content: "Page: " counter(page) " of " counter(pages);
     }
@@ -43,46 +35,3 @@ booktitle:after {
     display: block;
 }
 
-
-
-.wh_topic_content,
-.wh_content_area {
-    color: black;
-}
-
-a {
-    color: #360000;
-}
-
-.title {
-    font-family: 'Flamenco', cursive;
-    color: #360000;
-}
-
-.wh_header {
-    background-color: silver;
-    color: black;
-    font-family: 'Flamenco', cursive;
-    color: #360000;
-    font-size: x-large;
-}
-/*
- * ------------------------------------------------------------------
- *  
- * Publication titles
- *  
- */
-.wh_publication_title {
-    font-family: 'Flamenco', cursive;
-    text-transform: none;
-    font-size: xx-large;
-}
-.wh_publication_title > a {
-    font-size: 1.5em;
-    text-decoration: none;
-    color: black;
-}
-
-.wh_logo {
-    padding: 12px;
-}
