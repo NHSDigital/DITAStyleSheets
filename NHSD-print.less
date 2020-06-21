@@ -1,0 +1,121 @@
+@charset "utf-8";
+@NHSBlue: #005EB8;
+@NHSBlue3: #D4E4F3; /*  for backgrounds */
+@NHSDarkBlue: #003087;
+@DarkGreen: #006747;
+@DarkRed: #8A1538;
+@Purple: #330072;
+@DarkGrey: #425563;
+@NHSGrey4: #DFE2E5;  /*  for backgrounds */
+@NHSOrange: #ED8B00;
+@NHSPink: #AE2573;
+@NHSDBackground: #F0F4F5;
+@NHSWarmYellow: #FFB81C;
+@NHSWhite: #FFFFFF;
+/* 
+ * Logo position - left hand side
+ * 15px margin all sides (half height of 30px)
+ */
+ 
+@LogoImage: "resources/images/NHS-Logo.svg";
+@logo-border: 15px;
+
+/* 
+ * Breadcrumbs font-size 16px line height 24px
+ */
+ 
+ @Breadcrumb-font-size: 16px;
+ @Breadcrumb-lineheight: 24px;
+ 
+
+/*  Fonts */
+
+@BodyFont: 'Frutiger W01',Helvetica,Arial,Sans-serif;
+@HeadingFont: @BodyFont;
+
+/* Front page Image Filename */
+@FrontpageImage: "resources/images/Abstract-186165341-MED.jpg";
+
+body {
+     background: transparent;
+
+}
+
+@page {
+    size: A4;
+    margin: 2cm;
+
+}
+@page :left {
+    margin-right: 1cm;
+    @bottom-left {
+        content: "Page: " counter(page) " of " counter(pages);
+    }
+}
+
+@page :right {
+    margin-left: 1cm;
+    @bottom-right {
+        content: "Page: " counter(page) " of " counter(pages);
+    }
+}
+
+@page front-page {
+    background-image: url(@FrontpageImage);
+    background-position:0% 66%; /* The first is the alignement on the X axis, the second on the Y axis.*/
+    background-repeat:no-repeat; 
+    margin-top: 40mm;
+margin-left: 15mm;
+background-color:transparent;
+    @bottom-left {
+        content: "Copyright NHS Digital";
+    }
+    @top-right {
+        background-image: url(@LogoImage);
+        
+    }
+
+}
+
+*[class ~= "front-page/front-page-title"] {
+  margin-top: 50mm;  
+  font-size: 42pt;
+  color: @NHSBlue;
+  font:@HeadingFont;
+  background-color:transparent;
+  text-align:left;
+  
+}
+*[class ~= "front-page/front-page-title"]:after(1) {
+    display:block;
+    margin-top: 10mm; 
+     content: "NHS Data Model and Dictionary";
+    font-size: 24pt;
+    color: @DarkGrey;
+    text-align:left;
+      background-color:transparent;
+}
+*[class ~= "front-page/front-page-title"]:after(2) {
+    display:block;
+    margin-top: 20mm; 
+    content: "Draft publication";
+    font-size: 15pt;
+    color: @NHSBlue;
+    text-align:left;
+      background-color:transparent;
+}
+/* Remove the "chapter" prefix */
+*[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:before {
+    display: none !important;
+}
+
+*[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"]:before {
+    content: counter(chapter) ". " !important;
+}
+
+booktitle:after {
+    content: oxy_xpath("current-date()");
+    color: gray;
+    display: block;
+}
+

@@ -30,9 +30,6 @@
 
 /*  Fonts */
 
-@BodyFont: 'Frutiger W01',Helvetica,Arial,Sans-serif;
-@HeadingFont: @BodyFont;
-
 @font-face: {
     font-family: 'Frutiger W01';
     font-display:swap;
@@ -51,6 +48,8 @@
     src: url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.eot?#iefix) format("eot"),url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff2) format("woff2"),url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff) format("woff"),url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.ttf) format("truetype"),url(https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.svg#eae74276-dd78-47e4-9b27-dac81c3411ca) format("svg")
 };
 
+@BodyFont: 'Frutiger W01',Helvetica,Arial,Sans-serif;
+@HeadingFont: @BodyFont;
 /* Tiles */
 /* Page colours */
 /* Main Header Bar */

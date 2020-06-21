@@ -1,37 +1,87 @@
 @charset "utf-8";
+/*  for backgrounds */
+/*  for backgrounds */
+/* 
+ * Logo position - left hand side
+ * 15px margin all sides (half height of 30px)
+ */
+/* 
+ * Breadcrumbs font-size 16px line height 24px
+ */
+/*  Fonts */
+/* Front page Image Filename */
+body {
+  background: transparent;
+}
 @page {
-    size: A4;
-    margin: 1in;
-
+  size: A4;
+  margin: 2cm;
 }
 @page :left {
-    margin-right: 1.5in;
-    @bottom-left {
-        content: "Page: " counter(page) " of " counter(pages);
-    }
+  margin-right: 1cm;
+  
+  @bottom-left {
+    content: "Page: " counter(page) " of " counter(pages);
+  }
 }
-
 @page :right {
-    margin-left: 1.5in;
-    @bottom-right {
-        content: "Page: " counter(page) " of " counter(pages);
-    }
+  margin-left: 1cm;
+  
+  @bottom-right {
+    content: "Page: " counter(page) " of " counter(pages);
+  }
 }
-
-
-
+@page front-page {
+  background-image: url("resources/images/Abstract-186165341-MED.jpg");
+  background-position: 0% 66%;
+  background-repeat: no-repeat;
+  margin-top: 40mm;
+  margin-left: 15mm;
+  background-color: transparent;
+  
+  /* The first is the alignement on the X axis, the second on the Y axis.*/
+  @bottom-left {
+    content: "Copyright NHS Digital";
+  }
+  @top-right {
+    background-image: url("resources/images/NHS-Logo.svg");
+  }
+}
+*[class~="front-page/front-page-title"] {
+  margin-top: 50mm;
+  font-size: 42pt;
+  color: #005eb8;
+  font: 'Frutiger W01', Helvetica, Arial, Sans-serif;
+  background-color: transparent;
+  text-align: left;
+}
+*[class~="front-page/front-page-title"]:after(1) {
+  display: block;
+  margin-top: 10mm;
+  content: "NHS Data Model and Dictionary";
+  font-size: 24pt;
+  color: #425563;
+  text-align: left;
+  background-color: transparent;
+}
+*[class~="front-page/front-page-title"]:after(2) {
+  display: block;
+  margin-top: 20mm;
+  content: "Draft publication";
+  font-size: 15pt;
+  color: #005eb8;
+  text-align: left;
+  background-color: transparent;
+}
 /* Remove the "chapter" prefix */
-*[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:before {
-    display: none !important;
+*[class~="map/topicmeta"] > *[class~="topic/navtitle"]:before {
+  display: none !important;
 }
-
-*[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"]:before {
-    content: counter(chapter) ". " !important;
+*[class~="topic/topic"][is-chapter]:not([is-part]) > *[class~="topic/title"]:before {
+  content: counter(chapter) ". " !important;
 }
-
 booktitle:after {
-    content: oxy_xpath("current-date()");
-    color: gray;
-    display: block;
+  content: oxy_xpath("current-date()");
+  color: gray;
+  display: block;
 }
-
