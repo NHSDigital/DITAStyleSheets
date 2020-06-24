@@ -548,9 +548,10 @@ span.wh_expand_btn {
  * Additional title styles
  * 
  */
+/*
 h1.title {
-  /*  border: 1px solid @DarkGrey;
-  background: white;*/
+  border: 1px solid @DarkGrey;
+  background: white;
   padding: 0.5em;
   font-weight: normal;
   color: black;
@@ -568,7 +569,7 @@ h1.attribute::after {
   font-weight: normal;
 }
 h1.class::after {
-  color: #8a1538;
+  color: @DarkRed;
   content: '(Class)';
   float: right;
   font-weight: normal;
@@ -585,3 +586,4 @@ h1.businessDefinition::after {
   float: right;
   font-weight: normal;
 }
+ */

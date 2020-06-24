@@ -106,11 +106,16 @@ a:hover {
 .element:after {
     color:@DarkGreen;
     border-color: @DarkGreen;
-     content: 'e';
+    content: 'e';
 } 
 .attribute {
     color:@Purple;
-    content:'a';
+        font-weight:bold;
+        }
+.attribute:after {
+    color:@Purple;
+    border-color: @Purple;
+     content: 'a';
 }
 .class {
     color:@DarkRed;
@@ -119,7 +124,7 @@ a:hover {
 .class:after {
     color:@DarkRed;
     border-color: @DarkRed;
-     content: 'c';
+    content: 'c';
 } 
 
 a[data-id*="classes"] {
