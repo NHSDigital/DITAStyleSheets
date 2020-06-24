@@ -37,25 +37,47 @@ a:hover {
   margin: 30px;
 }
 /* Data Dictionary styles */
+.element:after,
+.attribute:after,
+.class:after,
+.businessDefinition:after,
+.dataSet:after {
+  border-width: thin;
+  border-style: solid;
+  background-color: white;
+  border-radius: 5px;
+  border-width: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-left: 2px;
+  font-weight: bold;
+}
 .element {
   color: #006747;
   font-weight: bold;
 }
 .element:after {
-  color: white;
-  background-color: #006747;
+  color: #006747;
+  border-color: #006747;
   content: 'e';
-  border-radius: 5px;
-  padding-left: 3px;
-  padding-right: 3px;
 }
 .attribute {
   color: #330072;
   font-weight: bold;
 }
+.attribute:after {
+  color: #330072;
+  border-color: #330072;
+  content: 'a';
+}
 .class {
   color: #8a1538;
   font-weight: bold;
+}
+.class:after {
+  color: #8a1538;
+  border-color: #8a1538;
+  content: 'c';
 }
 a[data-id*="classes"] {
   color: #8a1538;
@@ -65,22 +87,24 @@ a[data-id*="classes"] {
   color: #ed8b00;
   font-weight: bold;
 }
+.dataSet:after {
+  color: #ed8b00;
+  border-color: #ed8b00;
+  content: 'ds';
+}
 .businessDefinition {
   color: #003087;
   font-weight: bold;
+}
+.businessDefinition:after {
+  color: #003087;
+  border-color: #003087;
+  content: 'bd';
 }
 .retired {
   background-color: #dfe2e5;
   color: black;
   font-weight: normal;
-}
-.businessDefinition:after {
-  color: white;
-  background-color: #003087;
-  content: 'bd';
-  border-radius: 5px;
-  padding-left: 3px;
-  padding-right: 3px;
 }
 .shortdesc {
   background-color: #d4e4f3;

@@ -85,27 +85,47 @@ a:hover {
 
 
 /* Data Dictionary styles */
+
+.element:after, .attribute:after, .class:after, .businessDefinition:after, .dataSet:after {
+    border-width:thin;
+    border-style:solid;  
+    background-color:white;
+    border-radius:5px;
+    border-width: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: 2px;
+    font-weight:bold;
+};
+
 .element {
     color:@DarkGreen;
     font-weight:bold;
 }
 
 .element:after {
-    color:white;
-    background-color: @DarkGreen;
+    color:@DarkGreen;
+    border-color: @DarkGreen;
     content: 'e';
-    border-radius:5px;
-    padding-left: 3px;
-    padding-right: 3px;
 } 
 .attribute {
     color:@Purple;
-    font-weight:bold;
+        font-weight:bold;
+        }
+.attribute:after {
+    color:@Purple;
+    border-color: @Purple;
+     content: 'a';
 }
 .class {
     color:@DarkRed;
     font-weight:bold;
 }
+.class:after {
+    color:@DarkRed;
+    border-color: @DarkRed;
+    content: 'c';
+} 
 
 a[data-id*="classes"] {
     color:@DarkRed;
@@ -116,25 +136,28 @@ a[data-id*="classes"] {
     color:@NHSOrange;
     font-weight:bold;
 }
-
+.dataSet:after {
+    color:@NHSOrange;
+    border-color: @NHSOrange;
+     content: 'ds';
+} 
 .businessDefinition {
     color:@NHSDarkBlue;
     font-weight:bold;
 }
+
+.businessDefinition:after {
+    color:@NHSDarkBlue;
+    border-color: @NHSDarkBlue;
+     content: 'bd';
+} 
+
 .retired {
     background-color:@NHSGrey4;
     color: black;
     font-weight:normal;
 }
 
-.businessDefinition:after {
-    color:white;
-    background-color: @NHSDarkBlue;
-    content: 'bd';
-    border-radius:5px;
-    padding-left: 3px;
-    padding-right: 3px;
-}
 
  
 .shortdesc {

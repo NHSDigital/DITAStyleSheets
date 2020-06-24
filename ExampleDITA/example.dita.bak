@@ -72,12 +72,12 @@
           <stentry>Attribute Type</stentry>
         </sthead>
         <strow>
-          <stentry outputclass="class">GENERAL MEDICAL COUNCIL REFERENCE NUMBER</stentry>
-          <stentry outputclass="attribute">Default String</stentry>
+          <stentry>GENERAL MEDICAL COUNCIL REFERENCE NUMBER</stentry>
+          <stentry>Default String</stentry>
         </strow>
         <strow>
-          <stentry outputclass="dataSet">GENERAL MEDICAL PRACTITIONER PPD CODE</stentry>
-          <stentry outputclass="businessDefinition">Default String</stentry>
+          <stentry>GENERAL MEDICAL PRACTITIONER PPD CODE</stentry>
+          <stentry>Default String</stentry>
         </strow>
         <strow>
           <stentry>DOCTOR INDEX NUMBER</stentry>
