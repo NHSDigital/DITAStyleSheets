@@ -1,0 +1,589 @@
+@charset "utf-8";
+/*  Nicholas' customisation for Data Dictionary */
+/* Declare colours and charactaristics */
+/*  for backgrounds */
+/*  for backgrounds */
+/* 
+ * Logo position - left hand side
+ * 15px margin all sides (half height of 30px)
+ */
+/* 
+ * Breadcrumbs font-size 16px line height 24px
+ */
+/*  Fonts */
+/* Tiles */
+/* Page colours */
+/* Main Header Bar */
+/* Search Bar */
+/* Breadcrumbs */
+/*  Fonts */
+body {
+  background: #f0f4f5;
+  font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
+  text-rendering: optimizeLegibility;
+}
+/*  Set the default colour for links to NHS blue */
+a {
+  color: #005eb8;
+  text-decoration: underline;
+}
+a:hover {
+  color: #003087 !important;
+  background: #ffb81c !important;
+  text-decoration: underline;
+}
+.ISOcert {
+  float: right;
+  margin: 30px;
+}
+/* Data Dictionary styles */
+.element:after,
+.attribute:after,
+.class:after,
+.businessDefinition:after,
+.dataSet:after {
+  border-width: thin;
+  border-style: solid;
+  background-color: white;
+  border-radius: 5px;
+  border-width: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-left: 2px;
+  font-weight: bold;
+}
+.element {
+  color: #006747;
+  font-weight: bold;
+}
+.element:after {
+  color: #006747;
+  border-color: #006747;
+  content: 'e';
+}
+.attribute {
+  color: #330072;
+  font-weight: bold;
+}
+.attribute:after {
+  color: #330072;
+  border-color: #330072;
+  content: 'a';
+}
+.class {
+  color: #8a1538;
+  font-weight: bold;
+}
+.class:after {
+  color: #8a1538;
+  border-color: #8a1538;
+  content: 'c';
+}
+a[data-id*="classes"] {
+  color: #8a1538;
+  font-weight: bold;
+}
+.dataSet {
+  color: #ed8b00;
+  font-weight: bold;
+}
+.dataSet:after {
+  color: #ed8b00;
+  border-color: #ed8b00;
+  content: 'ds';
+}
+.businessDefinition {
+  color: #003087;
+  font-weight: bold;
+}
+.businessDefinition:after {
+  color: #003087;
+  border-color: #003087;
+  content: 'bd';
+}
+.retired {
+  background-color: #dfe2e5;
+  color: black;
+  font-weight: normal;
+}
+.shortdesc {
+  background-color: #d4e4f3;
+  padding: 1em 1em 1em 1em;
+}
+/*  Oxygen styles */
+/* Title and logo bar
+ * 
+ */
+.wh_header {
+  background-color: #ffffff;
+  color: #005eb8;
+  padding: 0em;
+}
+/* Webhelp mobile burger menu 
+ * 
+ */
+.wh_toggle_button {
+  background-color: #003087;
+  color: white;
+}
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Publication titles
+ *  
+ */
+.wh_publication_title {
+  font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
+  text-transform: none;
+  font-size: 28px;
+}
+.wh_publication_title > a {
+  font-size: 1.5em;
+  text-decoration: underline;
+  color: #005eb8;
+  margin: 0em;
+}
+.wh_publication_title > a:hover {
+  color: #003087;
+  background: #ffb81c;
+}
+.wh_logo img {
+  width: 73px;
+  height: 30px;
+  margin: 30px;
+}
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Menu
+ *  
+ */
+.wh_top_menu {
+  font-size: 1.1em;
+  margin: 0.4em 0;
+  color: #005eb8;
+}
+.wh_top_menu > a {
+  color: #005eb8;
+}
+.wh_top_menu > a:hover {
+  color: #ffffff;
+}
+/* The submenus */
+.wh_top_menu ul ul {
+  background: #003087;
+  color: white;
+}
+.wh_top_menu ul ul > a {
+  background: #003087;
+  color: #ffffff;
+}
+.wh_top_menu ul li a {
+  color: #005eb8;
+  text-decoration: underline;
+}
+.wh_top_menu ul li a:hover {
+  background: #003087;
+  color: #ffffff;
+}
+.wh_top_menu ul ul li a:hover {
+  background: #003087;
+  color: #ffffff;
+}
+.wh_top_menu ul ul li {
+  background: #003087;
+  color: #ffffff;
+}
+.wh_top_menu ul ul li a {
+  background: #003087;
+  color: #ffffff;
+}
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Link to the index.
+ * 
+ */
+.wh_indexterms_link a span {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .wh_indexterms_link a:before {
+    bottom: 0;
+  }
+}
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Breadcrumb
+ *  
+ */
+.wh_breadcrumb ol {
+  background-color: #003087;
+  color: #ffffff;
+  font-weight: bold;
+}
+.wh_breadcrumb ol a {
+  color: #ffffff;
+}
+.wh_breadcrumb ol .active {
+  background-color: #003087;
+  color: #ffb81c;
+}
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Tools and navigation
+ * 
+ */
+.wh_tools {
+  background-color: #003087;
+  margin: 1em 0 2em;
+}
+.wh_print_link button,
+.webhelp_expand_collapse_sections,
+.wh_hide_highlight,
+.wh_navigation_links a,
+.wh_navigation_links a:hover,
+.wh_navigation_links a:active,
+.wh_navigation_links a:visited,
+.wh_print_link a:before,
+.wh_navigation_links a:before,
+.wh_navigation_links a:hover:before,
+.wh_navigation_links a:active:before,
+.wh_navigation_links a:visited:before {
+  color: #ffb81c;
+  text-decoration: underline;
+}
+/* Introductory Text Before ToC or Tiles */
+.before_toc_or_tiles {
+  padding: 2em;
+}
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Tiles
+ * 
+ */
+.wh_tile {
+  border-radius: 0em;
+  border-color: #005eb8;
+  border-style: solid;
+  border-width: 8px;
+  background-color: #ffffff;
+}
+.wh_tile_shortdesc {
+  margin-top: 0.5em;
+  font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
+  text-align: left;
+  color: #425563;
+}
+.wh_tile_title {
+  color: #425563;
+  font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
+  text-align: left;
+  font-size: 1.1em;
+  text-decoration: none;
+  font-weight: bold;
+}
+.wh_tile_title a {
+  color: #425563;
+}
+.wh_tile_text:after {
+  background: linear-gradient(to bottom, rgba(238, 238, 238, 0), #eeeeee 50%);
+}
+@media only screen and (max-width: 767px) {
+  .wh_tile > div {
+    height: auto;
+  }
+}
+/* 
+You can style some of the tiles in a special way. 
+Example:
+.wh_tiles *[data-id='getting_started']{
+    background-color:gray;
+}
+*/
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Search area
+ * 
+ */
+.wh_search_input {
+  background-color: #005eb8;
+  color: white;
+  margin: 0 0;
+  padding: 0.4em;
+  border-color: #005eb8;
+}
+.wh_welcome:not(:empty) {
+  font-size: 1em;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 0 0.5em 0;
+  text-shadow: none;
+  color: white;
+}
+.wh_search_textfield {
+  color: #425563;
+  background-color: white;
+  border: solid 4px #003087;
+  border-radius: 0;
+  padding: 0 0.5em;
+  font-size: 1.2em;
+  line-height: 2em;
+  height: auto;
+}
+.wh_search_textfield:focus {
+  border: solid 4px #ffb81c;
+}
+.wh_search_button {
+  border: solid 4px #003087;
+  border-radius: 0 0 0 0;
+  padding: 0.5em 1em;
+  background-color: #003087;
+  color: #ffffff;
+}
+/* Search autocomplete */
+.ui-menu-item {
+  font-size: 1.4em;
+}
+.ui-menu-item .ui-state-active {
+  background-color: #346ec5;
+}
+/*  Nicholas: burger menu toggler */
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.custom-toggler {
+  border-color: #ffb81c;
+}
+.navbar-dark .navbar-toggler {
+  color: #005eb8;
+  border-color: #005eb8;
+}
+/* Search relative path */
+.searchresult li .relativePath a {
+  color: #006621;
+}
+/* Search autocomplete icons */
+.search-autocomplete-proposal-type-history a,
+.search-autocomplete-proposal-type-history a:hover,
+.search-autocomplete-proposal-type-history a:visited,
+.search-autocomplete-proposal-type-history a:active {
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.8em;
+}
+.ui-state-active .search-autocomplete-proposal-type-history a,
+.ui-state-active .search-autocomplete-proposal-type-history a:hover,
+.ui-state-active .search-autocomplete-proposal-type-history a:visited,
+.ui-state-active .search-autocomplete-proposal-type-history a:active {
+  color: #fff;
+}
+/* Active search page */
+#wh-search-pagination > ul > li.active > a {
+  background-color: #330072;
+}
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  border-color: #346ec5 !important;
+}
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Publication TOC
+ * 
+ */
+.wh_publication_toc {
+  border-radius: 3px;
+  background-color: #eeeeee;
+  padding: 1.5em 2em;
+  line-height: 2em;
+}
+.wh_publication_toc .active > .topicref a {
+  color: #5185cb;
+}
+.wh_publication_toc span,
+.wh_publication_toc a,
+.wh_publication_toc a:visited,
+.wh_publication_toc a:hover {
+  color: #7b7a7a;
+}
+.wh_publication_toc a:hover {
+  text-decoration: underline;
+}
+.topictitle3 {
+  font-weight: 400;
+}
+@media only screen and (max-width: 767px) {
+  .wh_publication_toc {
+    border-radius: 0;
+    padding: 1em 0.5em;
+    margin-top: 10px;
+  }
+}
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Footer
+ * 
+ */
+.wh_footer {
+  text-align: left;
+  padding: 0.5em;
+  clear: both;
+  background-color: #d4e4f3;
+  color: #003087;
+  width: 100%;
+}
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Topic content
+ * 
+ */
+.wh_topic_content,
+.wh_content_area {
+  color: #000000;
+  line-height: 1.7em;
+}
+.wh_related_links,
+.wh_child_links,
+.wh_topic_content .related-links {
+  background-color: #eeeeee;
+  padding: 1.5em;
+  margin-top: 1.5em;
+}
+.related-links a,
+.related-links a:visited {
+  color: #005eb8;
+  padding-bottom: 0.3em;
+  display: inline-block;
+}
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Search results.
+ * 
+ */
+.searchresult {
+  list-style: none;
+}
+.searchresult li a {
+  color: #003087;
+}
+.searchresult .shortdesclink {
+  margin: 0.3em 0.5em 0 0;
+}
+.wh_search_expression {
+  font-weight: bold;
+}
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Index terms.
+ * 
+ */
+.wh_index_terms span.wh_first_letter {
+  color: #003087;
+}
+.wh_index_terms #indexList {
+  padding: 0;
+}
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Tree TOC for the main page.
+ * 
+ */
+/* 
+ * 
+ * Additional section styles
+ * 
+ */
+section.section {
+  border: none;
+  padding: 0.5em 1em 1em 1em;
+  background-color: inherit;
+}
+h2.sectiontitle {
+  font-size: 150%;
+  font-weight: normal;
+  margin-bottom: 1em;
+  margin-top: 0.2em;
+}
+span.wh_expand_btn {
+  left: 0.7em;
+  color: #ffb81c;
+  border: none;
+  font-weight: 800;
+}
+/* 
+ * 
+ * Additional table styles 
+ * 
+ */
+.table {
+  border: 1px solid #425563 !important;
+  margin-left: 0;
+}
+.table .thead-light {
+  background-color: #003087 !important;
+  color: white;
+  border: 1px solid #425563 !important;
+}
+.table .thead-light th {
+  background-color: #003087 !important;
+  color: white;
+  border: 1px solid #425563 !important;
+}
+/* 
+ * 
+ * Additional title styles
+ * 
+ */
+/*
+h1.title {
+  border: 1px solid @DarkGrey;
+  background: white;
+  padding: 0.5em;
+  font-weight: normal;
+  color: black;
+}
+h1.element::after {
+  color: #006747;
+  content: '(Data Element)';
+  float: right;
+  font-weight: normal;
+}
+h1.attribute::after {
+  color: #330072;
+  content: '(Attribute)';
+  float: right;
+  font-weight: normal;
+}
+h1.class::after {
+  color: @DarkRed;
+  content: '(Class)';
+  float: right;
+  font-weight: normal;
+}
+h1.dataSet::after {
+  color: #ED8B00;
+  content: '(Data Set)';
+  float: right;
+  font-weight: normal;
+}
+h1.businessDefinition::after {
+  color: #003087;
+  content: '(Business Definition)';
+  float: right;
+  font-weight: normal;
+}
+ */

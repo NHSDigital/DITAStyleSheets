@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="Untitled">
+    <title>A simple topic</title>
+    <shortdesc>This is the same as <ph outputclass="class">something else</ph></shortdesc>
+    <body>
+        <p outputclass="class">A paragraph with a class in it</p>
+        <p>Another paragraph<ph outputclass="attribute">with an attribute</ph></p>
+    </body>
+</topic>
