@@ -171,6 +171,27 @@
           </stentry>
           <stentry>references in description WARD CODE</stentry>
         </strow>
+        <strow>
+          <stentry>Supporting Information</stentry>
+          <stentry>
+            <p outputclass='supportingInformation' >An element</p>
+          </stentry>
+          <stentry>references in description WARD CODE</stentry>
+        </strow>
+        <strow>
+          <stentry>Supporting definition</stentry>
+          <stentry>
+            <p outputclass='supportingDefinition' >A definitiont</p>
+          </stentry>
+          <stentry>references in description WARD CODE</stentry>
+        </strow>
+        <strow>
+          <stentry>Constraint</stentry>
+          <stentry>
+            <p outputclass='xmlSchemaConstraint' >A constraint</p>
+          </stentry>
+          <stentry>references in description WARD CODE</stentry>
+        </strow>
       </simpletable>
     </section>
     <section>

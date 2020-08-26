@@ -166,18 +166,23 @@ a[data-id*="classes"] {
     font-weight:normal;
 }
 
-.supportingInformation:after {  color:@NHSDarkBlue;
+.supportingInformation:after {  
+    color:@NHSDarkBlue;
     border-color: @NHSDarkBlue;
-     content: 'i';
+    content: 'i';
+    }
 
 .xmlSchemaConstraint {
     color:@NHSDarkBlue;
     font-weight:normal;
 }
-.xmlSchemaConstraint:after {  color:@NHSDarkBlue;
+
+.xmlSchemaConstraint:after {  
+    color:@NHSDarkBlue;
     border-color: @NHSDarkBlue;
-     content: '{}';
+    content: '\{...\}';
 } 
+
 .retired {
     background-color:@NHSGrey4;
     color: black;
@@ -642,7 +647,8 @@ span.wh_expand_btn {
   color: white;
   border: 1px solid @DarkGrey !important;
 }
-}
+
+
 
 /* 
  * 

@@ -3,4 +3,5 @@
 <map>
     <title>My untitled map</title>
     <topicref href="Untitled.dita"/>
+    <topicref href="example.dita"/>
 </map>

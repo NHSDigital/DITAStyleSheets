@@ -122,261 +122,197 @@ a[data-id*="classes"] {
   color: #003087;
   border-color: #003087;
   content: 'i';
-  /*  Oxygen styles */
-  /* Title and logo bar
+}
+.xmlSchemaConstraint {
+  color: #003087;
+  font-weight: normal;
+}
+.xmlSchemaConstraint:after {
+  color: #003087;
+  border-color: #003087;
+  content: '\{...\}';
+}
+.retired {
+  background-color: #dfe2e5;
+  color: black;
+  font-weight: normal;
+}
+tr.retired {
+  color: #425563;
+}
+.shortdesc {
+  background-color: #d4e4f3;
+  padding: 1em 1em 1em 1em;
+}
+/*  Oxygen styles */
+/* Title and logo bar
  * 
  */
-  /* Webhelp mobile burger menu 
+.wh_header {
+  background-color: #ffffff;
+  color: #005eb8;
+  padding: 0em;
+}
+/* Webhelp mobile burger menu 
  * 
  */
-  /*
+.wh_toggle_button {
+  background-color: #003087;
+  color: white;
+}
+/*
  * ------------------------------------------------------------------
  *  
  * Publication titles
  *  
  */
-  /*
- * ------------------------------------------------------------------
- *  
- * Menu
- *  
- */
-  /* The submenus */
-  /*
- * ------------------------------------------------------------------
- *  
- * Link to the index.
- * 
- */
-  /*
- * ------------------------------------------------------------------
- *  
- * Breadcrumb
- *  
- */
-  /*
- * ------------------------------------------------------------------
- *  
- * Tools and navigation
- * 
- */
-  /* Introductory Text Before ToC or Tiles */
-  /*
- * ------------------------------------------------------------------
- *  
- * Tiles
- * 
- */
-  /* 
-You can style some of the tiles in a special way. 
-Example:
-.wh_tiles *[data-id='getting_started']{
-    background-color:gray;
-}
-*/
-  /*
- * ------------------------------------------------------------------
- *  
- * Search area
- * 
- */
-  /* Search autocomplete */
-  /*  Nicholas: burger menu toggler */
-  /* Search relative path */
-  /* Search autocomplete icons */
-  /* Active search page */
-  /*
- * ------------------------------------------------------------------
- *  
- * Publication TOC
- * 
- */
-  /*
- * ------------------------------------------------------------------
- *  
- * Footer
- * 
- */
-  /*
- * ------------------------------------------------------------------
- *  
- * Topic content
- * 
- */
-  /*
- * ------------------------------------------------------------------
- *  
- * Search results.
- * 
- */
-  /*
- * ------------------------------------------------------------------
- *  
- * Index terms.
- * 
- */
-  /*
- * ------------------------------------------------------------------
- *  
- * Tree TOC for the main page.
- * 
- */
-  /* 
- * 
- * Additional section styles
- * 
- */
-  /* 
- * 
- * Additional table styles 
- * 
- */
-}
-.supportingInformation:after .xmlSchemaConstraint {
-  color: #003087;
-  font-weight: normal;
-}
-.supportingInformation:after .xmlSchemaConstraint:after {
-  color: #003087;
-  border-color: #003087;
-  content: '{}';
-}
-.supportingInformation:after .retired {
-  background-color: #dfe2e5;
-  color: black;
-  font-weight: normal;
-}
-.supportingInformation:after tr.retired {
-  color: #425563;
-}
-.supportingInformation:after .shortdesc {
-  background-color: #d4e4f3;
-  padding: 1em 1em 1em 1em;
-}
-.supportingInformation:after .wh_header {
-  background-color: #ffffff;
-  color: #005eb8;
-  padding: 0em;
-}
-.supportingInformation:after .wh_toggle_button {
-  background-color: #003087;
-  color: white;
-}
-.supportingInformation:after .wh_publication_title {
+.wh_publication_title {
   font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
   text-transform: none;
   font-size: 28px;
 }
-.supportingInformation:after .wh_publication_title > a {
+.wh_publication_title > a {
   font-size: 1.5em;
   text-decoration: underline;
   color: #005eb8;
   margin: 0em;
 }
-.supportingInformation:after .wh_publication_title > a:hover {
+.wh_publication_title > a:hover {
   color: #003087;
   background: #ffb81c;
 }
-.supportingInformation:after .wh_logo img {
+.wh_logo img {
   width: 73px;
   height: 30px;
   margin: 30px;
 }
-.supportingInformation:after .wh_top_menu {
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Menu
+ *  
+ */
+.wh_top_menu {
   font-size: 1.1em;
   margin: 0.4em 0;
   color: #005eb8;
 }
-.supportingInformation:after .wh_top_menu > a {
+.wh_top_menu > a {
   color: #005eb8;
 }
-.supportingInformation:after .wh_top_menu > a:hover {
+.wh_top_menu > a:hover {
   color: #ffffff;
 }
-.supportingInformation:after .wh_top_menu ul ul {
+/* The submenus */
+.wh_top_menu ul ul {
   background: #003087;
   color: white;
 }
-.supportingInformation:after .wh_top_menu ul ul > a {
+.wh_top_menu ul ul > a {
   background: #003087;
   color: #ffffff;
 }
-.supportingInformation:after .wh_top_menu ul li a {
+.wh_top_menu ul li a {
   color: #005eb8;
   text-decoration: underline;
 }
-.supportingInformation:after .wh_top_menu ul li a:hover {
+.wh_top_menu ul li a:hover {
   background: #003087;
   color: #ffffff;
 }
-.supportingInformation:after .wh_top_menu ul ul li a:hover {
+.wh_top_menu ul ul li a:hover {
   background: #003087;
   color: #ffffff;
 }
-.supportingInformation:after .wh_top_menu ul ul li {
+.wh_top_menu ul ul li {
   background: #003087;
   color: #ffffff;
 }
-.supportingInformation:after .wh_top_menu ul ul li a {
+.wh_top_menu ul ul li a {
   background: #003087;
   color: #ffffff;
 }
-.supportingInformation:after .wh_indexterms_link a span {
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Link to the index.
+ * 
+ */
+.wh_indexterms_link a span {
   display: none;
 }
 @media only screen and (max-width: 767px) {
-  .supportingInformation:after .wh_indexterms_link a:before {
+  .wh_indexterms_link a:before {
     bottom: 0;
   }
 }
-.supportingInformation:after .wh_breadcrumb ol {
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Breadcrumb
+ *  
+ */
+.wh_breadcrumb ol {
   background-color: #003087;
   color: #ffffff;
   font-weight: bold;
 }
-.supportingInformation:after .wh_breadcrumb ol a {
+.wh_breadcrumb ol a {
   color: #ffffff;
 }
-.supportingInformation:after .wh_breadcrumb ol .active {
+.wh_breadcrumb ol .active {
   background-color: #003087;
   color: #ffb81c;
 }
-.supportingInformation:after .wh_tools {
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Tools and navigation
+ * 
+ */
+.wh_tools {
   background-color: #003087;
   margin: 1em 0 2em;
 }
-.supportingInformation:after .wh_print_link button,
-.supportingInformation:after .webhelp_expand_collapse_sections,
-.supportingInformation:after .wh_hide_highlight,
-.supportingInformation:after .wh_navigation_links a,
-.supportingInformation:after .wh_navigation_links a:hover,
-.supportingInformation:after .wh_navigation_links a:active,
-.supportingInformation:after .wh_navigation_links a:visited,
-.supportingInformation:after .wh_print_link a:before,
-.supportingInformation:after .wh_navigation_links a:before,
-.supportingInformation:after .wh_navigation_links a:hover:before,
-.supportingInformation:after .wh_navigation_links a:active:before,
-.supportingInformation:after .wh_navigation_links a:visited:before {
+.wh_print_link button,
+.webhelp_expand_collapse_sections,
+.wh_hide_highlight,
+.wh_navigation_links a,
+.wh_navigation_links a:hover,
+.wh_navigation_links a:active,
+.wh_navigation_links a:visited,
+.wh_print_link a:before,
+.wh_navigation_links a:before,
+.wh_navigation_links a:hover:before,
+.wh_navigation_links a:active:before,
+.wh_navigation_links a:visited:before {
   color: #ffb81c;
   text-decoration: underline;
 }
-.supportingInformation:after .before_toc_or_tiles {
+/* Introductory Text Before ToC or Tiles */
+.before_toc_or_tiles {
   padding: 2em;
 }
-.supportingInformation:after .wh_tile {
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Tiles
+ * 
+ */
+.wh_tile {
   border-radius: 0em;
   border-color: #005eb8;
   border-style: solid;
   border-width: 8px;
   background-color: #ffffff;
 }
-.supportingInformation:after .wh_tile_shortdesc {
+.wh_tile_shortdesc {
   margin-top: 0.5em;
   font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
   text-align: left;
   color: #425563;
 }
-.supportingInformation:after .wh_tile_title {
+.wh_tile_title {
   color: #425563;
   font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
   text-align: left;
@@ -384,25 +320,38 @@ Example:
   text-decoration: none;
   font-weight: bold;
 }
-.supportingInformation:after .wh_tile_title a {
+.wh_tile_title a {
   color: #425563;
 }
-.supportingInformation:after .wh_tile_text:after {
+.wh_tile_text:after {
   background: linear-gradient(to bottom, rgba(238, 238, 238, 0), #eeeeee 50%);
 }
 @media only screen and (max-width: 767px) {
-  .supportingInformation:after .wh_tile > div {
+  .wh_tile > div {
     height: auto;
   }
 }
-.supportingInformation:after .wh_search_input {
+/* 
+You can style some of the tiles in a special way. 
+Example:
+.wh_tiles *[data-id='getting_started']{
+    background-color:gray;
+}
+*/
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Search area
+ * 
+ */
+.wh_search_input {
   background-color: #005eb8;
   color: white;
   margin: 0 0;
   padding: 0.4em;
   border-color: #005eb8;
 }
-.supportingInformation:after .wh_welcome:not(:empty) {
+.wh_welcome:not(:empty) {
   font-size: 1em;
   text-align: center;
   margin: 0 auto;
@@ -410,7 +359,7 @@ Example:
   text-shadow: none;
   color: white;
 }
-.supportingInformation:after .wh_search_textfield {
+.wh_search_textfield {
   color: #425563;
   background-color: white;
   border: solid 4px #003087;
@@ -420,89 +369,106 @@ Example:
   line-height: 2em;
   height: auto;
 }
-.supportingInformation:after .wh_search_textfield:focus {
+.wh_search_textfield:focus {
   border: solid 4px #ffb81c;
 }
-.supportingInformation:after .wh_search_button {
+.wh_search_button {
   border: solid 4px #003087;
   border-radius: 0 0 0 0;
   padding: 0.5em 1em;
   background-color: #003087;
   color: #ffffff;
 }
-.supportingInformation:after .ui-menu-item {
+/* Search autocomplete */
+.ui-menu-item {
   font-size: 1.4em;
 }
-.supportingInformation:after .ui-menu-item .ui-state-active {
+.ui-menu-item .ui-state-active {
   background-color: #346ec5;
 }
-.supportingInformation:after .custom-toggler .navbar-toggler-icon {
+/*  Nicholas: burger menu toggler */
+.custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
-.supportingInformation:after .custom-toggler {
+.custom-toggler {
   border-color: #ffb81c;
 }
-.supportingInformation:after .navbar-dark .navbar-toggler {
+.navbar-dark .navbar-toggler {
   color: #005eb8;
   border-color: #005eb8;
 }
-.supportingInformation:after .searchresult li .relativePath a {
+/* Search relative path */
+.searchresult li .relativePath a {
   color: #006621;
 }
-.supportingInformation:after .search-autocomplete-proposal-type-history a,
-.supportingInformation:after .search-autocomplete-proposal-type-history a:hover,
-.supportingInformation:after .search-autocomplete-proposal-type-history a:visited,
-.supportingInformation:after .search-autocomplete-proposal-type-history a:active {
+/* Search autocomplete icons */
+.search-autocomplete-proposal-type-history a,
+.search-autocomplete-proposal-type-history a:hover,
+.search-autocomplete-proposal-type-history a:visited,
+.search-autocomplete-proposal-type-history a:active {
   text-decoration: none;
   color: inherit;
   font-size: 0.8em;
 }
-.supportingInformation:after .ui-state-active .search-autocomplete-proposal-type-history a,
-.supportingInformation:after .ui-state-active .search-autocomplete-proposal-type-history a:hover,
-.supportingInformation:after .ui-state-active .search-autocomplete-proposal-type-history a:visited,
-.supportingInformation:after .ui-state-active .search-autocomplete-proposal-type-history a:active {
+.ui-state-active .search-autocomplete-proposal-type-history a,
+.ui-state-active .search-autocomplete-proposal-type-history a:hover,
+.ui-state-active .search-autocomplete-proposal-type-history a:visited,
+.ui-state-active .search-autocomplete-proposal-type-history a:active {
   color: #fff;
 }
-.supportingInformation:after #wh-search-pagination > ul > li.active > a {
+/* Active search page */
+#wh-search-pagination > ul > li.active > a {
   background-color: #330072;
 }
-.supportingInformation:after .pagination > .active > a,
-.supportingInformation:after .pagination > .active > a:focus,
-.supportingInformation:after .pagination > .active > a:hover,
-.supportingInformation:after .pagination > .active > span,
-.supportingInformation:after .pagination > .active > span:focus,
-.supportingInformation:after .pagination > .active > span:hover {
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
   border-color: #346ec5 !important;
 }
-.supportingInformation:after .wh_publication_toc {
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Publication TOC
+ * 
+ */
+.wh_publication_toc {
   border-radius: 3px;
   background-color: #eeeeee;
   padding: 1.5em 2em;
   line-height: 2em;
 }
-.supportingInformation:after .wh_publication_toc .active > .topicref a {
+.wh_publication_toc .active > .topicref a {
   color: #5185cb;
 }
-.supportingInformation:after .wh_publication_toc span,
-.supportingInformation:after .wh_publication_toc a,
-.supportingInformation:after .wh_publication_toc a:visited,
-.supportingInformation:after .wh_publication_toc a:hover {
+.wh_publication_toc span,
+.wh_publication_toc a,
+.wh_publication_toc a:visited,
+.wh_publication_toc a:hover {
   color: #7b7a7a;
 }
-.supportingInformation:after .wh_publication_toc a:hover {
+.wh_publication_toc a:hover {
   text-decoration: underline;
 }
-.supportingInformation:after .topictitle3 {
+.topictitle3 {
   font-weight: 400;
 }
 @media only screen and (max-width: 767px) {
-  .supportingInformation:after .wh_publication_toc {
+  .wh_publication_toc {
     border-radius: 0;
     padding: 1em 0.5em;
     margin-top: 10px;
   }
 }
-.supportingInformation:after .wh_footer {
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Footer
+ * 
+ */
+.wh_footer {
   text-align: left;
   padding: 0.5em;
   clear: both;
@@ -510,69 +476,103 @@ Example:
   color: #003087;
   width: 100%;
 }
-.supportingInformation:after .wh_topic_content,
-.supportingInformation:after .wh_content_area {
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Topic content
+ * 
+ */
+.wh_topic_content,
+.wh_content_area {
   color: #000000;
   line-height: 1.7em;
 }
-.supportingInformation:after .wh_related_links,
-.supportingInformation:after .wh_child_links,
-.supportingInformation:after .wh_topic_content .related-links {
+.wh_related_links,
+.wh_child_links,
+.wh_topic_content .related-links {
   background-color: #eeeeee;
   padding: 1.5em;
   margin-top: 1.5em;
 }
-.supportingInformation:after .related-links a,
-.supportingInformation:after .related-links a:visited {
+.related-links a,
+.related-links a:visited {
   color: #005eb8;
   padding-bottom: 0.3em;
   display: inline-block;
 }
-.supportingInformation:after .searchresult {
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Search results.
+ * 
+ */
+.searchresult {
   list-style: none;
 }
-.supportingInformation:after .searchresult li a {
+.searchresult li a {
   color: #003087;
 }
-.supportingInformation:after .searchresult .shortdesclink {
+.searchresult .shortdesclink {
   margin: 0.3em 0.5em 0 0;
 }
-.supportingInformation:after .wh_search_expression {
+.wh_search_expression {
   font-weight: bold;
 }
-.supportingInformation:after .wh_index_terms span.wh_first_letter {
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Index terms.
+ * 
+ */
+.wh_index_terms span.wh_first_letter {
   color: #003087;
 }
-.supportingInformation:after .wh_index_terms #indexList {
+.wh_index_terms #indexList {
   padding: 0;
 }
-.supportingInformation:after section.section {
+/*
+ * ------------------------------------------------------------------
+ *  
+ * Tree TOC for the main page.
+ * 
+ */
+/* 
+ * 
+ * Additional section styles
+ * 
+ */
+section.section {
   border: none;
   padding: 0.5em 1em 1em 1em;
   background-color: inherit;
 }
-.supportingInformation:after h2.sectiontitle {
+h2.sectiontitle {
   font-size: 150%;
   font-weight: normal;
   margin-bottom: 1em;
   margin-top: 0.2em;
 }
-.supportingInformation:after span.wh_expand_btn {
+span.wh_expand_btn {
   left: 0.7em;
   color: #ffb81c;
   border: none;
   font-weight: 800;
 }
-.supportingInformation:after .table {
+/* 
+ * 
+ * Additional table styles 
+ * 
+ */
+.table {
   border: 1px solid #425563 !important;
   margin-left: 0;
 }
-.supportingInformation:after .table .thead-light {
+.table .thead-light {
   background-color: #003087 !important;
   color: white;
   border: 1px solid #425563 !important;
 }
-.supportingInformation:after .table .thead-light th {
+.table .thead-light th {
   background-color: #003087 !important;
   color: white;
   border: 1px solid #425563 !important;

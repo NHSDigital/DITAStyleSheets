@@ -54,11 +54,11 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>ExampleDITA/Untitled.dita</String>
+                                    <String>NHSD.less</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>example (EPUB (DITA 4 Publishers))</String>
+                                        <String>NHS Data Dictionary (GIT)</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -74,11 +74,11 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>NHSD.less</String>
+                                    <String>ExampleDITA/Untitled.dita</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>NHS Data Dictionary (GIT)</String>
+                                        <String>example (EPUB (DITA 4 Publishers))</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
