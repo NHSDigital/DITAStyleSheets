@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serialized version="21.1" xml:space="preserve">
+<serialized version="22.1" xml:space="preserve">
 	<serializableOrderedMap>
 		<entry>
 			<String>scenarios</String>
@@ -57,10 +57,10 @@
 					<field name="publishingTemplateDataPO">
 						<publishingTemplate>
 							<field name="templateRoot">
-								<String>C:/Users/Nicholas/source/repos/DITAStyleSheets/</String>
+								<String>C:/GIT/DITAStyleSheets/</String>
 							</field>
 							<field name="descriptorRelativePath">
-								<String>NHSD.opt</String>
+								<String>NHS Data Dictionary (with Analytics).opt</String>
 							</field>
 							<field name="isCustomTemplate">
 								<Boolean>true</Boolean>
@@ -83,6 +83,36 @@
 						<list>
 							<ditaParameter>
 								<field name="name">
+									<String>args.grammar.cache</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>no</String>
+								</field>
+								<field name="defaultValue">
+									<String>yes</String>
+								</field>
+								<field name="type">
+									<Integer>4</Integer>
+								</field>
+								<field name="possibleValues">
+									<String-array>
+										<String>yes</String>
+										<String>no</String>
+										<null/>
+									</String-array>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<String-array>
+										<String></String>
+										<String></String>
+									</String-array>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
 									<String>args.xhtml.classattr</String>
 								</field>
 								<field name="description">
@@ -101,6 +131,36 @@
 									<String-array>
 										<String>yes</String>
 										<String>no</String>
+										<null/>
+									</String-array>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<String-array>
+										<String></String>
+										<String></String>
+									</String-array>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>conserve-memory</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>true</String>
+								</field>
+								<field name="defaultValue">
+									<String>false</String>
+								</field>
+								<field name="type">
+									<Integer>4</Integer>
+								</field>
+								<field name="possibleValues">
+									<String-array>
+										<String>true</String>
+										<String>false</String>
 										<null/>
 									</String-array>
 								</field>
@@ -141,6 +201,170 @@
 									</String-array>
 								</field>
 							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>generate-debug-attributes</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>false</String>
+								</field>
+								<field name="defaultValue">
+									<String>true</String>
+								</field>
+								<field name="type">
+									<Integer>4</Integer>
+								</field>
+								<field name="possibleValues">
+									<String-array>
+										<String>true</String>
+										<String>false</String>
+										<null/>
+									</String-array>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<String-array>
+										<String>Enables generation of debugging attributes</String>
+										<String>Disables generation of debugging attributes</String>
+									</String-array>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>webhelp.fragment.after.body</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>C:\Users\Nicholas\source\repos\DITAStyleSheets\page-templates\webhelp.fragment.after.body.xml</String>
+								</field>
+								<field name="defaultValue">
+									<String></String>
+								</field>
+								<field name="type">
+									<Integer>2</Integer>
+								</field>
+								<field name="possibleValues">
+									<String-array>
+										<String></String>
+									</String-array>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<String-array>
+										<String></String>
+									</String-array>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>webhelp.fragment.before.toc_or_tiles</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>C:\Users\Nicholas\source\repos\DITAStyleSheets\page-templates\before_toc_or_tiles.xml</String>
+								</field>
+								<field name="defaultValue">
+									<String></String>
+								</field>
+								<field name="type">
+									<Integer>2</Integer>
+								</field>
+								<field name="possibleValues">
+									<String-array>
+										<String></String>
+									</String-array>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<String-array>
+										<String></String>
+									</String-array>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>webhelp.fragment.head</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>${pd}/page-templates/Analytics.xml</String>
+								</field>
+								<field name="defaultValue">
+									<String></String>
+								</field>
+								<field name="type">
+									<Integer>2</Integer>
+								</field>
+								<field name="possibleValues">
+									<String-array>
+										<String></String>
+									</String-array>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<String-array>
+										<String></String>
+									</String-array>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>webhelp.fragment.welcome</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>C:\Users\Nicholas\source\repos\DITAStyleSheets\page-templates\welcome.xml</String>
+								</field>
+								<field name="defaultValue">
+									<null/>
+								</field>
+								<field name="type">
+									<Integer>2</Integer>
+								</field>
+								<field name="possibleValues">
+									<null/>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<null/>
+								</field>
+							</ditaParameter>
+							<ditaParameter>
+								<field name="name">
+									<String>webhelp.topic.collapsible.elements.initial.state</String>
+								</field>
+								<field name="description">
+									<null/>
+								</field>
+								<field name="value">
+									<String>collapsed</String>
+								</field>
+								<field name="defaultValue">
+									<String>expanded</String>
+								</field>
+								<field name="type">
+									<Integer>4</Integer>
+								</field>
+								<field name="possibleValues">
+									<String-array>
+										<String>expanded</String>
+										<String>collapsed</String>
+										<null/>
+									</String-array>
+								</field>
+								<field name="possibleValuesDescriptions">
+									<String-array>
+										<String></String>
+										<String></String>
+									</String-array>
+								</field>
+							</ditaParameter>
 						</list>
 					</field>
 					<field name="jvmArgs">
@@ -168,7 +392,7 @@
 						<null/>
 					</field>
 					<field name="name">
-						<String>NHS Data Dictionary (WebHelp Responsive)</String>
+						<String>example (WebHelp Responsive)</String>
 					</field>
 					<field name="baseURL">
 						<null/>

@@ -18,7 +18,7 @@
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>Kindle (Kindle (DITA 4 Publishers))</String>
+                                        <String>example (WebHelp Responsive)</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -34,7 +34,7 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>ExampleDITA/Untitled.dita</String>
+                                    <String>ExampleDITA/example.dita</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -54,7 +54,7 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>ExampleDITA/example.dita</String>
+                                    <String>ExampleDITA/Untitled.dita</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
@@ -1046,7 +1046,7 @@
                                             <String>C:/GIT/DITAStyleSheets/</String>
                                         </field>
                                         <field name="descriptorRelativePath">
-                                            <String>NHSD.opt</String>
+                                            <String>NHS Data Dictionary (with Analytics).opt</String>
                                         </field>
                                         <field name="isCustomTemplate">
                                             <Boolean>true</Boolean>
@@ -1069,6 +1069,36 @@
                                     <list>
                                         <ditaParameter>
                                             <field name="name">
+                                                <String>args.grammar.cache</String>
+                                            </field>
+                                            <field name="description">
+                                                <null/>
+                                            </field>
+                                            <field name="value">
+                                                <String>no</String>
+                                            </field>
+                                            <field name="defaultValue">
+                                                <String>yes</String>
+                                            </field>
+                                            <field name="type">
+                                                <Integer>4</Integer>
+                                            </field>
+                                            <field name="possibleValues">
+                                                <String-array>
+                                                    <String>yes</String>
+                                                    <String>no</String>
+                                                    <null/>
+                                                </String-array>
+                                            </field>
+                                            <field name="possibleValuesDescriptions">
+                                                <String-array>
+                                                    <String></String>
+                                                    <String></String>
+                                                </String-array>
+                                            </field>
+                                        </ditaParameter>
+                                        <ditaParameter>
+                                            <field name="name">
                                                 <String>args.xhtml.classattr</String>
                                             </field>
                                             <field name="description">
@@ -1087,6 +1117,36 @@
                                                 <String-array>
                                                     <String>yes</String>
                                                     <String>no</String>
+                                                    <null/>
+                                                </String-array>
+                                            </field>
+                                            <field name="possibleValuesDescriptions">
+                                                <String-array>
+                                                    <String></String>
+                                                    <String></String>
+                                                </String-array>
+                                            </field>
+                                        </ditaParameter>
+                                        <ditaParameter>
+                                            <field name="name">
+                                                <String>conserve-memory</String>
+                                            </field>
+                                            <field name="description">
+                                                <null/>
+                                            </field>
+                                            <field name="value">
+                                                <String>true</String>
+                                            </field>
+                                            <field name="defaultValue">
+                                                <String>false</String>
+                                            </field>
+                                            <field name="type">
+                                                <Integer>4</Integer>
+                                            </field>
+                                            <field name="possibleValues">
+                                                <String-array>
+                                                    <String>true</String>
+                                                    <String>false</String>
                                                     <null/>
                                                 </String-array>
                                             </field>
@@ -1124,6 +1184,36 @@
                                                 <String-array>
                                                     <String></String>
                                                     <String></String>
+                                                </String-array>
+                                            </field>
+                                        </ditaParameter>
+                                        <ditaParameter>
+                                            <field name="name">
+                                                <String>generate-debug-attributes</String>
+                                            </field>
+                                            <field name="description">
+                                                <null/>
+                                            </field>
+                                            <field name="value">
+                                                <String>false</String>
+                                            </field>
+                                            <field name="defaultValue">
+                                                <String>true</String>
+                                            </field>
+                                            <field name="type">
+                                                <Integer>4</Integer>
+                                            </field>
+                                            <field name="possibleValues">
+                                                <String-array>
+                                                    <String>true</String>
+                                                    <String>false</String>
+                                                    <null/>
+                                                </String-array>
+                                            </field>
+                                            <field name="possibleValuesDescriptions">
+                                                <String-array>
+                                                    <String>Enables generation of debugging attributes</String>
+                                                    <String>Disables generation of debugging attributes</String>
                                                 </String-array>
                                             </field>
                                         </ditaParameter>
@@ -1183,58 +1273,23 @@
                                         </ditaParameter>
                                         <ditaParameter>
                                             <field name="name">
-                                                <String>webhelp.fragment.footer</String>
+                                                <String>webhelp.fragment.head</String>
                                             </field>
                                             <field name="description">
                                                 <null/>
                                             </field>
                                             <field name="value">
-                                                <String>C:\Users\Nicholas\source\repos\DITAStyleSheets\page-templates\footer.xml</String>
+                                                <String>${pd}/page-templates/Analytics.xml</String>
                                             </field>
                                             <field name="defaultValue">
-                                                <String>
-            Generated by &lt;a class="oxyFooter" href="http://www.oxygenxml.com/xml_webhelp.html" target="_blank">
-            &amp;lt;oXygen/&amp;gt; XML WebHelp
-            &lt;/a>
-        </String>
+                                                <String></String>
                                             </field>
                                             <field name="type">
                                                 <Integer>2</Integer>
                                             </field>
                                             <field name="possibleValues">
-                                                <String-array>
-                                                    <String>
-            Generated by &lt;a class="oxyFooter" href="http://www.oxygenxml.com/xml_webhelp.html" target="_blank">
-            &amp;lt;oXygen/&amp;gt; XML WebHelp
-            &lt;/a>
-        </String>
-                                                </String-array>
-                                            </field>
-                                            <field name="possibleValuesDescriptions">
                                                 <String-array>
                                                     <String></String>
-                                                </String-array>
-                                            </field>
-                                        </ditaParameter>
-                                        <ditaParameter>
-                                            <field name="name">
-                                                <String>webhelp.fragment.header</String>
-                                            </field>
-                                            <field name="description">
-                                                <null/>
-                                            </field>
-                                            <field name="value">
-                                                <String>C:\Users\Nicholas\source\repos\DITAStyleSheets\page-templates\header.xml</String>
-                                            </field>
-                                            <field name="defaultValue">
-                                                <String>header.xml</String>
-                                            </field>
-                                            <field name="type">
-                                                <Integer>2</Integer>
-                                            </field>
-                                            <field name="possibleValues">
-                                                <String-array>
-                                                    <String>header.xml</String>
                                                 </String-array>
                                             </field>
                                             <field name="possibleValuesDescriptions">
@@ -1409,5 +1464,6 @@
     </meta>
     <projectTree name="DITAStyleSheets.xpr">
         <folder path="."/>
+        <file name="../../Users/niou/AppData/Local/Temp/NHS%20Data%20Dictionary%20(with%20Analytics).opt"/>
     </projectTree>
 </project>
