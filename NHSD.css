@@ -41,7 +41,11 @@ a:hover {
 .attribute:after,
 .class:after,
 .businessDefinition:after,
-.dataSet:after {
+.dataSet:after,
+.businessDefinition:after,
+.supportingDefinition:after,
+.supportingInformation:after,
+.xmlSchemaConstraint:after {
   border-width: thin;
   border-style: solid;
   background-color: white;
