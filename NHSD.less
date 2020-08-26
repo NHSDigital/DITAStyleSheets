@@ -151,14 +151,42 @@ a[data-id*="classes"] {
     border-color: @NHSDarkBlue;
      content: 'bd';
 } 
+.supportingDefinition {
+    color:@NHSDarkBlue;
+    font-weight:normal;
+}
 
+.supportingDefinition:after {  color:@NHSDarkBlue;
+    border-color: @NHSDarkBlue;
+     content: 'def';
+} 
+
+.supportingInformation {
+    color:@NHSDarkBlue;
+    font-weight:normal;
+}
+
+.supportingInformation:after {  color:@NHSDarkBlue;
+    border-color: @NHSDarkBlue;
+     content: 'i';
+
+.xmlSchemaConstraint {
+    color:@NHSDarkBlue;
+    font-weight:normal;
+}
+.xmlSchemaConstraint:after {  color:@NHSDarkBlue;
+    border-color: @NHSDarkBlue;
+     content: '{}';
+} 
 .retired {
     background-color:@NHSGrey4;
     color: black;
     font-weight:normal;
 }
 
-
+tr.retired {
+   color: @DarkGrey;
+}
  
 .shortdesc {
     background-color:@NHSBlue3;
@@ -614,6 +642,8 @@ span.wh_expand_btn {
   color: white;
   border: 1px solid @DarkGrey !important;
 }
+}
+
 /* 
  * 
  * Additional title styles
