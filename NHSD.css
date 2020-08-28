@@ -36,6 +36,10 @@ a:hover {
   float: right;
   margin: 30px;
 }
+/* Bootstrap override */
+.bg-info {
+  background-color: #d4e4f3;
+}
 /* Data Dictionary styles */
 .element:after,
 .attribute:after,
