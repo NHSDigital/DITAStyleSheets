@@ -3,6 +3,7 @@
 /* Declare colours and charactaristics */
 @NHSBlue: #005EB8;
 @NHSBlue3: #D4E4F3; /*  for backgrounds */
+
 @NHSDarkBlue: #003087;
 @DarkGreen: #006747;
 @DarkRed: #8A1538;
@@ -14,6 +15,9 @@
 @NHSDBackground: #F0F4F5;
 @NHSWarmYellow: #FFB81C;
 @NHSWhite: #FFFFFF;
+@NHSBlack: #000000;
+@NHSPaleGrey: #E8EDEE;
+
 /* 
  * Logo position - left hand side
  * 15px margin all sides (half height of 30px)
@@ -77,9 +81,28 @@ a:hover {
     text-decoration:underline;
 }
 
+a:focus {
+    border-width:3px; 
+}
+
+.banner {
+    text-align:center;
+    font-size:large;
+    color:@NHSWhite;
+    background-color:@DarkRed;
+}
+
 .ISOcert {
     float: right;
     margin:30px;
+}
+
+.wh_right_tools, .wh_print_link {
+padding-left:20px;    
+}
+
+.permalink {
+    opacity:0.9;
 }
 
 /* Bootstrap override */
@@ -198,7 +221,10 @@ tr.retired {
 }
  
 .shortdesc {
-    background-color:@NHSBlue3;
+    background-color:@NHSWhite;
+    color: @NHSDarkBlue;
+    font-size:large;
+    border-radius: 3px;
     padding: 1em 1em 1em 1em;
 } 
  
@@ -509,18 +535,21 @@ Example:
  */
 .wh_publication_toc {
   border-radius: 3px;
-  background-color: #eeeeee;
+  border-color:@NHSDarkBlue;
+  border-width: thin;
+  background-color:@NHSPaleGrey;
+  color:@NHSDarkBlue;
   padding: 1.5em 2em;
   line-height: 2em;
 }
 .wh_publication_toc .active > .topicref a {
-  color: #5185cb;
+   font-weight:bold;
 }
 .wh_publication_toc span,
 .wh_publication_toc a,
 .wh_publication_toc a:visited,
 .wh_publication_toc a:hover {
-  color: #7b7a7a;
+  color: @NHSDarkBlue;
 }
 .wh_publication_toc a:hover {
   text-decoration: underline;
@@ -557,13 +586,13 @@ Example:
  */
 .wh_topic_content,
 .wh_content_area {
-  color: #000000;
+  color: @NHSBlack;
   line-height: 1.7em;
 }
 .wh_related_links,
 .wh_child_links,
 .wh_topic_content .related-links {
-  background-color: #eeeeee;
+  background-color: @NHSGrey4;
   padding: 1.5em;
   margin-top: 1.5em;
 }

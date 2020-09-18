@@ -17,7 +17,7 @@
             <page-layout-file page="main" file="page-templates/wt_index.html"/>
         </html-page-layout-files>
         <parameters>
-           <!-- 
+            <!-- 
             <parameter name="webhelp.logo.image" value="resources/images/NHS-Logo.svg"/>
             <parameter name="webhelp.logo.image.target.url" value="https://www.nhs.uk"/>
             <parameter name="webhelp.logo.image.alt" value="National Health Service"/>
@@ -26,6 +26,7 @@
             <parameter name="webhelp.show.main.page.toc" value="no"/>
             <parameter name="webhelp.show.child.links" value="yes"/>
             <parameter name="webhelp.show.related.links" value="yes"/>
+            <parameter name="webhelp.default.collection.type.sequence" value="yes"/>
             <parameter name="webhelp.top.menu.depth" value="3"/>
             <parameter name="args.figurelink.style" value="TITLE"/>
             <parameter name="args.tablelink.style" value="TITLE"/>
@@ -37,13 +38,16 @@
                 type="filePath"/>
             <parameter name="webhelp.fragment.footer" value="page-templates/footer.xml"
                 type="filePath"/>
-        </parameters>
+               <parameter name="webhelp.fragment.before.body" 
+                   value="page-templates/webhelp.fragment.before.body.xml"
+                type="filePath"/>    </parameters>
         <resources>
-            
+
             <css file="NHSD.css"/>
-            <logo file="resources/images/NHS-Logo.svg" alt="National Health Service" target-url="https://www.nhs.uk"/>
+            <logo file="resources/images/NHS-Logo.svg" alt="National Health Service"
+                target-url="https://www.nhs.uk"/>
             <favicon file="resources/images/favicon.ico"/>
-            
+
             <fileset>
                 <include name="NHSDD.png"/>
                 <include name="resources/images/*"/>
