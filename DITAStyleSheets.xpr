@@ -18,7 +18,7 @@
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>Data Dictionary Beta</String>
+                                        <String>Data Dictionary Live</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -150,10 +150,10 @@
                                 <field name="publishingTemplateDataPO">
                                     <publishingTemplate>
                                         <field name="templateRoot">
-                                            <String>C:\GIT\DITAStyleSheets\NHSDD-Beta.zip</String>
+                                            <String>C:\GIT\DITAStyleSheets\NHSDD-Live.zip</String>
                                         </field>
                                         <field name="descriptorRelativePath">
-                                            <String>Data Dictionary Beta.opt</String>
+                                            <String>NHS Data Dictionary Live.opt</String>
                                         </field>
                                         <field name="isCustomTemplate">
                                             <Boolean>true</Boolean>
@@ -173,7 +173,35 @@
                                     <String></String>
                                 </field>
                                 <field name="ditaParams">
-                                    <list/>
+                                    <list>
+                                        <ditaParameter>
+                                            <field name="name">
+                                                <String>webhelp.fragment.head</String>
+                                            </field>
+                                            <field name="description">
+                                                <null/>
+                                            </field>
+                                            <field name="value">
+                                                <String>${pd}/page-templates/Analytics.xml</String>
+                                            </field>
+                                            <field name="defaultValue">
+                                                <String></String>
+                                            </field>
+                                            <field name="type">
+                                                <Integer>2</Integer>
+                                            </field>
+                                            <field name="possibleValues">
+                                                <String-array>
+                                                    <String></String>
+                                                </String-array>
+                                            </field>
+                                            <field name="possibleValuesDescriptions">
+                                                <String-array>
+                                                    <String></String>
+                                                </String-array>
+                                            </field>
+                                        </ditaParameter>
+                                    </list>
                                 </field>
                                 <field name="jvmArgs">
                                     <String>-Xmx15G</String>
@@ -200,7 +228,7 @@
                                     <null/>
                                 </field>
                                 <field name="name">
-                                    <String>Data Dictionary Beta</String>
+                                    <String>Data Dictionary Live</String>
                                 </field>
                                 <field name="baseURL">
                                     <null/>

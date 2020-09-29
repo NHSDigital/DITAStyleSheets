@@ -32,16 +32,40 @@ a:hover {
   background: #ffb81c !important;
   text-decoration: underline;
 }
+a:focus {
+  border-width: 3px;
+}
+.banner {
+  text-align: center;
+  font-size: large;
+  color: #ffffff;
+  background-color: #8a1538;
+}
 .ISOcert {
   float: right;
   margin: 30px;
+}
+.wh_right_tools,
+.wh_print_link {
+  padding-left: 20px;
+}
+.permalink {
+  opacity: 0.9;
+}
+/* Bootstrap override */
+.bg-info {
+  background-color: #d4e4f3;
 }
 /* Data Dictionary styles */
 .element:after,
 .attribute:after,
 .class:after,
 .businessDefinition:after,
-.dataSet:after {
+.dataSet:after,
+.businessDefinition:after,
+.supportingDefinition:after,
+.supportingInformation:after,
+.xmlSchemaConstraint:after {
   border-width: thin;
   border-style: solid;
   background-color: white;
@@ -101,13 +125,46 @@ a[data-id*="classes"] {
   border-color: #003087;
   content: 'bd';
 }
+.supportingDefinition {
+  color: #003087;
+  font-weight: normal;
+}
+.supportingDefinition:after {
+  color: #003087;
+  border-color: #003087;
+  content: 'def';
+}
+.supportingInformation {
+  color: #003087;
+  font-weight: normal;
+}
+.supportingInformation:after {
+  color: #003087;
+  border-color: #003087;
+  content: 'i';
+}
+.xmlSchemaConstraint {
+  color: #003087;
+  font-weight: normal;
+}
+.xmlSchemaConstraint:after {
+  color: #003087;
+  border-color: #003087;
+  content: '\{...\}';
+}
 .retired {
   background-color: #dfe2e5;
   color: black;
   font-weight: normal;
 }
+tr.retired {
+  color: #425563;
+}
 .shortdesc {
-  background-color: #d4e4f3;
+  background-color: #ffffff;
+  color: #003087;
+  font-size: large;
+  border-radius: 3px;
   padding: 1em 1em 1em 1em;
 }
 /*  Oxygen styles */
@@ -402,18 +459,21 @@ Example:
  */
 .wh_publication_toc {
   border-radius: 3px;
-  background-color: #eeeeee;
+  border-color: #003087;
+  border-width: thin;
+  background-color: #e8edee;
+  color: #003087;
   padding: 1.5em 2em;
   line-height: 2em;
 }
 .wh_publication_toc .active > .topicref a {
-  color: #5185cb;
+  font-weight: bold;
 }
 .wh_publication_toc span,
 .wh_publication_toc a,
 .wh_publication_toc a:visited,
 .wh_publication_toc a:hover {
-  color: #7b7a7a;
+  color: #003087;
 }
 .wh_publication_toc a:hover {
   text-decoration: underline;
@@ -456,7 +516,7 @@ Example:
 .wh_related_links,
 .wh_child_links,
 .wh_topic_content .related-links {
-  background-color: #eeeeee;
+  background-color: #dfe2e5;
   padding: 1.5em;
   margin-top: 1.5em;
 }

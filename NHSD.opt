@@ -38,9 +38,7 @@
                 type="filePath"/>
             <parameter name="webhelp.fragment.footer" value="page-templates/footer.xml"
                 type="filePath"/>
-               <parameter name="webhelp.fragment.before.body" 
-                   value="page-templates/webhelp.fragment.before.body.xml"
-                type="filePath"/>    </parameters>
+                    </parameters>
         <resources>
 
             <css file="NHSD.css"/>
