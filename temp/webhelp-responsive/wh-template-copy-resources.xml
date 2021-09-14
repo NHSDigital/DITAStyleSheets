@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project basedir="D:\Branding\DITAStyleSheets" name="Copy template resources" default="copy-template-resources">
+    <target name="copy-template-resources">
+        <mkdir dir="D:\Branding\DITAStyleSheets\out\webhelp-responsive\oxygen-webhelp\template"/>
+        <copy todir="D:\Branding\DITAStyleSheets\out\webhelp-responsive\oxygen-webhelp\template" overwrite="yes" failonerror="yes" verbose="yes">
+            <fileset dir=".">
+                <include name="NHSD.css"/>
+            </fileset>
+            <fileset dir=".">
+                <include name="resources/images/favicon.ico"/>
+            </fileset>
+            <fileset dir=".">
+                <include name="resources/images/NHS-Logo.svg"/>
+            </fileset>
+            <fileset dir=".">
+                <include name="NHSDD.png"/>
+                <include name="resources/images/*"/>
+                <include name="resources/**/*"/>
+                <exclude name="resources/**/*.svn"/>
+                <exclude name="resources/**/*.git"/>
+            </fileset>
+        </copy>
+    </target>
+</project>
