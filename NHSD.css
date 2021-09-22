@@ -608,6 +608,8 @@ span.wh_expand_btn {
   background-color: #003087 !important;
   color: white;
   border: 1px solid #425563 !important;
+}td.gray {
+  background-color: #425563 !important;
 }
 /* 
  * 
@@ -652,7 +654,5 @@ h1.businessDefinition::after {
   float: right;
   font-weight: normal;
 }
-td.gray {
-  background-color: #425563 !important;
-}
+
  */
