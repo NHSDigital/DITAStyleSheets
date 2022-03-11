@@ -12,12 +12,29 @@
 @NHSDBackground: #F0F4F5;
 @NHSWarmYellow: #FFB81C;
 @NHSWhite: #FFFFFF;
+@NHSMidGrey: #768692;
+
+    @font-face {
+    font-family: 'Frutiger';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Frutiger'), url('resources/fonts/Frutiger.ttf') format('ttff');
+    }
+    
+
+    @font-face {
+    font-family: 'Frutiger Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Frutiger Bold'), url('resources/fonts/Frutiger_bold.ttf') format('ttf');
+    }
+
 /* 
  * Logo position - left hand side
  * 15px margin all sides (half height of 30px)
  */
  
-@LogoImage: "resources/images/NHS-Logo.svg";
+@LogoImage: "resources/images/NHS Digital logo_NHS Blue_RGB-01.svg";
 @logo-border: 15px;
 
 /* 
@@ -30,50 +47,69 @@
 
 /*  Fonts */
 
-@BodyFont: 'Frutiger W01',Helvetica,Arial,Sans-serif;
-@HeadingFont: @BodyFont;
+@BodyFont: 'Frutiger',Arial,Sans-serif;
+@HeadingFont: 'Frutiger Bold',Arial,Sans-serif;
 
 /* Front page Image Filename */
 @FrontpageImage: "resources/images/Abstract-186165341-MED.jpg";
 
+/* ISO Image Filename */
+@IsoImage: "resources/images/iso-9001-certification-europe-v1.svg";
+
 body {
      background: transparent;
+     font-size: 10pt !important;
 
 }
 
 @page {
     size: A4;
     margin: 2cm;
+    font: @BodyFont;
+    font-size: 10pt !important;
 
 }
 @page :left {
-    margin-right: 1cm;
+    margin-right: 2cm;
     @bottom-left {
         content: "Page: " counter(page) " of " counter(pages);
     }
 }
 
 @page :right {
-    margin-left: 1cm;
+    margin-left: 2cm;
     @bottom-right {
         content: "Page: " counter(page) " of " counter(pages);
     }
 }
 
 @page front-page {
-    background-image: url(@FrontpageImage);
-    background-position:0% 66%; /* The first is the alignement on the X axis, the second on the Y axis.*/
-    background-repeat:no-repeat; 
+//    background-image: url(@FrontpageImage);
+//    background-position:0% 66%; /* The first is the alignement on the X axis, the second on the Y axis.*/
+//    background-repeat:no-repeat; 
     margin-top: 40mm;
-margin-left: 15mm;
-background-color:transparent;
+    margin-left: 2cm;
+    background-color:transparent;
+    
     @bottom-left {
-        content: "Copyright NHS Digital";
+        content: "Copyright © NHS Digital";
+        padding-bottom: 2cm;
     }
     @top-right {
+        content: '';
         background-image: url(@LogoImage);
         
+        background-repeat:no-repeat;
+        background-position: right;
+        
+        
     }
+    
+/*     @bottom-right {
+        content: '';
+        margin-bottom: 2em;
+    }
+*/
 
 }
 
@@ -83,34 +119,72 @@ background-color:transparent;
   color: @NHSBlue;
   font:@HeadingFont;
   background-color:transparent;
-  text-align:left;
+  text-align:right;
+  line-height: 50pt;
   
 }
-*[class ~= "front-page/front-page-title"]:after(1) {
+*[class ~= "front-page/front-page-title"]:before(1) {
     display:block;
     margin-top: 10mm; 
      content: "NHS Data Model and Dictionary";
     font-size: 24pt;
-    color: @DarkGrey;
-    text-align:left;
-      background-color:transparent;
+    color: @NHSMidGrey;
+    text-align:right;
+    background-color:transparent;
 }
-*[class ~= "front-page/front-page-title"]:after(2) {
+
+/**[class ~= "front-page/front-page-title"]:after(1) {
     display:block;
     margin-top: 20mm; 
     content: "Draft publication";
     font-size: 15pt;
     color: @NHSBlue;
-    text-align:left;
-      background-color:transparent;
+    text-align:right;
+    background-color:transparent;
+}
+ * */
+*[class ~= "front-page/front-page-title"]:after(2) {
+    content: url(@IsoImage);
+    display:block;
+    position: absolute;
+    bottom: 2cm;
+    left: 140mm;
+    text-align: right;
 }
 /* Remove the "chapter" prefix */
 *[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:before {
     display: none !important;
 }
 
+
 *[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"]:before {
     content: counter(chapter) ". " !important;
+}
+
+*[class ~= "toc/title"],
+*[class~="topic/topic"] > *[class~="topic/title"] {
+    margin-bottom: 1cm;
+    margin-top: 1cm;
+    color: @NHSBlue !important;
+    font-weight: bold !important;
+} 
+
+*[class ~= "toc/title"],
+*[class~="topic/topic"][is-chapter]:not([is-part]) > *[class~="topic/title"] {
+    font-size: 27pt !important;
+} 
+
+table {
+    background-color: @NHSDBackground;
+    width: 100%;
+    font-size: 8pt;
+    cell-border: 1px solid @NHSDarkBlue;
+    border: 1px solid @NHSDarkBlue;
+}
+
+table td {
+    border: 1px solid @NHSDarkBlue;
+    height: 10pt;
 }
 
 booktitle:after {
@@ -119,3 +193,43 @@ booktitle:after {
     display: block;
 }
 
+*[class ~= "map/topicref"] *[class ~= "topic/navtitle"]:after {
+    content: leader('_') target-counter(attr(href), page) !important;
+    color: black;
+}
+
+*[class~="topic/li"]::marker {
+  text-align: center;
+  font-weight: bold;
+  color: @NHSDarkBlue;
+}
+
+*[class~="topic/li"] {
+  margin-left: 1cm;
+}
+
+*[class ~= "topic/xref"][href],
+*[class ~= "topic/link"][href] {
+    text-decoration: underline;
+}
+
+*[class ~= "topic/xref"][href]:after,
+*[class ~= "topic/link"][href]:after {
+    content: none !important;
+}
+
+*[class ~= "new"] {
+    background-color: @NHSBlue3;
+}
+
+*[class ~= "retired"] {
+    color: @DarkGrey;
+}
+
+*[class ~= "deleted"] {
+    text-decoration: line-through !important;
+    text-decoration-style: solid;
+    text-decoration-color: red;
+    text-decoration-thickness: 2px;
+    text-rendering: unset !important;
+}
