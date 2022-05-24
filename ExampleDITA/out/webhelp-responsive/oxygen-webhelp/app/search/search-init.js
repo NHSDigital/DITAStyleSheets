@@ -1,4 +1,4 @@
-define(['util', 'jquery'], function(util, $) {
+define([ 'util', 'jquery'], function (util, $) {
     $(document).ready(function () {
         var searchQuery = '';
         searchQuery = util.getParameter('searchQuery');
@@ -9,12 +9,12 @@ define(['util', 'jquery'], function(util, $) {
             $('#searchForm').submit();
         }
         
-        $('#searchForm').on('submit', function(event){
+        $('#searchForm').on('submit', function (event) {
             util.debug('submit form....');
-            if ($('#textToSearch').val().trim()=='') {
+            if ($('#textToSearch').val().trim() == '') {
                 event.preventDefault();
                 event.stopPropagation();
-
+                
                 return false;
             }
         });

@@ -4,10 +4,10 @@
 var actualLocation = window.location.href;
 var newLocation;
 var request = new XMLHttpRequest();
-if (actualLocation.indexOf('/#')!=-1) {
+if (actualLocation.indexOf('/#') != -1) {
     newLocation = actualLocation.replace(/\/#/g, "/");
 }
-if (actualLocation.match(/\/index\.(.*)#/gi)!=null) {
+if (actualLocation.match(/\/index\.(.*)#/gi) != null) {
     newLocation = actualLocation.replace(/\/index\.(.*)#/gi, "/");
 }
 if (typeof newLocation != "undefined") {

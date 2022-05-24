@@ -2,16 +2,16 @@
 /*  for backgrounds */
 /*  for backgrounds */
 @font-face {
-  font-family: 'Frutiger';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Frutiger'), url('resources/fonts/Frutiger.ttf') format('ttff');
+    font-family: 'Frutiger';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Frutiger'), url('resources/fonts/Frutiger.ttf') format('ttff');
 }
 @font-face {
-  font-family: 'Frutiger Bold';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Frutiger Bold'), url('resources/fonts/Frutiger_bold.ttf') format('ttf');
+    font-family: 'Frutiger Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Frutiger Bold'), url('resources/fonts/Frutiger_bold.ttf') format('ttf');
 }
 /* 
  * Logo position - left hand side
@@ -24,146 +24,146 @@
 /* Front page Image Filename */
 /* ISO Image Filename */
 body {
-  background: transparent;
-  font-size: 10pt !important;
+    background: transparent;
+    font-size: 10pt !important;
 }
 @page {
-  size: A4;
-  margin: 2cm;
-  font: 'Frutiger', Arial, Sans-serif;
-  font-size: 10pt !important;
+    size: A4;
+    margin: 2cm;
+    font: 'Frutiger', Arial, Sans-serif;
+    font-size: 10pt !important;
 }
 @page :left {
-  margin-right: 2cm;
-  @bottom-left {
-    content: "Page: " counter(page) " of " counter(pages);
-  }
+    margin-right: 2cm;
+    @bottom-left {
+        content: "Page: " counter(page) " of " counter(pages);
+    }
 }
 @page :right {
-  margin-left: 2cm;
-  @bottom-right {
-    content: "Page: " counter(page) " of " counter(pages);
-  }
+    margin-left: 2cm;
+    @bottom-right {
+        content: "Page: " counter(page) " of " counter(pages);
+    }
 }
 @page front-page {
-  margin-top: 40mm;
-  margin-left: 2cm;
-  background-color: transparent;
-  @bottom-left {
-    content: "Copyright © NHS Digital";
-    padding-bottom: 2cm;
-  }
-  @top-right {
-    content: '';
-    background-image: url("resources/images/NHS Digital logo_NHS Blue_RGB-01.svg");
-    background-repeat: no-repeat;
-    background-position: right;
-  }
-  /*     @bottom-right {
+    margin-top: 40mm;
+    margin-left: 2cm;
+    background-color: transparent;
+    @bottom-left {
+        content: "Copyright © NHS Digital";
+        padding-bottom: 2cm;
+    }
+    @top-right {
+        content: '';
+        background-image: url("resources/images/NHS Digital logo_NHS Blue_RGB-01.svg");
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+/*     @bottom-right {
         content: '';
         margin-bottom: 2em;
     }
 */
 }
-*[class~="front-page/front-page-title"] {
-  margin-top: 50mm;
-  font-size: 42pt;
-  color: #005EB8;
-  font: 'Frutiger Bold', Arial, Sans-serif;
-  background-color: transparent;
-  text-align: right;
-  line-height: 50pt;
+*[class ~= "front-page/front-page-title"] {
+    margin-top: 50mm;
+    font-size: 42pt;
+    color: #005EB8;
+    font: 'Frutiger Bold', Arial, Sans-serif;
+    background-color: transparent;
+    text-align: right;
+    line-height: 50pt;
 }
-*[class~="front-page/front-page-title"]:before(1) {
-  display: block;
-  margin-top: 10mm;
-  content: "NHS Data Model and Dictionary";
-  font-size: 24pt;
-  color: #768692;
-  text-align: right;
-  background-color: transparent;
+*[class ~= "front-page/front-page-title"]:before(1) {
+    display: block;
+    margin-top: 10mm;
+    content: "NHS Data Model and Dictionary";
+    font-size: 24pt;
+    color: #768692;
+    text-align: right;
+    background-color: transparent;
 }
-*[class~="front-page/front-page-title"]:after(1) {
-  display: block;
-  margin-top: 20mm;
-  content: "Draft publication";
-  font-size: 15pt;
-  color: #005EB8;
-  text-align: right;
-  background-color: transparent;
+*[class ~= "front-page/front-page-title"]:after(1) {
+    display: block;
+    margin-top: 20mm;
+    content: "Draft publication";
+    font-size: 15pt;
+    color: #005EB8;
+    text-align: right;
+    background-color: transparent;
 }
-*[class~="front-page/front-page-title"]:after(2) {
-  content: url("resources/images/iso-9001-certification-europe-v1.svg");
-  display: block;
-  position: absolute;
-  bottom: 2cm;
-  left: 140mm;
-  text-align: right;
+*[class ~= "front-page/front-page-title"]:after(2) {
+    content: url("resources/images/iso-9001-certification-europe-v1.svg");
+    display: block;
+    position: absolute;
+    bottom: 2cm;
+    left: 140mm;
+    text-align: right;
 }
 /* Remove the "chapter" prefix */
-*[class~="map/topicmeta"] > *[class~="topic/navtitle"]:before {
-  display: none !important;
+*[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:before {
+    display: none !important;
 }
-*[class~="topic/topic"][is-chapter]:not([is-part]) > *[class~="topic/title"]:before {
-  content: counter(chapter) ". " !important;
+*[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"]:before {
+    content: counter(chapter) ". " !important;
 }
-*[class~="toc/title"],
-*[class~="topic/topic"] > *[class~="topic/title"] {
-  margin-bottom: 1cm;
-  margin-top: 1cm;
-  color: #005EB8 !important;
-  font-weight: bold !important;
+*[class ~= "toc/title"],
+*[class ~= "topic/topic"] > *[class ~= "topic/title"] {
+    margin-bottom: 1cm;
+    margin-top: 1cm;
+    color: #005EB8 !important;
+    font-weight: bold !important;
 }
-*[class~="toc/title"],
-*[class~="topic/topic"][is-chapter]:not([is-part]) > *[class~="topic/title"] {
-  font-size: 27pt !important;
+*[class ~= "toc/title"],
+*[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"] {
+    font-size: 27pt !important;
 }
 table {
-  background-color: #F0F4F5;
-  width: 100%;
-  font-size: 8pt;
-  cell-border: 1px solid #003087;
-  border: 1px solid #003087;
+    background-color: #F0F4F5;
+    width: 100%;
+    font-size: 8pt;
+    cell-border: 1px solid #003087;
+    border: 1px solid #003087;
 }
 table td {
-  border: 1px solid #003087;
-  height: 10pt;
+    border: 1px solid #003087;
+    height: 10pt;
 }
 booktitle:after {
-  content: oxy_xpath("current-date()");
-  color: gray;
-  display: block;
+    content: oxy_xpath("current-date()");
+    color: gray;
+    display: block;
 }
-*[class~="map/topicref"] *[class~="topic/navtitle"]:after {
-  content: leader('_') target-counter(attr(href), page) !important;
-  color: black;
+*[class ~= "map/topicref"] *[class ~= "topic/navtitle"]:after {
+    content: leader('_') target-counter(attr(href), page) !important;
+    color: black;
 }
-*[class~="topic/li"]::marker {
-  text-align: center;
-  font-weight: bold;
-  color: #003087;
+*[class ~= "topic/li"]::marker {
+    text-align: center;
+    font-weight: bold;
+    color: #003087;
 }
-*[class~="topic/li"] {
-  margin-left: 1cm;
+*[class ~= "topic/li"] {
+    margin-left: 1cm;
 }
-*[class~="topic/xref"][href],
-*[class~="topic/link"][href] {
-  text-decoration: underline;
+*[class ~= "topic/xref"][href],
+*[class ~= "topic/link"][href] {
+    text-decoration: underline;
 }
-*[class~="topic/xref"][href]:after,
-*[class~="topic/link"][href]:after {
-  content: none !important;
+*[class ~= "topic/xref"][href]:after,
+*[class ~= "topic/link"][href]:after {
+    content: none !important;
 }
-*[class~="new"] {
-  background-color: #D4E4F3;
+*[class ~= "new"] {
+    background-color: #D4E4F3;
 }
-*[class~="retired"] {
-  color: #425563;
+*[class ~= "retired"] {
+    color: #425563;
 }
-*[class~="deleted"] {
-  text-decoration: line-through !important;
-  text-decoration-style: solid;
-  text-decoration-color: red;
-  text-decoration-thickness: 2px;
-  text-rendering: unset !important;
+*[class ~= "deleted"] {
+    text-decoration: line-through !important;
+    text-decoration-style: solid;
+    text-decoration-color: red;
+    text-decoration-thickness: 2px;
+    text-rendering: unset !important;
 }

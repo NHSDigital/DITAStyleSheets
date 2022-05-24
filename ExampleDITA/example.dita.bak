@@ -72,12 +72,12 @@
           <stentry>Attribute Type</stentry>
         </sthead>
         <strow>
-          <stentry>GENERAL MEDICAL COUNCIL REFERENCE NUMBER</stentry>
-          <stentry>Default String</stentry>
+          <stentry outputclass="class">GENERAL MEDICAL COUNCIL REFERENCE NUMBER</stentry>
+          <stentry outputclass="attribute">Default String</stentry>
         </strow>
         <strow>
-          <stentry>GENERAL MEDICAL PRACTITIONER PPD CODE</stentry>
-          <stentry>Default String</stentry>
+          <stentry outputclass="dataSet">GENERAL MEDICAL PRACTITIONER PPD CODE</stentry>
+          <stentry outputclass="businessDefinition">Default String</stentry>
         </strow>
         <strow>
           <stentry>DOCTOR INDEX NUMBER</stentry>
@@ -132,18 +132,18 @@
         </dlentry>
       </dl>
       
-      <p>
-        <xref outputclass="element" keyref="me">WARD CODE</xref>
+
+        <p outputclass="element" >WARD CODE</p>
          is the same as attribute 
-        <xref outputclass="attribute" keyref="me">WARD CODE</xref>
-        .  </p>
-      <p>
+        <p outputclass="attribute" >WARD CODE</p>
+        .  
+
         
       
       
       
       <b>This data element is also known by these names:</b>
-      </p>
+      
       
       <simpletable relcolwidth='1* 2*' outputclass='table table-striped table-sm'>
         <sthead outputclass='thead-light'>
@@ -167,7 +167,28 @@
         <strow>
           <stentry>Data Element</stentry>
           <stentry>
-            <xref keyref='me' outputclass='element' />
+            <p outputclass='element' >An element</p>
+          </stentry>
+          <stentry>references in description WARD CODE</stentry>
+        </strow>
+        <strow>
+          <stentry>Supporting Information</stentry>
+          <stentry>
+            <p outputclass='supportingInformation' >An element</p>
+          </stentry>
+          <stentry>references in description WARD CODE</stentry>
+        </strow>
+        <strow>
+          <stentry>Supporting definition</stentry>
+          <stentry>
+            <p outputclass='supportingDefinition' >A definitiont</p>
+          </stentry>
+          <stentry>references in description WARD CODE</stentry>
+        </strow>
+        <strow>
+          <stentry>Constraint</stentry>
+          <stentry>
+            <p outputclass='xmlSchemaConstraint' >A constraint</p>
           </stentry>
           <stentry>references in description WARD CODE</stentry>
         </strow>
@@ -177,7 +198,7 @@
       <title>Attribute</title>
       <ul>
         <li>
-          <xref keyref='me' outputclass='attribute' />
+          <p outputclass='attribute' >An attribute</p>
         </li>
       </ul>
     </section>

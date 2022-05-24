@@ -35,19 +35,20 @@
 
 define(function () {
     return function (word) {
-//    Letters in French include the following accented forms,
-//        â   à   ç   ë   é   ê   è   ï   î   ô   û   ù
-//    The following letters are vowels:
-//        a   e   i   o   u   y   â   à   ë   é   ê   è   ï   î   ô   û   ù
-
+        //    Letters in French include the following accented forms,
+        //        â   à   ç   ë   é   ê   è   ï   î   ô   û   ù
+        //    The following letters are vowels:
+        //        a   e   i   o   u   y   â   à   ë   é   ê   è   ï   î   ô   û   ù
+        
         word = word.toLowerCase();
         var oriWord = word;
-        word = word.replace(/qu/g, 'qU');   //have to perform first, as after the operation, capital U is not treated as a vowel
+        word = word.replace(/qu/g, 'qU');
+        //have to perform first, as after the operation, capital U is not treated as a vowel
         word = word.replace(/([aeiouyâàëéêèïîôûù])u([aeiouyâàëéêèïîôûù])/g, '$1U$2');
         word = word.replace(/([aeiouyâàëéêèïîôûù])i([aeiouyâàëéêèïîôûù])/g, '$1I$2');
         word = word.replace(/([aeiouyâàëéêèïîôûù])y/g, '$1Y');
         word = word.replace(/y([aeiouyâàëéêèïîôûù])/g, 'Y$1');
-
+        
         var rv = '';
         var rvIndex = -1;
         if (word.search(/^(par|col|tap)/) != -1 || word.search(/^[aeiouyâàëéêèïîôûù]{2}/) != -1) {
@@ -56,15 +57,15 @@ define(function () {
         } else {
             rvIndex = word.substring(1).search(/[aeiouyâàëéêèïîôûù]/);
             if (rvIndex != -1) {
-                rvIndex += 2;   //+2 is to supplement the substring(1) used to find rvIndex
+                rvIndex += 2; //+2 is to supplement the substring(1) used to find rvIndex
                 rv = word.substring(rvIndex);
             } else {
                 rvIndex = word.length;
             }
         }
-
-//    R1 is the region after the first non-vowel following a vowel, or the end of the word if there is no such non-vowel.
-//    R2 is the region after the first non-vowel following a vowel in R1, or the end of the word if there is no such non-vowel
+        
+        //    R1 is the region after the first non-vowel following a vowel, or the end of the word if there is no such non-vowel.
+        //    R2 is the region after the first non-vowel following a vowel in R1, or the end of the word if there is no such non-vowel
         var r1Index = word.search(/[aeiouyâàëéêèïîôûù][^aeiouyâàëéêèïîôûù]/);
         var r1 = '';
         if (r1Index != -1) {
@@ -73,7 +74,7 @@ define(function () {
         } else {
             r1Index = word.length;
         }
-
+        
         var r2Index = -1;
         var r2 = '';
         if (r1Index != -1) {
@@ -91,10 +92,10 @@ define(function () {
             r1Index = 3;
             r1 = word.substring(r1Index);
         }
-
+        
         /*
-        Step 1: Standard suffix removal
-        */
+         Step 1: Standard suffix removal
+         */
         var a1Index = word.search(/(ance|iqUe|isme|able|iste|eux|ances|iqUes|ismes|ables|istes)$/);
         var a2Index = word.search(/(atrice|ateur|ation|atrices|ateurs|ations)$/);
         var a3Index = word.search(/(logie|logies)$/);
@@ -110,23 +111,28 @@ define(function () {
         var a13Index = word.search(/(amment)$/);
         var a14Index = word.search(/(emment)$/);
         var a15Index = word.search(/[aeiouyâàëéêèïîôûù](ment|ments)$/);
-
+        
         if (a1Index != -1 && a1Index >= r2Index) {
             word = word.substring(0, a1Index);
         } else if (a2Index != -1 && a2Index >= r2Index) {
             word = word.substring(0, a2Index);
             var a2Index2 = word.search(/(ic)$/);
             if (a2Index2 != -1 && a2Index2 >= r2Index) {
-                word = word.substring(0, a2Index2);        //if preceded by ic, delete if in R2,
-            } else {                                //else replace by iqU
+                word = word.substring(0, a2Index2);
+                //if preceded by ic, delete if in R2,
+            } else {
+                //else replace by iqU
                 word = word.replace(/(ic)$/, 'iqU');
             }
         } else if (a3Index != -1 && a3Index >= r2Index) {
-            word = word.replace(/(logie|logies)$/, 'log');  //replace with log if in R2
+            word = word.replace(/(logie|logies)$/, 'log');
+            //replace with log if in R2
         } else if (a4Index != -1 && a4Index >= r2Index) {
-            word = word.replace(/(usion|ution|usions|utions)$/, 'u');  //replace with u if in R2
+            word = word.replace(/(usion|ution|usions|utions)$/, 'u');
+            //replace with u if in R2
         } else if (a5Index != -1 && a5Index >= r2Index) {
-            word = word.replace(/(ence|ences)$/, 'ent');  //replace with ent if in R2
+            word = word.replace(/(ence|ences)$/, 'ent');
+            //replace with ent if in R2
         } else if (a6Index != -1 && a6Index >= rvIndex) {
             word = word.substring(0, a6Index);
             if (word.search(/(iv)$/) >= r2Index) {
@@ -142,13 +148,17 @@ define(function () {
                     word = word.substring(0, a6Index2) + "eux";
                 }
             } else if (word.search(/(abl|iqU)$/) >= r2Index) {
-                word = word.replace(/(abl|iqU)$/, '');   //if preceded by abl or iqU, delete if in R2,
+                word = word.replace(/(abl|iqU)$/, '');
+                //if preceded by abl or iqU, delete if in R2,
             } else if (word.search(/(ièr|Ièr)$/) >= rvIndex) {
-                word = word.replace(/(ièr|Ièr)$/, 'i');   //if preceded by abl or iqU, delete if in R2,
+                word = word.replace(/(ièr|Ièr)$/, 'i');
+                //if preceded by abl or iqU, delete if in R2,
             }
         } else if (a7Index != -1 && a7Index >= r2Index) {
-            word = word.substring(0, a7Index);   //delete if in R2
-            if (word.search(/(abil)$/) != -1) {   //if preceded by abil, delete if in R2, else replace by abl, otherwise,
+            word = word.substring(0, a7Index);
+            //delete if in R2
+            if (word.search(/(abil)$/) != -1) {
+                //if preceded by abil, delete if in R2, else replace by abl, otherwise,
                 var a7Index2 = word.search(/(abil)$/);
                 if (a7Index2 >= r2Index) {
                     word = word.substring(0, a7Index2);
@@ -158,8 +168,10 @@ define(function () {
             } else if (word.search(/(ic)$/) != -1) {
                 var a7Index3 = word.search(/(ic)$/);
                 if (a7Index3 != -1 && a7Index3 >= r2Index) {
-                    word = word.substring(0, a7Index3);        //if preceded by ic, delete if in R2,
-                } else {                                //else replace by iqU
+                    word = word.substring(0, a7Index3);
+                    //if preceded by ic, delete if in R2,
+                } else {
+                    //else replace by iqU
                     word = word.replace(/(ic)$/, 'iqU');
                 }
             } else if (word.search(/(iv)$/) != r2Index) {
@@ -187,7 +199,8 @@ define(function () {
                 word = word.substring(0, a11Index2) + "eux";
             }
         } else if (a12Index != -1 && a12Index >= r1Index) {
-            word = word.substring(0, a12Index + 1);    //+1- amendment to non-vowel
+            word = word.substring(0, a12Index + 1);
+            //+1- amendment to non-vowel
         } else if (a13Index != -1 && a13Index >= rvIndex) {
             word = word.replace(/(amment)$/, 'ant');
         } else if (a14Index != -1 && a14Index >= rvIndex) {
@@ -195,7 +208,7 @@ define(function () {
         } else if (a15Index != -1 && a15Index >= rvIndex) {
             word = word.substring(0, a15Index + 1);
         }
-
+        
         /* Step 2a: Verb suffixes beginning i*/
         var wordStep1 = word;
         var step2aDone = false;
@@ -206,7 +219,7 @@ define(function () {
                 word = word.replace(b1Regex, '$1');
             }
         }
-
+        
         /* Step 2b:  Other verb suffixes*/
         if (step2aDone && wordStep1 == word) {
             if (word.search(/(ions)$/) >= r2Index) {
@@ -228,7 +241,7 @@ define(function () {
                 }
             }
         }
-
+        
         if (oriWord != word.toLowerCase()) {
             /* Step 3 */
             var rep = '';
@@ -252,25 +265,24 @@ define(function () {
                     word = word.substring(0, e2Index) + "i";
                 } else {
                     if (word.search(/e$/) >= rvIndex) {
-                        word = word.replace(/e$/, '');   //delete last e
+                        word = word.replace(/e$/, '');
+                        //delete last e
                     } else if (word.search(/guë$/) >= rvIndex) {
                         word = word.replace(/guë$/, 'gu');
                     }
                 }
             }
         }
-
+        
         /* Step 5: Undouble */
         //word = word.replace(/(en|on|et|el|eil)(n|t|l)$/,'$1');
         word = word.replace(/(en|on)(n)$/, '$1');
         word = word.replace(/(ett)$/, 'et');
         word = word.replace(/(el|eil)(l)$/, '$1');
-
+        
         /* Step 6: Un-accent */
         word = word.replace(/[éè]([^aeiouyâàëéêèïîôûù]+)$/, 'e$1');
         word = word.toLowerCase();
         return word;
     };
 });
-
-

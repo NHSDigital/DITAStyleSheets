@@ -2,7 +2,7 @@
 .wh_breadcrumb title,
 .wh_publication_toc .title {
     position: relative;
-   /* display: inline-block;*/
+    /* display: inline-block;*/
 }
 
 .wh-tooltip-container .wh-tooltip,
@@ -51,27 +51,27 @@
 
 /* Tooltip positioning. */
 @media screen {
-	[data-tooltip-position="left"] .wh-tooltip {
-	    top: -0.5em;
-	    right: 105%;
-	}
-	
-	[data-tooltip-position="right"] .wh-tooltip {
-	    top: -0.5em;
-	    left: 105%;
-	}
-	
-	[data-tooltip-position="top"] .wh-tooltip {
-	    bottom: 100%;
-	}
-	
-	[data-tooltip-position="bottom"] .wh-tooltip {
-	    top: 100%;
-	}
-	
-	[data-tooltip-position="hidden"] .wh-tooltip {
-	    display:none !important;
-	}
+    [data-tooltip-position = "left"] .wh-tooltip {
+        top: -0.5em;
+        right: 105%;
+    }
+
+    [data-tooltip-position = "right"] .wh-tooltip {
+        top: -0.5em;
+        left: 105%;
+    }
+
+    [data-tooltip-position = "top"] .wh-tooltip {
+        bottom: 100%;
+    }
+
+    [data-tooltip-position = "bottom"] .wh-tooltip {
+        top: 100%;
+    }
+
+    [data-tooltip-position = "hidden"] .wh-tooltip {
+        display: none !important;
+    }
 }
 
 /* Tooltip arrow. */
@@ -83,25 +83,25 @@
     border: .4em solid transparent;
 }
 
-[data-tooltip-position="left"] .wh-tooltip::before {
+[data-tooltip-position = "left"] .wh-tooltip::before {
     top: .8em;
     left: 100%;
     border-left-color: #444;
 }
 
-[data-tooltip-position="right"] .wh-tooltip::before {
+[data-tooltip-position = "right"] .wh-tooltip::before {
     top: .8em;
     right: 100%;
     border-right-color: #444;
 }
 
-[data-tooltip-position="bottom"] .wh-tooltip::before {
+[data-tooltip-position = "bottom"] .wh-tooltip::before {
     left: .8em;
     bottom: 100%;
     border-bottom-color: #444;
 }
 
-[data-tooltip-position="top"] .wh-tooltip::before {
+[data-tooltip-position = "top"] .wh-tooltip::before {
     left: .8em;
     top: 100%;
     border-top-color: #444;

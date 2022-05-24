@@ -1,11 +1,11 @@
-define(['util', 'jquery'], function(util, $) {
+define([ 'util', 'jquery'], function (util, $) {
     /**
      * The maximum number of items kept in local history for a specific WH output.
      *
      * @type {number}
      */
     var HISTORY_ITEMS_MAX_COUNT = 30;
-
+    
     /**
      * Test if a browser local storage is available.
      *
@@ -13,8 +13,8 @@ define(['util', 'jquery'], function(util, $) {
      */
     function localStorageAvailable() {
         try {
-            var storage = window["localStorage"],
-                x = '__storage_test__';
+            var storage = window[ "localStorage"],
+            x = '__storage_test__';
             storage.setItem(x, x);
             storage.removeItem(x);
             return true;
@@ -24,7 +24,7 @@ define(['util', 'jquery'], function(util, $) {
             return false;
         }
     }
-
+    
     /**
      * @returns {string} Get the key to use for reading from local storage. It is unique for a WH output.
      */
@@ -35,11 +35,11 @@ define(['util', 'jquery'], function(util, $) {
         } else {
             wh_root += "index.html";
         }
-
+        
         var wh_root_path = resolveRelativePath(wh_root);
         return wh_root_path + "_search_history_items";
     }
-
+    
     /**
      * Resolve a relative path to the current browser location.
      *
@@ -51,7 +51,7 @@ define(['util', 'jquery'], function(util, $) {
         link.href = relPath;
         return (link.protocol + "//" + link.host + link.pathname + link.search + link.hash);
     }
-
+    
     return {
         /**
          * Add a search query to the history.
@@ -65,9 +65,9 @@ define(['util', 'jquery'], function(util, $) {
                 var localStorageKey = getSearchHistoryKey();
                 try {
                     var localStorageItems = window.localStorage.getItem(localStorageKey);
-                    if (!localStorageItems) {
+                    if (! localStorageItems) {
                         // Local storage is empty for the current WH output.
-                        var hItemsArray = [];
+                        var hItemsArray =[];
                         hItemsArray.push(searchQuery);
                         var valToSave = JSON.stringify(hItemsArray);
                         util.debug("Save to local storage: ", valToSave)
@@ -81,59 +81,59 @@ define(['util', 'jquery'], function(util, $) {
                             util.debug("Promote history item:", lastSearchItemsArray);
                             lastSearchItemsArray.splice(idx, 1);
                         }
-
+                        
                         // Add first
                         lastSearchItemsArray.unshift(searchQuery);
-
+                        
                         // Ensure local history items  do not exceed the MAX limit
                         if (lastSearchItemsArray.length > HISTORY_ITEMS_MAX_COUNT) {
                             lastSearchItemsArray.splice(HISTORY_ITEMS_MAX_COUNT);
                         }
-
+                        
                         // Save to local storage.
                         var newVal = JSON.stringify(lastSearchItemsArray);
                         window.localStorage.setItem(localStorageKey, newVal);
-
                     }
-                } catch (e) {
+                }
+                catch (e) {
                     util.debug("Exception when trying to save to local storage: ", e);
                     window.localStorage.removeItem(localStorageKey);
                 }
-
             } else {
                 util.debug("Local storage is not available");
             }
         },
-
+        
         /**
          * Get the search history items from local storage.
          *
          * @returns {Array} The array with search history items.
          */
         getHistorySearchItems: function () {
-            var toRet = [];
+            var toRet =[];
             if (localStorageAvailable()) {
                 var localStorageKey = getSearchHistoryKey();
-
+                
                 try {
                     var lastLocalStorage = window.localStorage.getItem(localStorageKey);
                     if (lastLocalStorage) {
                         // Convert to array
                         var lastSearchItemsArray = JSON.parse(lastLocalStorage);
-
+                        
                         if (Array.isArray(lastSearchItemsArray)) {
                             toRet = lastSearchItemsArray;
                         }
                     }
-                } catch (e) {
+                }
+                catch (e) {
                     util.debug("Exception when reading from local storage: ", e);
                     window.localStorage.removeItem(localStorageKey);
                 }
             }
-
+            
             return toRet;
         },
-
+        
         /**
          * Remove from local storage a history item.
          *
@@ -144,13 +144,13 @@ define(['util', 'jquery'], function(util, $) {
             var removed = false;
             if (localStorageAvailable()) {
                 var localStorageKey = getSearchHistoryKey();
-
+                
                 try {
                     var lastLocalStorage = window.localStorage.getItem(localStorageKey);
                     if (lastLocalStorage) {
                         // Convert to array
                         var lastSearchItemsArray = JSON.parse(lastLocalStorage);
-
+                        
                         if (Array.isArray(lastSearchItemsArray)) {
                             historyItem = historyItem.toLowerCase();
                             var idx = lastSearchItemsArray.indexOf(historyItem);
@@ -159,17 +159,18 @@ define(['util', 'jquery'], function(util, $) {
                                 lastSearchItemsArray.splice(idx, 1);
                                 var newVal = JSON.stringify(lastSearchItemsArray);
                                 window.localStorage.setItem(localStorageKey, newVal);
-
+                                
                                 removed = true;
                             }
                         }
                     }
-                } catch (e) {
+                }
+                catch (e) {
                     util.debug("Exception when removing from local storage: ", e);
                     window.localStorage.removeItem(localStorageKey);
                 }
             }
-
+            
             return removed;
         }
     }

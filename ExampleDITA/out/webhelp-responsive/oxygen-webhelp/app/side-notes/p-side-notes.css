@@ -19,10 +19,10 @@ Copyright (c) 1998-2020 Syncro Soft SRL, Romania.  All rights reserved.
  */
 @namespace oxy "http://www.oxygenxml.com/extensions/author";
 
- 
+
 @media screen {
 
-	oxy-attributes,
+    oxy-attributes,
     oxy-comment,
     oxy-delete,
     oxy-insert,
@@ -30,11 +30,11 @@ Copyright (c) 1998-2020 Syncro Soft SRL, Romania.  All rights reserved.
     .oxy-comment,
     .oxy-delete,
     .oxy-insert {
-            margin: 0.5em;
-            width: 20%;
-            min-width:7em;                                          
+        margin: 0.5em;
+        width: 20%;
+        min-width: 7em;
     }
-    
+
     table oxy-attributes,
     table oxy-comment,
     table oxy-delete,
@@ -43,17 +43,17 @@ Copyright (c) 1998-2020 Syncro Soft SRL, Romania.  All rights reserved.
     table .oxy-comment,
     table .oxy-delete,
     table .oxy-insert {
-            margin: 0.5em;
-            width: 50%;
+        margin: 0.5em;
+        width: 50%;
     }
-        
+
 }
 
- 
+
 @media print, screen {
 
-	
-	/*
+
+/*
 	 * Main callouts properties.
 	 */
     oxy-attributes,
@@ -63,99 +63,99 @@ Copyright (c) 1998-2020 Syncro Soft SRL, Romania.  All rights reserved.
     .oxy-attributes,
     .oxy-comment,
     .oxy-delete,
-    .oxy-insert  {
-        font-size:small;
-        
-        font-weight:normal !important; /* Do not take text styles from the context. */
-        text-decoration:none !important;
-        
-        font-family:arial, helvetica, sans-serif;
-        
-        position:relative;
+    .oxy-insert {
+        font-size: small;
+
+        font-weight: normal !important; /* Do not take text styles from the context. */
+        text-decoration: none !important;
+
+        font-family: arial, helvetica, sans-serif;
+
+        position: relative;
         float: right;
-        clear:right;
-                
+        clear: right;
+
         padding: 0.5em 1em 0.5em 1em;
-        
-        min-height:1em;
+
+        min-height: 1em;
         page-break-inside: avoid;
-       
+
         border-radius: 10px;
 
-        link:attr(href);
+        link: attr(href);
         -ah-link: attr(href);
         -oxy-link: attr(href);
-        
+
     }
-    
+
 
     /*
      * Style the comment replies.
-     */	
-	oxy-attributes   oxy-comment,
-    oxy-comment  	 oxy-comment,
-    oxy-delete  	 oxy-comment,
-    oxy-insert   	 oxy-comment,
-	.oxy-attributes .oxy-comment,
-    .oxy-comment  	.oxy-comment,
-    .oxy-delete  	.oxy-comment,
-    .oxy-insert  	.oxy-comment {
-		border-left: 2pt solid;
-	    padding-left: 0.5em;
-	    padding-right: 0;
-	    
+     */
+    oxy-attributes oxy-comment,
+    oxy-comment oxy-comment,
+    oxy-delete oxy-comment,
+    oxy-insert oxy-comment,
+    .oxy-attributes .oxy-comment,
+    .oxy-comment .oxy-comment,
+    .oxy-delete .oxy-comment,
+    .oxy-insert .oxy-comment {
+        border-left: 2pt solid;
+        padding-left: 0.5em;
+        padding-right: 0;
+
         margin: 2pt 0 2pt 10%;
-        width:90%;
+        width: 90%;
         border-radius: 0;
-    } 
-	
-	
-	/* 
+    }
+
+
+    /* 
 	 * Hide the links from the replies.
 	 */
-	oxy-attributes   oxy-comment:before,
-    oxy-comment      oxy-comment:before,
-    oxy-delete       oxy-comment:before,
-    oxy-insert       oxy-comment:before,
-	.oxy-attributes  .oxy-comment:before,
-    .oxy-comment     .oxy-comment:before,
-    .oxy-delete      .oxy-comment:before,
-    .oxy-insert      .oxy-comment:before {
-		display:none;
+    oxy-attributes oxy-comment:before,
+    oxy-comment oxy-comment:before,
+    oxy-delete oxy-comment:before,
+    oxy-insert oxy-comment:before,
+    .oxy-attributes .oxy-comment:before,
+    .oxy-comment .oxy-comment:before,
+    .oxy-delete .oxy-comment:before,
+    .oxy-insert .oxy-comment:before {
+        display: none;
     }
-    	
-    	
-	/*
+
+
+    /*
 	 * Hide some meta information.
 	 */
-	oxy-comment-id,
-	oxy-comment-parent-id,
-	oxy-mid,
-	oxy-hour,
-	oxy-tz,
-	.oxy-comment-id,
-	.oxy-comment-parent-id,
-	.oxy-mid,
-	.oxy-hour,
-	.oxy-tz  {
-		display:none;
-	}
-	
-    
+    oxy-comment-id,
+    oxy-comment-parent-id,
+    oxy-mid,
+    oxy-hour,
+    oxy-tz,
+    .oxy-comment-id,
+    .oxy-comment-parent-id,
+    .oxy-mid,
+    .oxy-hour,
+    .oxy-tz {
+        display: none;
+    }
+
+
     /* The ID of the change, like the number of a footnote. */
     oxy-attributes[hr_id]:before,
     oxy-comment[hr_id]:before,
     oxy-delete[hr_id]:before,
-    oxy-insert[hr_id]:before{
-        content:'[' attr(hr_id) '] ';
+    oxy-insert[hr_id]:before {
+        content: '[' attr(hr_id) '] ';
     }
-    
+
     .oxy-attributes[hr_id]:before,
     .oxy-comment[hr_id]:before,
     .oxy-delete[hr_id]:before,
-    .oxy-insert[hr_id]:before{
-    	/* For HTML, the hr_id is missing, the link is created as an "A" element. */
-		content:none;
+    .oxy-insert[hr_id]:before {
+        /* For HTML, the hr_id is missing, the link is created as an "A" element. */
+        content: none;
     }
 
 
@@ -163,98 +163,98 @@ Copyright (c) 1998-2020 Syncro Soft SRL, Romania.  All rights reserved.
     /* Author */
     oxy-author,
     .oxy-author {
-        font-weight:bold;
+        font-weight: bold;
     }
-    
+
     /* Comment */
     oxy-comment-text,
-    .oxy-comment-text{
-        display:block;
-        margin-top:0.5em;
-        margin-bottom:0.5em;
+    .oxy-comment-text {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
     }
-        
-    /* Content of the change */    
+
+    /* Content of the change */
     oxy-content,
-    .oxy-content{
-        display:block;
-        margin-top:0.5em;
-        margin-bottom:0.5em;
+    .oxy-content {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
     }
 
     oxy-delete > oxy-content,
-    .oxy-delete > .oxy-content  {
-        text-decoration:line-through;
+    .oxy-delete > .oxy-content {
+        text-decoration: line-through;
     }
     oxy-insert > oxy-content,
-    .oxy-insert > .oxy-content  {
-        font-style:italic;
+    .oxy-insert > .oxy-content {
+        font-style: italic;
     }
     oxy-insert > oxy-content:before,
     .oxy-insert > .oxy-content:before {
-        content:"<<";
+        content: "<<";
     }
     oxy-insert > oxy-content:after,
-    .oxy-insert > .oxy-content:after  {
-        content:">>";
+    .oxy-insert > .oxy-content:after {
+        content: ">>";
     }
-     
-    /* Date */    
+
+    /* Date */
     oxy-date,
     .oxy-date {
-        display:block;
-        margin-top:0.5em;
-        margin-bottom:0.5em;
-        text-align:right;
-        font-size:0.8em;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        text-align: right;
+        font-size: 0.8em;
     }
 
 
-    /* Old and cuattribute value */    
+    /* Old and cuattribute value */
     oxy-old-value,
     .oxy-old-value {
-        display:block;
-        text-decoration: line-through;    
+        display: block;
+        text-decoration: line-through;
     }
-    
+
     oxy-old-value:before,
     .oxy-old-value:before,
     oxy-current-value:before,
     .oxy-current-value:before {
-        display:block;
-        font-weight:bold;
-        text-decoration:none;
+        display: block;
+        font-weight: bold;
+        text-decoration: none;
     }
-    
-    
-    
-    
-    oxy-current-value[unknown='true']:before,
-    .oxy-current-value[unknown='true']:before{
-    	content:"<< Cannot determine the current value >>";
-    	color:red;
-    }    
+
+
+
+
+    oxy-current-value[unknown = 'true']:before,
+    .oxy-current-value[unknown = 'true']:before {
+        content: "<< Cannot determine the current value >>";
+        color: red;
+    }
     oxy-current-value,
     .oxy-current-value
-     {
-        display:block;
+    {
+        display: block;
     }
 
 
     oxy-attribute-change:before,
-    .oxy-attribute-change:before{
-        display:block;
-        content: " @" attr(name) "\A" attr(type)" by \A";
-        font-weight:bold;
+    .oxy-attribute-change:before {
+        display: block;
+        content: " @" attr(name) "\A" attr(type) " by \A";
+        font-weight: bold;
     }
-    
+
 
     oxy-range-start,
     .oxy-range-start,
     oxy-range-end,
     .oxy-range-end {
-    	display:inline;
-    	text-decoration: none;
+        display: inline;
+        text-decoration: none;
         font-weight: normal;
         font-style: normal;
     }
@@ -265,26 +265,26 @@ Copyright (c) 1998-2020 Syncro Soft SRL, Romania.  All rights reserved.
      */
     oxy-range-start:before,
     .oxy-range-start:before {
-    	display:inline;
-        content:'[' attr(hr_id) ']';
+        display: inline;
+        content: '[' attr(hr_id) ']';
     }
-    
-    
+
+
     /*
      * This marks the end of the range. 
      */
     oxy-range-end:before,
     .oxy-range-end:before {
-       	display:inline ;
-        content:'[/' attr(hr_id) ']';
+        display: inline;
+        content: '[/' attr(hr_id) ']';
     }
-    
+
 }
 
 
 @media print {
-	
-	oxy-attributes,
+
+    oxy-attributes,
     oxy-comment,
     oxy-delete,
     oxy-insert,
@@ -292,12 +292,12 @@ Copyright (c) 1998-2020 Syncro Soft SRL, Romania.  All rights reserved.
     .oxy-comment,
     .oxy-delete,
     .oxy-insert {
-            font-size:0.8rem;
-            margin: 0.5em -0.7in 0.5em 0.5em;
-            /* This should be correlated with the page margin from the p-page-size.css */
-            width: 1.5in;
-             
-    }        
+        font-size: 0.8rem;
+        margin: 0.5em -0.7in 0.5em 0.5em;
+        /* This should be correlated with the page margin from the p-page-size.css */
+        width: 1.5in;
+
+    }
 }
 
 
@@ -313,9 +313,9 @@ oxy-insert,
 .oxy-attributes,
 .oxy-comment,
 .oxy-delete,
-.oxy-insert  {
-        background-color: #FFFFAA;
-        color:black;
+.oxy-insert {
+    background-color: #FFFFAA;
+    color: black;
 }
 
 
@@ -324,76 +324,76 @@ oxy-insert,
  * This is also built-in Chemistry processor, but if one uses other processors is good to have it here also.
  */
 oxy-insert-hl,
-.oxy-insert-hl{
-    display:inline;
-    color:blue;
-	text-decoration:underline;    
+.oxy-insert-hl {
+    display: inline;
+    color: blue;
+    text-decoration: underline;
 }
 oxy-delete-hl,
 .oxy-delete-hl {
-  	display:inline;
-	color:red;
-	text-decoration:line-through;
+    display: inline;
+    color: red;
+    text-decoration: line-through;
 }
 oxy-comment-hl,
-.oxy-comment-hl{
-	display:inline;
-    background-color:yellow;
+.oxy-comment-hl {
+    display: inline;
+    background-color: yellow;
 }
 oxy-color-hl[color],
-.oxy-color-hl[color]{
-	display:inline;
-    background-color:attr(color, color);
+.oxy-color-hl[color] {
+    display: inline;
+    background-color: attr(color, color);
 }
 
 
 
-    
+
 /*
  * The marked as done changes should be grayed out.
  */
-oxy-attributes[flag~="done"],
-oxy-comment[flag~="done"],
-oxy-delete[flag~="done"],
-oxy-insert[flag~="done"],
-.oxy-attributes[flag~="done"],
-.oxy-comment[flag~="done"],
-.oxy-delete[flag~="done"],
-.oxy-insert[flag~="done"] {
-    color:gray;
-}       
+oxy-attributes[flag ~= "done"],
+oxy-comment[flag ~= "done"],
+oxy-delete[flag ~= "done"],
+oxy-insert[flag ~= "done"],
+.oxy-attributes[flag ~= "done"],
+.oxy-comment[flag ~= "done"],
+.oxy-delete[flag ~= "done"],
+.oxy-insert[flag ~= "done"] {
+    color: gray;
+}
 oxy-attributes,
-.oxy-attributes{
-    border-color:black;
+.oxy-attributes {
+    border-color: black;
 }
 oxy-comment,
-.oxy-comment{
-    border-color:transparent;
+.oxy-comment {
+    border-color: transparent;
 }
 oxy-delete,
-.oxy-delete{
-    border-color:red;
+.oxy-delete {
+    border-color: red;
 }
 oxy-insert,
-.oxy-insert{
-    border-color:blue;
+.oxy-insert {
+    border-color: blue;
 }
 oxy-range-start,
 .oxy-range-start,
 oxy-range-end,
 .oxy-range-end {
-    background-color: yellow;        
+    background-color: yellow;
 }
 
-oxy-attributes   oxy-comment,
-oxy-comment  	 oxy-comment,
-oxy-delete  	 oxy-comment,
-oxy-insert   	 oxy-comment,
+oxy-attributes oxy-comment,
+oxy-comment oxy-comment,
+oxy-delete oxy-comment,
+oxy-insert oxy-comment,
 .oxy-attributes .oxy-comment,
-.oxy-comment  	.oxy-comment,
-.oxy-delete  	.oxy-comment,
-.oxy-insert  	.oxy-comment {
-	border-left-color: orange;
+.oxy-comment .oxy-comment,
+.oxy-delete .oxy-comment,
+.oxy-insert .oxy-comment {
+    border-left-color: orange;
 }
 
 
@@ -405,8 +405,8 @@ oxy-insert   	 oxy-comment,
 	the -no-pdf-annotaotions-for-change-tracking-and-comments Chemistry command line parameter. 	
 */
 
-@media oxygen-chemistry{
-	oxy-attributes,
+@media oxygen-chemistry {
+    oxy-attributes,
     oxy-comment,
     oxy-delete,
     oxy-insert,
@@ -414,37 +414,37 @@ oxy-insert   	 oxy-comment,
     .oxy-comment,
     .oxy-delete,
     .oxy-insert {
-    	margin: 0.5em;
-        position:static;
+        margin: 0.5em;
+        position: static;
         float: footnote;
-	}
+    }
 
-	/* Footnotes in footnotes are not allowed in the FO and they are not OK to represent the replies. 
-	   So leave the replies as normal blocks, inside the parent change.*/	
-	oxy-attributes oxy-comment,
+    /* Footnotes in footnotes are not allowed in the FO and they are not OK to represent the replies. 
+	   So leave the replies as normal blocks, inside the parent change.*/
+    oxy-attributes oxy-comment,
     oxy-comment oxy-comment,
     oxy-delete oxy-comment,
     oxy-insert oxy-comment,
     .oxy-attributes .oxy-comment,
     .oxy-comment .oxy-comment,
     .oxy-delete .oxy-comment,
-    .oxy-insert .oxy-comment{
-        float:none;
-	}
-	
-	
+    .oxy-insert .oxy-comment {
+        float: none;
+    }
+
+
     oxy-attributes[hr_id]:before,
     oxy-comment[hr_id]:before,
     oxy-delete[hr_id]:before,
-    oxy-insert[hr_id]:before{
-        content:none;
+    oxy-insert[hr_id]:before {
+        content: none;
     }
-    
+
     .oxy-attributes[hr_id]:before,
     .oxy-comment[hr_id]:before,
     .oxy-delete[hr_id]:before,
-    .oxy-insert[hr_id]:before{
-		content:none;
+    .oxy-insert[hr_id]:before {
+        content: none;
     }
 
     /* Do not leave the range id in the content, it creates confusion with the footnotes numbers. */
@@ -452,39 +452,39 @@ oxy-insert   	 oxy-comment,
     .oxy-range-start,
     oxy-range-end,
     .oxy-range-end {
-    	background-color:inherit;
-        color:maroon;
+        background-color: inherit;
+        color: maroon;
     }
     oxy-range-start:before,
     .oxy-range-start:before {
-        content:'{';
-        font-weight:bold;
+        content: '{';
+        font-weight: bold;
     }
     oxy-range-end:before,
     .oxy-range-end:before {
-        content:'}';
-        font-weight:bold;
+        content: '}';
+        font-weight: bold;
     }
-    
+
     oxy-range-start[is-changebar]:before(100),
     .oxy-range-start[is-changebar]:before(100) {
         content: "";
-        display:-oxy-changebar-start;
+        display: -oxy-changebar-start;
         -oxy-changebar-color: gray;
         -oxy-changebar-width: 1.5pt;
     }
     oxy-range-end[is-changebar]:before(100),
     .oxy-range-end[is-changebar]:before(100) {
         content: "";
-    	display:-oxy-changebar-end;
+        display: -oxy-changebar-end;
     }
 
     /* Remove the link from the HTML output, we already have a link from the footnote marker to the call. */
     .oxy-attributes > a,
     .oxy-comment > a,
     .oxy-delete > a,
-    .oxy-insert > a{
-        display:none;
+    .oxy-insert > a {
+        display: none;
     }
 
     oxy-attributes,
@@ -492,32 +492,32 @@ oxy-insert   	 oxy-comment,
     oxy-attributes:footnote-marker,
     .oxy-attributes,
     .oxy-attributes:footnote-call,
-    .oxy-attributes:footnote-marker	{
-    	background-color:cyan;    
-	}	
-	oxy-comment,
+    .oxy-attributes:footnote-marker {
+        background-color: cyan;
+    }
+    oxy-comment,
     oxy-comment:footnote-call,
     oxy-comment:footnote-marker,
     .oxy-comment,
     .oxy-comment:footnote-call,
-    .oxy-comment:footnote-marker{
-    	background-color:#FFFFAA;    
-	}
-	oxy-delete,
+    .oxy-comment:footnote-marker {
+        background-color: #FFFFAA;
+    }
+    oxy-delete,
     oxy-delete:footnote-call,
     oxy-delete:footnote-marker,
     .oxy-delete,
     .oxy-delete:footnote-call,
-    .oxy-delete:footnote-marker{
-    	background-color:#FFAAAA;    
-	}
-	oxy-insert,
+    .oxy-delete:footnote-marker {
+        background-color: #FFAAAA;
+    }
+    oxy-insert,
     oxy-insert:footnote-call,
     oxy-insert:footnote-marker,
     .oxy-insert,
     .oxy-insert:footnote-call,
-    .oxy-insert:footnote-marker	{
-    	background-color:#DDDDFF;    
-	}
-    
+    .oxy-insert:footnote-marker {
+        background-color: #DDDDFF;
+    }
+
 }

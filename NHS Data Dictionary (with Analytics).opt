@@ -17,7 +17,7 @@
             <page-layout-file page="main" file="page-templates/wt_index.html"/>
         </html-page-layout-files>
         <parameters>
-           <!-- 
+            <!-- 
             <parameter name="webhelp.logo.image" value="resources/images/NHS-Logo.svg"/>
             <parameter name="webhelp.logo.image.target.url" value="https://www.nhs.uk"/>
             <parameter name="webhelp.logo.image.alt" value="National Health Service"/>
@@ -37,16 +37,17 @@
                 type="filePath"/>
             <parameter name="webhelp.fragment.footer" value="page-templates/footer.xml"
                 type="filePath"/>
-			<parameter name="webhelp.fragment.head" value="page-templates/Analytics.xml"
+            <parameter name="webhelp.fragment.head" value="page-templates/Analytics.xml"
                 type="filePath"/>
-				
+
         </parameters>
         <resources>
-            
+
             <css file="NHSD.css"/>
-            <logo file="resources/images/NHS-Logo.svg" alt="National Health Service" target-url="https://www.nhs.uk"/>
+            <logo file="resources/images/NHS-Logo.svg" alt="National Health Service"
+                target-url="https://www.nhs.uk"/>
             <favicon file="resources/images/favicon.ico"/>
-            
+
             <fileset>
                 <include name="NHSDD.png"/>
                 <include name="resources/images/*"/>

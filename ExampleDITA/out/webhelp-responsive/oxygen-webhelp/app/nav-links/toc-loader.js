@@ -1,20 +1,20 @@
-define(["options", "jquery", "nav"], function (options, $, navConfig) {
-
+define([ "options", "jquery", "nav"], function (options, $, navConfig) {
+    
     /**
      * The path of the output directory, relative to the current HTML file.
      * @type {String}
      */
     var path2root = null;
-
-    $(document).ready ( function() {
+    
+    $(document).ready (function () {
         // Register the click handler for the TOC
         var topicRefExpandBtn = $(".wh_publication_toc .wh-expand-btn");
         topicRefExpandBtn.click(toggleTocExpand);
-
+        
         /* Toggle expand/collapse on enter and space */
         topicRefExpandBtn.keypress(handleKeyEvent);
     });
-
+    
     /**
      * Retrieves the path of the output directory, relative to the current HTML file.
      *
@@ -29,26 +29,26 @@ define(["options", "jquery", "nav"], function (options, $, navConfig) {
         }
         return path2root;
     };
-
-    /* 
-     * Toggles expand/collapse on enter and space 
+    
+    /*
+     * Toggles expand/collapse on enter and space
      */
     function handleKeyEvent(event) {
         // Enter & Spacebar events
-        if ( event.which === 13 || event.which === 32) {
+        if (event.which === 13 || event.which === 32) {
             event.preventDefault();
             toggleTocExpand.call(this);
         }
     }
-
+    
     function toggleTocExpand() {
-
+        
         var topicRef = $(this).closest(".topicref");
         var state = topicRef.attr(navConfig.attrs.state);
         var parentLi = $(this).closest('li');
         var titleLink = $(this).siblings(".title").children("a");
         var titleLinkID = titleLink.attr("id");
-
+        
         if (state == null) {
             // Do nothing
         } else if (state == navConfig.states.pending) {
@@ -68,7 +68,7 @@ define(["options", "jquery", "nav"], function (options, $, navConfig) {
             parentLi.attr('aria-expanded', 'true');
         }
     };
-
+    
     /**
      * Loads the JS file containing the list of child nodes for the current topic node.
      * Builds the list of child topics element nodes based on the retrieved data.
@@ -79,35 +79,33 @@ define(["options", "jquery", "nav"], function (options, $, navConfig) {
         var tocId = $(topicRefSpan).attr(navConfig.attrs.tocID);
         if (tocId != null) {
             var jsonHref = navConfig.jsonBaseDir + "/" + tocId;
-            require(
-                [jsonHref],
-                function(data) {
-                    if (data != null) {
-                        var topics = data.topics;
-                        var topicLi = topicRefSpan.closest('li');
-                        var topicsUl = createTopicsList(topics);
-
-                        var topicsUlParent = $('<ul role="group"/>');
-                        topicsUl.forEach(function(topic){
-                            topicsUlParent.append(topic);
-                        });
-                        topicLi.append(topicsUlParent);
-
-                        var titleLink = topicRefSpan.find(".title > a");
-                        var titleLinkID = titleLink.attr("id");
-
-                        var expandBtn = topicRefSpan.children('.wh-expand-btn');
-                        expandBtn.attr("aria-labelledby", navConfig.btnIds.collapse + " " + titleLinkID);
-
-                        topicRefSpan.attr(navConfig.attrs.state, navConfig.states.expanded);
-                    } else {
-                        topicRefSpan.attr(navConfig.attrs.state, navConfig.states.leaf);
-                    }
+            require([jsonHref],
+            function (data) {
+                if (data != null) {
+                    var topics = data.topics;
+                    var topicLi = topicRefSpan.closest('li');
+                    var topicsUl = createTopicsList(topics);
+                    
+                    var topicsUlParent = $('<ul role="group"/>');
+                    topicsUl.forEach(function (topic) {
+                        topicsUlParent.append(topic);
+                    });
+                    topicLi.append(topicsUlParent);
+                    
+                    var titleLink = topicRefSpan.find(".title > a");
+                    var titleLinkID = titleLink.attr("id");
+                    
+                    var expandBtn = topicRefSpan.children('.wh-expand-btn');
+                    expandBtn.attr("aria-labelledby", navConfig.btnIds.collapse + " " + titleLinkID);
+                    
+                    topicRefSpan.attr(navConfig.attrs.state, navConfig.states.expanded);
+                } else {
+                    topicRefSpan.attr(navConfig.attrs.state, navConfig.states.leaf);
                 }
-            );
+            });
         }
     }
-
+    
     /**
      * Creates the <code>ul</code> element containing the child topic nodes of the current topic.
      *
@@ -116,14 +114,14 @@ define(["options", "jquery", "nav"], function (options, $, navConfig) {
      * @returns {*|jQuery|HTMLElement} the <code>li</code> elements representing the child topic nodes of the current topic.
      */
     function createTopicsList(topics) {
-        var topicsArray = [];
-        topics.forEach(function(topic) {
+        var topicsArray =[];
+        topics.forEach(function (topic) {
             var topicLi = createTopicLi(topic);
             topicsArray.push(topicLi);
         });
         return topicsArray;
     };
-
+    
     /**
      * Creates the <code>li</code> element containing a topic node.
      *
@@ -137,15 +135,15 @@ define(["options", "jquery", "nav"], function (options, $, navConfig) {
         if (hasChildren(topic)) {
             li.attr('aria-expanded', 'false');
         }
-
+        
         // .topicref span
         var topicRefSpan = createTopicRefSpan(topic);
         // append the topicref node in parent
         li.append(topicRefSpan);
-
+        
         return li;
     };
-
+    
     /**
      * Creates the <span> element containing the title and the link to the topic associated to a node in the menu or the TOC.
      *
@@ -155,25 +153,25 @@ define(["options", "jquery", "nav"], function (options, $, navConfig) {
      */
     function createTopicRefSpan(topic) {
         var isExternalReference = topic.scope == 'external';
-
+        
         // .topicref span
         var topicRefSpan = $("<span>");
         topicRefSpan.addClass("topicref");
         if (topic.outputclass != null) {
             topicRefSpan.addClass(topic.outputclass);
         }
-
+        
         // WH-1820 Copy the Ditaval "pass through" attributes.
         var dataAttributes = topic.attributes;
         if (typeof dataAttributes !== 'undefined') {
             var attrsNames = Object.keys(dataAttributes);
-            attrsNames.forEach(function(attr) {
+            attrsNames.forEach(function (attr) {
                 topicRefSpan.attr(attr, dataAttributes[attr]);
             });
         }
-
+        
         topicRefSpan.attr(navConfig.attrs.tocID, topic.tocID);
-
+        
         // Current node state
         var containsChildren = hasChildren(topic);
         if (containsChildren) {
@@ -182,25 +180,25 @@ define(["options", "jquery", "nav"], function (options, $, navConfig) {
         } else {
             topicRefSpan.attr(navConfig.attrs.state, navConfig.states.leaf);
         }
-
+        
         var expandBtn = $("<span>", {
             class: "wh-expand-btn",
             role: "button"
         });
-
-        if(containsChildren) {
+        
+        if (containsChildren) {
             expandBtn.attr("aria-labelledby", navConfig.btnIds.expand + " " + getTopicLinkID(topic));
             expandBtn.attr("tabindex", "0");
         }
-
+        
         expandBtn.click(toggleTocExpand);
         expandBtn.keypress(handleKeyEvent);
         topicRefSpan.append(expandBtn);
-
+        
         // Topic ref link
         var linkHref = '';
         if (topic.href != null && topic.href != 'javascript:void(0)') {
-            if (!isExternalReference) {
+            if (! isExternalReference) {
                 linkHref += getPathToRoot();
             }
             linkHref += topic.href;
@@ -225,26 +223,26 @@ define(["options", "jquery", "nav"], function (options, $, navConfig) {
                 $(this).attr("src", pathToRoot + src);
             }
         });
-
+        
         link.attr("id", getTopicLinkID(topic));
-
+        
         if (isExternalReference) {
             link.attr("target", "_blank");
         }
         var titleSpan = $("<span>", {
-           class: "title"
+            class: "title"
         });
-
+        
         titleSpan.append(link);
-
+        
         // Topic ref short description
         if (topic.shortdesc != null) {
             var tooltipSpan = $("<span>", {
                 class: "wh-tooltip",
                 html: topic.shortdesc
             });
-
-			/* WH-1518: Check if the tooltip has content. */
+            
+            /* WH-1518: Check if the tooltip has content. */
             if (tooltipSpan.find('.shortdesc:empty').length == 0) {
                 // Update the relative links
                 var links = tooltipSpan.find("a[href]");
@@ -261,20 +259,20 @@ define(["options", "jquery", "nav"], function (options, $, navConfig) {
                         $(this).attr("src", pathToRoot + src);
                     }
                 });
-
+                
                 titleSpan.append(tooltipSpan);
             }
         }
-
+        
         topicRefSpan.append(titleSpan);
-
+        
         return topicRefSpan;
     }
-
+    
     function getTopicLinkID(topic) {
         return topic.tocID + "-link";
     }
-
+    
     function hasChildren(topic) {
         // If the "topics" property is not specified then it means that children should be loaded from the
         // module referenced in the "next" property

@@ -1,30 +1,29 @@
-define([], function(){
-
+define([], function () {
+    
     return {
-
-        attrs : {
+        
+        attrs: {
             /* The state attribute name */
-            state : "data-state",
-            id : "data-id",
-            tocID : "data-tocid"
+            state: "data-state",
+            id: "data-id",
+            tocID: "data-tocid"
         },
-
-        states : {
+        
+        states: {
             /* The possible states */
-            pending : "pending",
-            notReady : "not-ready",
-            collapsed : "collapsed",
-            expanded : "expanded",
-            leaf : "leaf"
+            pending: "pending",
+            notReady: "not-ready",
+            collapsed: "collapsed",
+            expanded: "expanded",
+            leaf: "leaf"
         },
-
-        btnIds : {
-            expand : "button-expand-action",
-            collapse : "button-collapse-action",
-            pending : "button-pending-action"
+        
+        btnIds: {
+            expand: "button-expand-action",
+            collapse: "button-collapse-action",
+            pending: "button-pending-action"
         },
-
-        jsonBaseDir : "nav-links/json"
+        
+        jsonBaseDir: "nav-links/json"
     };
-
 });

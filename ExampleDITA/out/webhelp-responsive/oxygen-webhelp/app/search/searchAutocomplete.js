@@ -1,18 +1,18 @@
-define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], function(keywordsInfo, searchHistory, options, $) {
-
-// Install search autocomplete
-
+define([ "keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], function (keywordsInfo, searchHistory, options, $) {
+    
+    // Install search autocomplete
+    
     $(document).ready(function () {
         if (options.getBoolean("webhelp.enable.search.autocomplete")) {
             var searchFunction = function (request, response) {
                 var searchTerm = request.term.toLowerCase();
-
+                
                 // Get history proposals.
                 var historyItems = getHistoryProposals(searchTerm);
-
-                var titlePhrases = [];
-                var phraseIds = [];
-
+                
+                var titlePhrases =[];
+                var phraseIds =[];
+                
                 var keywords = keywordsInfo.keywords;
                 var ph = keywordsInfo.ph;
                 var words = searchTerm.split(" ");
@@ -22,14 +22,14 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
                     var cw = words[wi].trim();
                     if (cw.length > 0) {
                         // Iterate over keywords to find the ones that contains the word
-                        var newPhraseIds = [];
+                        var newPhraseIds =[];
                         for (var i = 0; i < keywords.length; i++) {
                             if (keywords[i].w.toLowerCase().indexOf(cw) == 0) {
                                 // Word was found
                                 var phIds = keywords[i].p;
                                 for (var pj = 0; pj < phIds.length; pj++) {
                                     var pid = phIds[pj];
-
+                                    
                                     if (wi == 0) {
                                         newPhraseIds.push(pid);
                                     } else {
@@ -44,12 +44,12 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
                         phraseIds = newPhraseIds;
                     }
                 }
-
+                
                 if (phraseIds.length > 0) {
                     // Compute proposals from titles/keywords
                     for (var pi = 0; pi < phraseIds.length; pi++) {
                         var wIdx = ph[phraseIds[pi]];
-
+                        
                         var pStr = "";
                         for (var wi = 0; wi < wIdx.length; wi++) {
                             var word = keywords[wIdx[wi]].w;
@@ -57,12 +57,12 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
                                 word = word.charAt(0).toUpperCase() + word.substr(1);
                             }
                             pStr += word;
-
+                            
                             if (wi < wIdx.length - 1) {
                                 pStr += " ";
                             }
                         }
-
+                        
                         // Test if items is already in history proposals
                         for (var i = 0; i < historyItems.length; i++) {
                             if (pStr.toLocaleLowerCase() == historyItems[i]) {
@@ -70,7 +70,7 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
                                 break;
                             }
                         }
-
+                        
                         if (sameHi == null) {
                             var hp = {
                                 label: pStr.toLowerCase(),
@@ -83,11 +83,11 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
                 } else {
                     var lastWord = words[words.length - 1];
                     var beforeLastWord = request.term.substring(0, searchTerm.lastIndexOf(lastWord));
-
+                    
                     for (var i = 0; i < keywords.length; i++) {
                         if (keywords[i].w.toLowerCase().indexOf(cw) == 0) {
                             var proposal = beforeLastWord + keywords[i].w;
-
+                            
                             // Test if items is already in history proposals
                             for (var j = 0; j < historyItems.length; j++) {
                                 if (proposal.toLocaleLowerCase() == historyItems[j]) {
@@ -95,43 +95,43 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
                                     break;
                                 }
                             }
-
+                            
                             if (sameHi == null) {
                                 var hp = {
                                     label: proposal.toLowerCase(),
                                     value: proposal.toLowerCase(),
                                     type: "keyword"
                                 };
-
+                                
                                 titlePhrases.push(hp);
                             }
                         }
                     }
                 }
-
-                var res = [];
+                
+                var res =[];
                 res = res.concat(historyItems);
                 res = res.concat(titlePhrases);
-
+                
                 response(res);
             };
-
+            
             // Uncomment the following code if you want to take into account the border radius of the search input
             /*
-            var leftMargin = parseInt($("#textToSearch").css("border-bottom-left-radius"));
-            var rightMargin = parseInt($("#textToSearch").css("border-bottom-right-radius"));
-            */
-
+             var leftMargin = parseInt($("#textToSearch").css("border-bottom-left-radius"));
+             var rightMargin = parseInt($("#textToSearch").css("border-bottom-right-radius"));
+             */
+            
             var autocompleteObj = $("#textToSearch").autocomplete({
                 source: searchFunction,
                 minLength: 3
                 // Uncomment the following code if you want to take into account the border radius of the search input
                 /*
-                ,
-                position: {my : "left+" + leftMargin + " top"}
-                */
+                 ,
+                 position: {my : "left+" + leftMargin + " top"}
+                 */
             });
-
+            
             // Close autocomplete on ENTER
             $("#textToSearch").keydown(function (event) {
                 if (event.which == 13 && $("#textToSearch").length > 1) {
@@ -139,36 +139,36 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
                     $("#searchForm").submit();
                 }
             });
-
+            
             var auObj = autocompleteObj.data("ui-autocomplete");
-
+            
             // Set width of the autocomplete area
             // Uncomment the following code if you want to take into account the border radius of the search input
             /*
-            auObj._resizeMenu = function(){
-                this.menu.element.outerWidth( parseInt($("#textToSearch").outerWidth()) - leftMargin - rightMargin );
-            };
-            */
-
+             auObj._resizeMenu = function(){
+             this.menu.element.outerWidth( parseInt($("#textToSearch").outerWidth()) - leftMargin - rightMargin );
+             };
+             */
+            
             // Install a renderer
             auObj._renderItem = function (ul, item) {
                 // Text to search
                 var tts = $("#textToSearch").val();
-
+                
                 tts = tts.toLowerCase();
                 var words = tts.split(" ");
-
+                
                 /*console.log("Render item:", item);*/
-
+                
                 var proposal = item.label;
-
+                
                 // Highlight words from search query
                 var pw = proposal.split(" ");
                 var newProposal = "";
                 for (var pwi = 0; pwi < pw.length; pwi++) {
                     var cpw = pw[pwi];
                     if (cpw.trim().length > 0) {
-
+                        
                         // Iterate over words
                         var added = false;
                         for (var wi = 0; wi < words.length; wi++) {
@@ -176,18 +176,17 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
                             if (w.length > 0) {
                                 // Iterate over keywords to find the ones
                                 // Highlight the text to search
-
+                                
                                 try {
-                                    w = w.replace("\\", "\\\\")
-                                        .replace(")", "\\)")
-                                        .replace("(", "\\(");
+                                    w = w.replace("\\", "\\\\").replace(")", "\\)").replace("(", "\\(");
                                     var cpwh = cpw.replace(
-                                        new RegExp("(" + w + ")", 'i'),
-                                        "<span class='search-autocomplete-proposal-hg'>$1</span>");
-                                } catch (e) {
+                                    new RegExp("(" + w + ")", 'i'),
+                                    "<span class='search-autocomplete-proposal-hg'>$1</span>");
+                                }
+                                catch (e) {
                                     debug(e);
                                 }
-
+                                
                                 if (cpwh != cpw) {
                                     newProposal += cpwh;
                                     added = true;
@@ -195,54 +194,54 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
                                 }
                             }
                         }
-
-                        if (!added) {
+                        
+                        if (! added) {
                             newProposal += cpw;
                         }
-
+                        
                         if (pwi < pw.length - 1) {
                             newProposal += " ";
                         }
                     }
                 }
-
+                
                 var icon = "&nbsp;";
                 if (item.type == 'history') {
                     icon = "h";
                 }
                 var proposalIcon =
-                    $("<span>", {
-                        class: "search-autocomplete-proposal-icon " + item.type,
-                        html: icon
-                    });
-
+                $("<span>", {
+                    class: "search-autocomplete-proposal-icon " + item.type,
+                    html: icon
+                });
+                
                 // span with proposal label
                 var proposalLabel =
-                    $("<span>", {
-                        class: "search-autocomplete-proposal-label",
-                        "data-value": item.value,
-                        html: newProposal
-                    });
-
+                $("<span>", {
+                    class: "search-autocomplete-proposal-label",
+                    "data-value": item.value,
+                    html: newProposal
+                });
+                
                 // span with remove from history
                 var removeButton;
                 if (item.type == 'history') {
                     removeButton =
-                        $("<span>", {
-                            class: "search-autocomplete-proposal-type-history",
-                            html: "<a data-value='" + item.value + "' class='oxy-icon oxy-icon-remove' />"
-                        });
+                    $("<span>", {
+                        class: "search-autocomplete-proposal-type-history",
+                        html: "<a data-value='" + item.value + "' class='oxy-icon oxy-icon-remove' />"
+                    });
                     $(removeButton).find("a").on("click", function (event) {
                         removeHistoryItem(this);
-
+                        
                         // Do not close the menu
                         event.preventDefault();
                         event.stopPropagation();
-
+                        
                         return false;
                     });
                 }
-
+                
                 var li = $("<li>", {
                     class: "ui-menu-item",
                     "data-value": item.value
@@ -252,27 +251,27 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
                 });
                 li.append(divWrapper);
                 divWrapper.append(proposalIcon).append(proposalLabel);
-
+                
                 if (removeButton != null) {
                     divWrapper.append(removeButton);
                 }
-
+                
                 // If a search suggestion is chosen the form is submitted
                 li.find(".ui-menu-item-wrapper").on("click", function (event) {
                     $("#textToSearch").val($(this).find(".search-autocomplete-proposal-label").attr('data-value'));
                     $("#searchForm").submit();
                 });
-
+                
                 return li.appendTo(ul);
             };
-
+            
             $(window).resize(function () {
                 var autocompleteObj = $("#textToSearch").autocomplete("instance");
                 autocompleteObj.search();
             });
         }
     });
-
+    
     /**
      * Remove from local storage a history item.
      *
@@ -280,22 +279,22 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
      * @returns {boolean}
      */
     function removeHistoryItem(hi) {
-
+        
         var historyItem = hi.getAttribute("data-value");
         var removed = searchHistory.removeSearchHistoryItem(historyItem);
-
+        
         // Change label
         if (removed) {
             $(hi).attr("class", "oxy-icon oxy-icon-ok");
             $(hi).parents("div").find(".search-autocomplete-proposal-label").addClass("removed-from-history");
         }
-
+        
         // Do not close the menu
         event.preventDefault();
         event.stopPropagation();
         return false;
     }
-
+    
     /**
      * Compute search proposals from history items.
      *
@@ -303,12 +302,12 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
      * @returns {Array} The array with search proposals.
      */
     function getHistoryProposals(searchQuery) {
-        var toRet = [];
+        var toRet =[];
         var historyItems = searchHistory.getHistorySearchItems();
-
+        
         if (historyItems != null) {
             var words = searchQuery.split(" ");
-
+            
             for (var i = 0; i < historyItems.length; i++) {
                 /*console.log("History item", historyItems[i]);*/
                 // Test if history item match the serch query
@@ -324,10 +323,10 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
                 }
             }
         }
-
+        
         return toRet;
     }
-
+    
     /**
      * Test if a history item match all words from search query.
      *
@@ -337,13 +336,13 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
      */
     function matchSearchHistoryItem(historyPhrase, words) {
         // Iterate over words
-
+        
         var historyWords = historyPhrase.split(" ");
         var allWordsMatch = true;
-
+        
         for (var wi = 0; wi < words.length && allWordsMatch; wi++) {
             var cw = words[wi].trim();
-
+            
             if (cw.length > 0) {
                 // Iterate over keywords to find the ones that contains the word
                 var wordFound = false;
@@ -353,11 +352,11 @@ define(["keywords", "searchHistoryItems", "options", "jquery", "jquery.ui"], fun
                         break;
                     }
                 }
-
+                
                 allWordsMatch = allWordsMatch && wordFound;
             }
         }
-
+        
         return allWordsMatch;
     }
 });

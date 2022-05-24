@@ -1,5 +1,5 @@
 /* Module that loads a user's custom module that was specified within the Publishing Template. */
-define(["options", "util", "require"], function (options, util, require) {
+define([ "options", "util", "require"], function (options, util, require) {
     /**
      * @type {string}
      *
@@ -7,7 +7,7 @@ define(["options", "util", "require"], function (options, util, require) {
      * object passed to the RequireJS library used to load the JS modules.
      */
     var TEMPLATE_BASE_DIR_ID = "template-base-dir";
-
+    
     /**
      * @type {string}
      *
@@ -15,32 +15,31 @@ define(["options", "util", "require"], function (options, util, require) {
      * should be loaded or not.
      */
     var isTemplateJsModuleLoadingEnabled = options.getBoolean('webhelp.enable.template.js.module.loading');
-
+    
     /**
      * @type {string}
      *
      * The path of the template's main JS module relative to the base directory of the Publishing Template.
      */
-    var templateMainJsModuleRelPath = options.get('webhelp.js.module.rel.path');
-
+    var templateMainJsModuleRelPath = options. get ('webhelp.js.module.rel.path');
+    
     if (isTemplateJsModuleLoadingEnabled && templateMainJsModuleRelPath) {
         var templateMainJsID = getTemplateMainJsID(templateMainJsModuleRelPath);
         try {
-            require(
-                [templateMainJsID],
-                function() {
-                   util.debug("Finished loading custom script:", templateMainJsModuleRelPath);
-                },
-                // Error callback
-                function(err) {
-                    console.error("Cannot load script:", templateMainJsModuleRelPath, err);
-                }
-            );
-        } catch(err) {
+            require([templateMainJsID],
+            function () {
+                util.debug("Finished loading custom script:", templateMainJsModuleRelPath);
+            },
+            // Error callback
+            function (err) {
+                console.error("Cannot load script:", templateMainJsModuleRelPath, err);
+            });
+        }
+        catch (err) {
             console.error("Cannot load script:", templateMainJsModuleRelPath, err);
         }
     }
-
+    
     /**
      * Computes the ID of the template's main JS module.
      *
@@ -56,7 +55,7 @@ define(["options", "util", "require"], function (options, util, require) {
         } else {
             templateMainJsRelPathNoExt = templateMainJsModuleRelPath;
         }
-
+        
         return TEMPLATE_BASE_DIR_ID + "/" + templateMainJsRelPathNoExt;
     }
 });

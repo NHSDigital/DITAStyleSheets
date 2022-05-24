@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+ <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-162683491-1"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+    gtag('config', 'UA-162683491-1');
+ </script>
+  <script async="async" data-cbid="30398f35-a144-4edd-a779-05481f9da7b3" src="https://consent.cookiebot.com/uc.js" id="Cookiebot">
+  </script>
+</head>

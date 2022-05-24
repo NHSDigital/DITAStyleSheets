@@ -1,4 +1,4 @@
-define(["jquery", "jquery.highlight"], function($, highlight) {
+define([ "jquery", "jquery.highlight"], function ($, highlight) {
     /**
      * In this context: ($ === jQuery) = false;
      *

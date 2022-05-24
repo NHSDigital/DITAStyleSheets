@@ -87,7 +87,6 @@ li {
 }
 .element {
   color: #006747;
-  font-weight: normal;
 }
 .element:after {
   color: #006747;
@@ -96,7 +95,6 @@ li {
 }
 .attribute {
   color: #330072;
-  font-weight: normal;
 }
 .attribute:after {
   color: #330072;
@@ -105,7 +103,6 @@ li {
 }
 .class {
   color: #8A1538;
-  font-weight: normal;
 }
 .class:after {
   color: #8A1538;
@@ -118,7 +115,6 @@ a[data-id*="classes"] {
 }
 .dataSet {
   color: #ED8B00;
-  font-weight: normal;
 }
 .dataSet:after {
   color: #ED8B00;
@@ -127,7 +123,6 @@ a[data-id*="classes"] {
 }
 .businessDefinition {
   color: #003087;
-  font-weight: normal;
 }
 .businessDefinition:after {
   color: #003087;
@@ -136,7 +131,6 @@ a[data-id*="classes"] {
 }
 .supportingDefinition {
   color: #003087;
-  font-weight: normal;
 }
 .supportingDefinition:after {
   color: #003087;
@@ -145,7 +139,6 @@ a[data-id*="classes"] {
 }
 .supportingInformation {
   color: #003087;
-  font-weight: normal;
 }
 .supportingInformation:after {
   color: #003087;
@@ -154,7 +147,6 @@ a[data-id*="classes"] {
 }
 .xmlSchemaConstraint {
   color: #003087;
-  font-weight: normal;
 }
 .xmlSchemaConstraint:after {
   color: #003087;
@@ -164,7 +156,6 @@ a[data-id*="classes"] {
 .retired {
   background-color: #DFE2E5;
   color: black;
-  font-weight: normal;
 }
 tr.retired {
   color: #425563;

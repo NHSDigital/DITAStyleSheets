@@ -1,0 +1,5 @@
+<div xmlns:whc="http://www.oxygenxml.com/webhelp/components">
+  <p class="banner">
+    This is an archive based on the data dictionary at <whc:macro value="${timestamp([D01]/[M01]/[Y0001])}"/>
+  </p>
+</div>

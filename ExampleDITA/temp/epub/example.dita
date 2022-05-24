@@ -1,177 +1,299 @@
-<?xml version="1.0" encoding="utf-8"?><?workdir /C:\GIT\DITAStyleSheets\ExampleDITA\temp\epub?><?workdir-uri file:/C:/GIT/DITAStyleSheets/ExampleDITA/temp/epub/?><?path2project?><?path2project-uri ./?><?path2rootmap-uri ./?><?doctype-public -//OASIS//DTD DITA Topic//EN?><?doctype-system topic.dtd?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" class="- topic/topic " ditaarch:DITAArchVersion="1.3" domains="(topic abbrev-d) a(props deliveryTarget) (topic equation-d) (topic hazard-d) (topic hi-d) (topic indexing-d) (topic markup-d) (topic mathml-d) (topic pr-d) (topic relmgmt-d) (topic sw-d) (topic svg-d) (topic ui-d) (topic ut-d) (topic markup-d xml-d)" id="me" xtrc="topic:1;3:16" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-  <title class="- topic/title " xtrc="title:1;4:10" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">GENERAL MEDICAL PRACTITIONER</title>
-  <titlealts class="- topic/titlealts " xtrc="titlealts:1;5:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-    <searchtitle class="- topic/searchtitle " xtrc="searchtitle:1;6:18" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Class: GENERAL MEDICAL PRACTITIONER</searchtitle>
+<?xml version="1.0" encoding="utf-8"?><?workdir /C:\GIT\DITAStyleSheets\ExampleDITA\temp\epub?><?workdir-uri file:/C:/GIT/DITAStyleSheets/ExampleDITA/temp/epub/?><?path2project?><?path2project-uri ./?><?path2rootmap-uri ./?><?doctype-public -//OASIS//DTD DITA Topic//EN?><?doctype-system topic.dtd?>
+<topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+  xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" class="- topic/topic "
+  ditaarch:DITAArchVersion="1.3"
+  domains="(topic abbrev-d) a(props deliveryTarget) (topic equation-d) (topic hazard-d) (topic hi-d) (topic indexing-d) (topic markup-d) (topic mathml-d) (topic pr-d) (topic relmgmt-d) (topic sw-d) (topic svg-d) (topic ui-d) (topic ut-d) (topic markup-d xml-d)"
+  id="me" xtrc="topic:1;3:16" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+  <title class="- topic/title " xtrc="title:1;4:10"
+    xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">GENERAL MEDICAL
+    PRACTITIONER</title>
+  <titlealts class="- topic/titlealts " xtrc="titlealts:1;5:14"
+    xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+    <searchtitle class="- topic/searchtitle " xtrc="searchtitle:1;6:18"
+      xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Class: GENERAL MEDICAL
+      PRACTITIONER</searchtitle>
   </titlealts>
-  <shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;8:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-    ullamco laboris nisi </shortdesc>
-  <prolog class="- topic/prolog " xtrc="prolog:1;11:11" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-    <metadata class="- topic/metadata " xtrc="metadata:1;12:15" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-      <othermeta class="- topic/othermeta " content="GENERAL MEDICAL PRACTITIONER" name="name" xtrc="othermeta:1;13:70" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
-      <othermeta class="- topic/othermeta " content="groovy.lang.MetaClassImpl@71f53cf3[class ox.softeng.cataloguetools.nhsd.datadictionary.DDClass]" name="metaclass" xtrc="othermeta:2;15:116" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
-      <othermeta class="- topic/othermeta " content="Version 3.0&lt;;&gt;3.1.0 CR=849&lt;;&gt;3.0.0&lt;;&gt;3.0.0" name="Data_Dictionary_Profile_x__y_DD_Model_x__y_baseVersion" xtrc="othermeta:3;17:81" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
-      <othermeta class="- topic/othermeta " content="DD Class" name="stereotype" xtrc="othermeta:4;18:56" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
-      <othermeta class="- topic/othermeta " content="GENERAL MEDICAL PRACTITIONERS" name="Data_Dictionary_Profile_x__y_DD_Alias_x__y_aliasPlural" xtrc="othermeta:5;20:50" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
-      <othermeta class="- topic/othermeta " content="file:/Users/steveh/nhsdd-preprocessing/December_2019_Release/transformedoutput/Data_Dictionary/Classes/G/GENERAL_MEDICAL_PRACTITIONER.txaClass20" name="sourceURI" xtrc="othermeta:6;22:165" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
-      <othermeta class="- topic/othermeta " content="Tue Feb 25 07:34:26 GMT 2020" name="sourceVersion" xtrc="othermeta:7;23:79" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
-      <othermeta class="- topic/othermeta " content="DerivedDD_html" name="sourceType" xtrc="othermeta:8;24:62" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
-      <othermeta class="- topic/othermeta " content="??" name="topicCreationDate" xtrc="othermeta:9;25:57" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
-      <othermeta class="- topic/othermeta " content="??" name="topicVersion" xtrc="othermeta:10;26:52" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
-      <othermeta class="- topic/othermeta " content="GENERAL MEDICAL PRACTITIONER" name="originalCase" xtrc="othermeta:11;27:78" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
+  <shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;8:14"
+    xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </shortdesc>
+  <prolog class="- topic/prolog " xtrc="prolog:1;11:11"
+    xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+    <metadata class="- topic/metadata " xtrc="metadata:1;12:15"
+      xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+      <othermeta class="- topic/othermeta " content="GENERAL MEDICAL PRACTITIONER" name="name"
+        xtrc="othermeta:1;13:70" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
+      <othermeta class="- topic/othermeta "
+        content="groovy.lang.MetaClassImpl@71f53cf3[class ox.softeng.cataloguetools.nhsd.datadictionary.DDClass]"
+        name="metaclass" xtrc="othermeta:2;15:116"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
+      <othermeta class="- topic/othermeta "
+        content="Version 3.0&lt;;&gt;3.1.0 CR=849&lt;;&gt;3.0.0&lt;;&gt;3.0.0"
+        name="Data_Dictionary_Profile_x__y_DD_Model_x__y_baseVersion" xtrc="othermeta:3;17:81"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
+      <othermeta class="- topic/othermeta " content="DD Class" name="stereotype"
+        xtrc="othermeta:4;18:56" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
+      <othermeta class="- topic/othermeta " content="GENERAL MEDICAL PRACTITIONERS"
+        name="Data_Dictionary_Profile_x__y_DD_Alias_x__y_aliasPlural" xtrc="othermeta:5;20:50"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
+      <othermeta class="- topic/othermeta "
+        content="file:/Users/steveh/nhsdd-preprocessing/December_2019_Release/transformedoutput/Data_Dictionary/Classes/G/GENERAL_MEDICAL_PRACTITIONER.txaClass20"
+        name="sourceURI" xtrc="othermeta:6;22:165"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
+      <othermeta class="- topic/othermeta " content="Tue Feb 25 07:34:26 GMT 2020"
+        name="sourceVersion" xtrc="othermeta:7;23:79"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
+      <othermeta class="- topic/othermeta " content="DerivedDD_html" name="sourceType"
+        xtrc="othermeta:8;24:62" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
+      <othermeta class="- topic/othermeta " content="??" name="topicCreationDate"
+        xtrc="othermeta:9;25:57" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
+      <othermeta class="- topic/othermeta " content="??" name="topicVersion"
+        xtrc="othermeta:10;26:52" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
+      <othermeta class="- topic/othermeta " content="GENERAL MEDICAL PRACTITIONER"
+        name="originalCase" xtrc="othermeta:11;27:78"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"/>
     </metadata>
   </prolog>
 
-  <body class="- topic/body " xtrc="body:1;31:9" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+  <body class="- topic/body " xtrc="body:1;31:9"
+    xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
 
-    <section class="- topic/section " xtrc="section:1;33:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-      <title class="- topic/title " xtrc="title:2;34:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Description</title><p class="- topic/p " xtrc="p:1;34:36" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-        anim id est laborum.</p>
-      <p class="- topic/p " xtrc="p:2;40:10" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et
-        commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.
-        Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec
-        lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est
-        euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec
-        fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget,
-        consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing
-        sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu.
-        Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean
-        magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea
-        dictumst.</p>
-      <b class="+ topic/ph hi-d/b " xtrc="b:1;51:10" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">This class is also known by these names:</b>
-      <simpletable class="- topic/simpletable " outputclass="table table-striped table-sm" relcolwidth="1* 2*" xtrc="simpletable:1;52:83" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-        <sthead class="- topic/sthead " outputclass="thead-light" xtrc="sthead:1;53:43" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <stentry class="- topic/stentry " xtrc="stentry:1;54:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Context</stentry>
-          <stentry class="- topic/stentry " xtrc="stentry:2;55:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Alias</stentry>
+    <section class="- topic/section " xtrc="section:1;33:14"
+      xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+      <title class="- topic/title " xtrc="title:2;34:14"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Description</title>
+      <p class="- topic/p " xtrc="p:1;34:36"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+        in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p class="- topic/p " xtrc="p:2;40:10"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Curabitur pretium tincidunt
+        lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros
+        bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod
+        gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam
+        tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt
+        sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque
+        malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque.
+        Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam
+        lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur
+        augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis,
+        molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>
+      <b class="+ topic/ph hi-d/b " xtrc="b:1;51:10"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">This class is also known by
+        these names:</b>
+      <simpletable class="- topic/simpletable " outputclass="table table-striped table-sm"
+        relcolwidth="1* 2*" xtrc="simpletable:1;52:83"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+        <sthead class="- topic/sthead " outputclass="thead-light" xtrc="sthead:1;53:43"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <stentry class="- topic/stentry " xtrc="stentry:1;54:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Context</stentry>
+          <stentry class="- topic/stentry " xtrc="stentry:2;55:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Alias</stentry>
         </sthead>
-        <strow class="- topic/strow " xtrc="strow:1;57:16" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <stentry class="- topic/stentry " xtrc="stentry:3;58:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Also known as</stentry>
-          <stentry class="- topic/stentry " xtrc="stentry:4;59:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">MEDICAL DOCTOR</stentry>
+        <strow class="- topic/strow " xtrc="strow:1;57:16"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <stentry class="- topic/stentry " xtrc="stentry:3;58:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Also known as</stentry>
+          <stentry class="- topic/stentry " xtrc="stentry:4;59:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">MEDICAL DOCTOR</stentry>
         </strow>
-        <strow class="- topic/strow " xtrc="strow:2;61:16" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <stentry class="- topic/stentry " xtrc="stentry:5;62:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Plural</stentry>
-          <stentry class="- topic/stentry " xtrc="stentry:6;63:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">GENERAL MEDICAL PRACTITIONERS</stentry>
+        <strow class="- topic/strow " xtrc="strow:2;61:16"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <stentry class="- topic/stentry " xtrc="stentry:5;62:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Plural</stentry>
+          <stentry class="- topic/stentry " xtrc="stentry:6;63:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">GENERAL MEDICAL
+            PRACTITIONERS</stentry>
         </strow>
       </simpletable>
     </section>
-    <section class="- topic/section " xtrc="section:2;67:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-      <title class="- topic/title " xtrc="title:3;68:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Attributes</title>
-      <simpletable class="- topic/simpletable " outputclass="table table-striped table-sm" relcolwidth="3* 2*" xtrc="simpletable:2;69:83" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-        <sthead class="- topic/sthead " outputclass="thead-light" xtrc="sthead:2;70:43" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <stentry class="- topic/stentry " xtrc="stentry:7;71:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Attribute Name</stentry>
-          <stentry class="- topic/stentry " xtrc="stentry:8;72:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Attribute Type</stentry>
+    <section class="- topic/section " xtrc="section:2;67:14"
+      xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+      <title class="- topic/title " xtrc="title:3;68:14"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Attributes</title>
+      <simpletable class="- topic/simpletable " outputclass="table table-striped table-sm"
+        relcolwidth="3* 2*" xtrc="simpletable:2;69:83"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+        <sthead class="- topic/sthead " outputclass="thead-light" xtrc="sthead:2;70:43"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <stentry class="- topic/stentry " xtrc="stentry:7;71:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Attribute Name</stentry>
+          <stentry class="- topic/stentry " xtrc="stentry:8;72:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Attribute Type</stentry>
         </sthead>
-        <strow class="- topic/strow " xtrc="strow:3;74:16" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <stentry class="- topic/stentry " outputclass="class" xtrc="stentry:9;75:40" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">GENERAL MEDICAL COUNCIL REFERENCE NUMBER</stentry>
-          <stentry class="- topic/stentry " outputclass="attribute" xtrc="stentry:10;76:44" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Default String</stentry>
+        <strow class="- topic/strow " xtrc="strow:3;74:16"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <stentry class="- topic/stentry " outputclass="class" xtrc="stentry:9;75:40"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">GENERAL MEDICAL COUNCIL
+            REFERENCE NUMBER</stentry>
+          <stentry class="- topic/stentry " outputclass="attribute" xtrc="stentry:10;76:44"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Default String</stentry>
         </strow>
-        <strow class="- topic/strow " xtrc="strow:4;78:16" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <stentry class="- topic/stentry " outputclass="dataSet" xtrc="stentry:11;79:42" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">GENERAL MEDICAL PRACTITIONER PPD CODE</stentry>
-          <stentry class="- topic/stentry " outputclass="businessDefinition" xtrc="stentry:12;80:53" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Default String</stentry>
+        <strow class="- topic/strow " xtrc="strow:4;78:16"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <stentry class="- topic/stentry " outputclass="dataSet" xtrc="stentry:11;79:42"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">GENERAL MEDICAL
+            PRACTITIONER PPD CODE</stentry>
+          <stentry class="- topic/stentry " outputclass="businessDefinition" xtrc="stentry:12;80:53"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Default String</stentry>
         </strow>
-        <strow class="- topic/strow " xtrc="strow:5;82:16" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <stentry class="- topic/stentry " xtrc="stentry:13;83:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">DOCTOR INDEX NUMBER</stentry>
-          <stentry class="- topic/stentry " xtrc="stentry:14;84:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Default String</stentry>
+        <strow class="- topic/strow " xtrc="strow:5;82:16"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <stentry class="- topic/stentry " xtrc="stentry:13;83:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">DOCTOR INDEX
+            NUMBER</stentry>
+          <stentry class="- topic/stentry " xtrc="stentry:14;84:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Default String</stentry>
         </strow>
       </simpletable>
     </section>
-    <section class="- topic/section " xtrc="section:3;88:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-      <title class="- topic/title " xtrc="title:4;89:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Relationships</title>
-      <p class="- topic/p " xtrc="p:3;90:10" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p class="- topic/p " xtrc="p:4;95:10" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et
-        commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.
-        Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec
-        lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est
-        euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec
-        fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget,
-        consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing
-        sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu.
-        Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean
-        magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea
-        dictumst.</p>
+    <section class="- topic/section " xtrc="section:3;88:14"
+      xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+      <title class="- topic/title " xtrc="title:4;89:14"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Relationships</title>
+      <p class="- topic/p " xtrc="p:3;90:10"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"> Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+        in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p class="- topic/p " xtrc="p:4;95:10"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Curabitur pretium tincidunt
+        lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros
+        bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod
+        gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam
+        tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt
+        sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque
+        malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque.
+        Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam
+        lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur
+        augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis,
+        molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>
     </section>
-    <section class="- topic/section " xtrc="section:4;107:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-      <title class="- topic/title " xtrc="title:5;108:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Where Used</title>
-      <p class="- topic/p " xtrc="p:5;109:10" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p class="- topic/p " xtrc="p:6;114:10" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et
-        commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.
-        Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec
-        lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est
-        euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec
-        fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget,
-        consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing
-        sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu.
-        Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean
-        magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea
-        dictumst.</p>
+    <section class="- topic/section " xtrc="section:4;107:14"
+      xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+      <title class="- topic/title " xtrc="title:5;108:14"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Where Used</title>
+      <p class="- topic/p " xtrc="p:5;109:10"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+        in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p class="- topic/p " xtrc="p:6;114:10"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Curabitur pretium tincidunt
+        lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros
+        bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod
+        gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam
+        tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt
+        sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque
+        malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque.
+        Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam
+        lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur
+        augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis,
+        molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>
     </section>
-    <section class="- topic/section " xtrc="section:5;126:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-      <title class="- topic/title " xtrc="title:6;127:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Description</title>
-      <dl class="- topic/dl " xtrc="dl:1;128:11" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-        <dlentry class="- topic/dlentry " xtrc="dlentry:1;129:18" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <dt class="- topic/dt " xtrc="dt:1;130:15" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Format / Length</dt>
-          <dd class="- topic/dd " xtrc="dd:1;131:15" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">max an12</dd>
+    <section class="- topic/section " xtrc="section:5;126:14"
+      xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+      <title class="- topic/title " xtrc="title:6;127:14"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Description</title>
+      <dl class="- topic/dl " xtrc="dl:1;128:11"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+        <dlentry class="- topic/dlentry " xtrc="dlentry:1;129:18"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <dt class="- topic/dt " xtrc="dt:1;130:15"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Format / Length</dt>
+          <dd class="- topic/dd " xtrc="dd:1;131:15"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">max an12</dd>
         </dlentry>
       </dl>
-      
-      <p class="- topic/p " xtrc="p:7;135:10" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-        <xref class="- topic/xref " keyref="me" outputclass="element" xtrc="xref:1;136:49" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"><?ditaot usertext?>WARD CODE</xref>
-         is the same as attribute 
-        <xref class="- topic/xref " keyref="me" outputclass="attribute" xtrc="xref:2;138:51" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"><?ditaot usertext?>WARD CODE</xref>
-        .  </p>
-      <p class="- topic/p " xtrc="p:8;140:10" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-        
-      
-      
-      
-      <b class="+ topic/ph hi-d/b " xtrc="b:2;145:10" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">This data element is also known by these names:</b>
+
+      <p class="- topic/p " xtrc="p:7;135:10"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+        <xref class="- topic/xref " keyref="me" outputclass="element" xtrc="xref:1;136:49"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"><?ditaot usertext?>WARD
+          CODE</xref>  is the same as attribute <xref class="- topic/xref " keyref="me"
+          outputclass="attribute" xtrc="xref:2;138:51"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"><?ditaot usertext?>WARD
+          CODE</xref> . </p>
+      <p class="- topic/p " xtrc="p:8;140:10"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+
+
+
+
+        <b class="+ topic/ph hi-d/b " xtrc="b:2;145:10"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">This data element is also
+          known by these names:</b>
       </p>
-      
-      <simpletable class="- topic/simpletable " outputclass="table table-striped table-sm" relcolwidth="1* 2*" xtrc="simpletable:3;148:83" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-        <sthead class="- topic/sthead " outputclass="thead-light" xtrc="sthead:3;149:43" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <stentry class="- topic/stentry " xtrc="stentry:15;150:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Context</stentry>
-          <stentry class="- topic/stentry " xtrc="stentry:16;151:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Alias</stentry>
+
+      <simpletable class="- topic/simpletable " outputclass="table table-striped table-sm"
+        relcolwidth="1* 2*" xtrc="simpletable:3;148:83"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+        <sthead class="- topic/sthead " outputclass="thead-light" xtrc="sthead:3;149:43"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <stentry class="- topic/stentry " xtrc="stentry:15;150:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Context</stentry>
+          <stentry class="- topic/stentry " xtrc="stentry:16;151:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Alias</stentry>
         </sthead>
-        <strow class="- topic/strow " xtrc="strow:6;153:16" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <stentry class="- topic/stentry " xtrc="stentry:17;154:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Plural</stentry>
-          <stentry class="- topic/stentry " xtrc="stentry:18;155:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">WARD CODES</stentry>
+        <strow class="- topic/strow " xtrc="strow:6;153:16"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <stentry class="- topic/stentry " xtrc="stentry:17;154:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Plural</stentry>
+          <stentry class="- topic/stentry " xtrc="stentry:18;155:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">WARD CODES</stentry>
         </strow>
       </simpletable>
     </section>
-    <section class="- topic/section " xtrc="section:6;159:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-      <title class="- topic/title " xtrc="title:7;160:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Where Used</title>
-      <simpletable class="- topic/simpletable " outputclass="table table-striped table-sm" relcolwidth="1* 3* 2*" xtrc="simpletable:4;161:86" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-        <sthead class="- topic/sthead " outputclass="thead-light" xtrc="sthead:4;162:43" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <stentry class="- topic/stentry " xtrc="stentry:19;163:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Type</stentry>
-          <stentry class="- topic/stentry " xtrc="stentry:20;164:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Link</stentry>
-          <stentry class="- topic/stentry " xtrc="stentry:21;165:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">How used</stentry>
+    <section class="- topic/section " xtrc="section:6;159:14"
+      xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+      <title class="- topic/title " xtrc="title:7;160:14"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Where Used</title>
+      <simpletable class="- topic/simpletable " outputclass="table table-striped table-sm"
+        relcolwidth="1* 3* 2*" xtrc="simpletable:4;161:86"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+        <sthead class="- topic/sthead " outputclass="thead-light" xtrc="sthead:4;162:43"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <stentry class="- topic/stentry " xtrc="stentry:19;163:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Type</stentry>
+          <stentry class="- topic/stentry " xtrc="stentry:20;164:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Link</stentry>
+          <stentry class="- topic/stentry " xtrc="stentry:21;165:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">How used</stentry>
         </sthead>
-        <strow class="- topic/strow " xtrc="strow:7;167:16" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <stentry class="- topic/stentry " xtrc="stentry:22;168:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Data Element</stentry>
-          <stentry class="- topic/stentry " xtrc="stentry:23;169:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-            <xref class="- topic/xref " keyref="me" outputclass="element" xtrc="xref:3;170:55" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"><?ditaot usertext?></xref>
+        <strow class="- topic/strow " xtrc="strow:7;167:16"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <stentry class="- topic/stentry " xtrc="stentry:22;168:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Data Element</stentry>
+          <stentry class="- topic/stentry " xtrc="stentry:23;169:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+            <xref class="- topic/xref " keyref="me" outputclass="element" xtrc="xref:3;170:55"
+              xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"
+              ><?ditaot usertext?></xref>
           </stentry>
-          <stentry class="- topic/stentry " xtrc="stentry:24;172:20" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">references in description WARD CODE</stentry>
+          <stentry class="- topic/stentry " xtrc="stentry:24;172:20"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">references in description
+            WARD CODE</stentry>
         </strow>
       </simpletable>
     </section>
-    <section class="- topic/section " xtrc="section:7;176:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-      <title class="- topic/title " xtrc="title:8;177:14" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Attribute</title>
-      <ul class="- topic/ul " xtrc="ul:1;178:11" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-        <li class="- topic/li " xtrc="li:1;179:13" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
-          <xref class="- topic/xref " keyref="me" outputclass="attribute" xtrc="xref:4;180:55" xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"><?ditaot usertext?></xref>
+    <section class="- topic/section " xtrc="section:7;176:14"
+      xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+      <title class="- topic/title " xtrc="title:8;177:14"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">Attribute</title>
+      <ul class="- topic/ul " xtrc="ul:1;178:11"
+        xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+        <li class="- topic/li " xtrc="li:1;179:13"
+          xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita">
+          <xref class="- topic/xref " keyref="me" outputclass="attribute" xtrc="xref:4;180:55"
+            xtrf="file:/C:/GIT/DITAStyleSheets/ExampleDITA/example.dita"><?ditaot usertext?></xref>
         </li>
       </ul>
     </section>

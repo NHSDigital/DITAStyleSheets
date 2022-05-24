@@ -9,7 +9,7 @@ Copyright (c) 1998-2020 Syncro Soft SRL, Romania.  All rights reserved.
 @import "syntax-highlight.css?buildId=2020091713";
 @import "print.css?buildId=2020091713";
 
-#wh_print_link{
+#wh_print_link {
     margin-left: 5px;
     cursor: pointer;
     font-size: larger;
@@ -18,8 +18,8 @@ Copyright (c) 1998-2020 Syncro Soft SRL, Romania.  All rights reserved.
     line-height: 16px;
 }
 
-#myPassword, #myUserName{
-  width:100%;  
+#myPassword,
+#myUserName {
+    width: 100%;
 }
 
-	 

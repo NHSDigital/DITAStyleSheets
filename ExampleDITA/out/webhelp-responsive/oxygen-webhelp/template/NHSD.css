@@ -18,43 +18,43 @@
 /* Breadcrumbs */
 /*  Fonts */
 body {
-  background: #f0f4f5;
-  font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
-  text-rendering: optimizeLegibility;
+    background: #f0f4f5;
+    font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
+    text-rendering: optimizeLegibility;
 }
 /*  Set the default colour for links to NHS blue */
 a {
-  color: #005eb8;
-  text-decoration: underline;
+    color: #005eb8;
+    text-decoration: underline;
 }
 a:hover {
-  color: #003087 !important;
-  background: #ffb81c !important;
-  text-decoration: underline;
+    color: #003087 !important;
+    background: #ffb81c !important;
+    text-decoration: underline;
 }
 a:focus {
-  border-width: 3px;
+    border-width: 3px;
 }
 .banner {
-  text-align: center;
-  font-size: large;
-  color: #ffffff;
-  background-color: #8a1538;
+    text-align: center;
+    font-size: large;
+    color: #ffffff;
+    background-color: #8a1538;
 }
 .ISOcert {
-  float: right;
-  margin: 30px;
+    float: right;
+    margin: 30px;
 }
 .wh_right_tools,
 .wh_print_link {
-  padding-left: 20px;
+    padding-left: 20px;
 }
 .permalink {
-  opacity: 0.9;
+    opacity: 0.9;
 }
 /* Bootstrap override */
 .bg-info {
-  background-color: #d4e4f3;
+    background-color: #d4e4f3;
 }
 /* Data Dictionary styles */
 .element:after,
@@ -66,122 +66,122 @@ a:focus {
 .supportingDefinition:after,
 .supportingInformation:after,
 .xmlSchemaConstraint:after {
-  border-width: thin;
-  border-style: solid;
-  background-color: white;
-  border-radius: 5px;
-  border-width: 1px;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-left: 2px;
-  font-weight: bold;
+    border-width: thin;
+    border-style: solid;
+    background-color: white;
+    border-radius: 5px;
+    border-width: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: 2px;
+    font-weight: bold;
 }
 .element {
-  color: #006747;
-  font-weight: bold;
+    color: #006747;
+    font-weight: bold;
 }
 .element:after {
-  color: #006747;
-  border-color: #006747;
-  content: 'e';
+    color: #006747;
+    border-color: #006747;
+    content: 'e';
 }
 .attribute {
-  color: #330072;
-  font-weight: bold;
+    color: #330072;
+    font-weight: bold;
 }
 .attribute:after {
-  color: #330072;
-  border-color: #330072;
-  content: 'a';
+    color: #330072;
+    border-color: #330072;
+    content: 'a';
 }
 .class {
-  color: #8a1538;
-  font-weight: bold;
+    color: #8a1538;
+    font-weight: bold;
 }
 .class:after {
-  color: #8a1538;
-  border-color: #8a1538;
-  content: 'c';
+    color: #8a1538;
+    border-color: #8a1538;
+    content: 'c';
 }
-a[data-id*="classes"] {
-  color: #8a1538;
-  font-weight: bold;
+a[data-id *= "classes"] {
+    color: #8a1538;
+    font-weight: bold;
 }
 .dataSet {
-  color: #ed8b00;
-  font-weight: bold;
+    color: #ed8b00;
+    font-weight: bold;
 }
 .dataSet:after {
-  color: #ed8b00;
-  border-color: #ed8b00;
-  content: 'ds';
+    color: #ed8b00;
+    border-color: #ed8b00;
+    content: 'ds';
 }
 .businessDefinition {
-  color: #003087;
-  font-weight: bold;
+    color: #003087;
+    font-weight: bold;
 }
 .businessDefinition:after {
-  color: #003087;
-  border-color: #003087;
-  content: 'bd';
+    color: #003087;
+    border-color: #003087;
+    content: 'bd';
 }
 .supportingDefinition {
-  color: #003087;
-  font-weight: normal;
+    color: #003087;
+    font-weight: normal;
 }
 .supportingDefinition:after {
-  color: #003087;
-  border-color: #003087;
-  content: 'def';
+    color: #003087;
+    border-color: #003087;
+    content: 'def';
 }
 .supportingInformation {
-  color: #003087;
-  font-weight: normal;
+    color: #003087;
+    font-weight: normal;
 }
 .supportingInformation:after {
-  color: #003087;
-  border-color: #003087;
-  content: 'i';
+    color: #003087;
+    border-color: #003087;
+    content: 'i';
 }
 .xmlSchemaConstraint {
-  color: #003087;
-  font-weight: normal;
+    color: #003087;
+    font-weight: normal;
 }
 .xmlSchemaConstraint:after {
-  color: #003087;
-  border-color: #003087;
-  content: '\{...\}';
+    color: #003087;
+    border-color: #003087;
+    content: '\{...\}';
 }
 .retired {
-  background-color: #dfe2e5;
-  color: black;
-  font-weight: normal;
+    background-color: #dfe2e5;
+    color: black;
+    font-weight: normal;
 }
 tr.retired {
-  color: #425563;
+    color: #425563;
 }
 .shortdesc {
-  background-color: #ffffff;
-  color: #003087;
-  font-size: large;
-  border-radius: 3px;
-  padding: 1em 1em 1em 1em;
+    background-color: #ffffff;
+    color: #003087;
+    font-size: large;
+    border-radius: 3px;
+    padding: 1em 1em 1em 1em;
 }
 /*  Oxygen styles */
 /* Title and logo bar
  * 
  */
 .wh_header {
-  background-color: #ffffff;
-  color: #005eb8;
-  padding: 0em;
+    background-color: #ffffff;
+    color: #005eb8;
+    padding: 0em;
 }
 /* Webhelp mobile burger menu 
  * 
  */
 .wh_toggle_button {
-  background-color: #003087;
-  color: white;
+    background-color: #003087;
+    color: white;
 }
 /*
  * ------------------------------------------------------------------
@@ -190,24 +190,24 @@ tr.retired {
  *  
  */
 .wh_publication_title {
-  font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
-  text-transform: none;
-  font-size: 28px;
+    font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
+    text-transform: none;
+    font-size: 28px;
 }
 .wh_publication_title > a {
-  font-size: 1.5em;
-  text-decoration: underline;
-  color: #005eb8;
-  margin: 0em;
+    font-size: 1.5em;
+    text-decoration: underline;
+    color: #005eb8;
+    margin: 0em;
 }
 .wh_publication_title > a:hover {
-  color: #003087;
-  background: #ffb81c;
+    color: #003087;
+    background: #ffb81c;
 }
 .wh_logo img {
-  width: 73px;
-  height: 30px;
-  margin: 30px;
+    width: 73px;
+    height: 30px;
+    margin: 30px;
 }
 /*
  * ------------------------------------------------------------------
@@ -216,44 +216,44 @@ tr.retired {
  *  
  */
 .wh_top_menu {
-  font-size: 1.1em;
-  margin: 0.4em 0;
-  color: #005eb8;
+    font-size: 1.1em;
+    margin: 0.4em 0;
+    color: #005eb8;
 }
 .wh_top_menu > a {
-  color: #005eb8;
+    color: #005eb8;
 }
 .wh_top_menu > a:hover {
-  color: #ffffff;
+    color: #ffffff;
 }
 /* The submenus */
 .wh_top_menu ul ul {
-  background: #003087;
-  color: white;
+    background: #003087;
+    color: white;
 }
 .wh_top_menu ul ul > a {
-  background: #003087;
-  color: #ffffff;
+    background: #003087;
+    color: #ffffff;
 }
 .wh_top_menu ul li a {
-  color: #005eb8;
-  text-decoration: underline;
+    color: #005eb8;
+    text-decoration: underline;
 }
 .wh_top_menu ul li a:hover {
-  background: #003087;
-  color: #ffffff;
+    background: #003087;
+    color: #ffffff;
 }
 .wh_top_menu ul ul li a:hover {
-  background: #003087;
-  color: #ffffff;
+    background: #003087;
+    color: #ffffff;
 }
 .wh_top_menu ul ul li {
-  background: #003087;
-  color: #ffffff;
+    background: #003087;
+    color: #ffffff;
 }
 .wh_top_menu ul ul li a {
-  background: #003087;
-  color: #ffffff;
+    background: #003087;
+    color: #ffffff;
 }
 /*
  * ------------------------------------------------------------------
@@ -262,12 +262,12 @@ tr.retired {
  * 
  */
 .wh_indexterms_link a span {
-  display: none;
+    display: none;
 }
-@media only screen and (max-width: 767px) {
-  .wh_indexterms_link a:before {
-    bottom: 0;
-  }
+@media only screen and (max-width : 767px) {
+    .wh_indexterms_link a:before {
+        bottom: 0;
+    }
 }
 /*
  * ------------------------------------------------------------------
@@ -276,16 +276,16 @@ tr.retired {
  *  
  */
 .wh_breadcrumb ol {
-  background-color: #003087;
-  color: #ffffff;
-  font-weight: bold;
+    background-color: #003087;
+    color: #ffffff;
+    font-weight: bold;
 }
 .wh_breadcrumb ol a {
-  color: #ffffff;
+    color: #ffffff;
 }
 .wh_breadcrumb ol .active {
-  background-color: #003087;
-  color: #ffb81c;
+    background-color: #003087;
+    color: #ffb81c;
 }
 /*
  * ------------------------------------------------------------------
@@ -294,8 +294,8 @@ tr.retired {
  * 
  */
 .wh_tools {
-  background-color: #003087;
-  margin: 1em 0 2em;
+    background-color: #003087;
+    margin: 1em 0 2em;
 }
 .wh_print_link button,
 .webhelp_expand_collapse_sections,
@@ -309,12 +309,12 @@ tr.retired {
 .wh_navigation_links a:hover:before,
 .wh_navigation_links a:active:before,
 .wh_navigation_links a:visited:before {
-  color: #ffb81c;
-  text-decoration: underline;
+    color: #ffb81c;
+    text-decoration: underline;
 }
 /* Introductory Text Before ToC or Tiles */
 .before_toc_or_tiles {
-  padding: 2em;
+    padding: 2em;
 }
 /*
  * ------------------------------------------------------------------
@@ -323,36 +323,36 @@ tr.retired {
  * 
  */
 .wh_tile {
-  border-radius: 0em;
-  border-color: #005eb8;
-  border-style: solid;
-  border-width: 8px;
-  background-color: #ffffff;
+    border-radius: 0em;
+    border-color: #005eb8;
+    border-style: solid;
+    border-width: 8px;
+    background-color: #ffffff;
 }
 .wh_tile_shortdesc {
-  margin-top: 0.5em;
-  font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
-  text-align: left;
-  color: #425563;
+    margin-top: 0.5em;
+    font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
+    text-align: left;
+    color: #425563;
 }
 .wh_tile_title {
-  color: #425563;
-  font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
-  text-align: left;
-  font-size: 1.1em;
-  text-decoration: none;
-  font-weight: bold;
+    color: #425563;
+    font-family: 'Frutiger W01', Helvetica, Arial, Sans-serif;
+    text-align: left;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: bold;
 }
 .wh_tile_title a {
-  color: #425563;
+    color: #425563;
 }
 .wh_tile_text:after {
-  background: linear-gradient(to bottom, rgba(238, 238, 238, 0), #eeeeee 50%);
+    background: linear-gradient(to bottom, rgba(238, 238, 238, 0), #eeeeee 50%);
 }
-@media only screen and (max-width: 767px) {
-  .wh_tile > div {
-    height: auto;
-  }
+@media only screen and (max-width : 767px) {
+    .wh_tile > div {
+        height: auto;
+    }
 }
 /* 
 You can style some of the tiles in a special way. 
@@ -368,80 +368,80 @@ Example:
  * 
  */
 .wh_search_input {
-  background-color: #005eb8;
-  color: white;
-  margin: 0 0;
-  padding: 0.4em;
-  border-color: #005eb8;
+    background-color: #005eb8;
+    color: white;
+    margin: 0 0;
+    padding: 0.4em;
+    border-color: #005eb8;
 }
 .wh_welcome:not(:empty) {
-  font-size: 1em;
-  text-align: center;
-  margin: 0 auto;
-  padding: 0 0 0.5em 0;
-  text-shadow: none;
-  color: white;
+    font-size: 1em;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 0 0.5em 0;
+    text-shadow: none;
+    color: white;
 }
 .wh_search_textfield {
-  color: #425563;
-  background-color: white;
-  border: solid 4px #003087;
-  border-radius: 0;
-  padding: 0 0.5em;
-  font-size: 1.2em;
-  line-height: 2em;
-  height: auto;
+    color: #425563;
+    background-color: white;
+    border: solid 4px #003087;
+    border-radius: 0;
+    padding: 0 0.5em;
+    font-size: 1.2em;
+    line-height: 2em;
+    height: auto;
 }
 .wh_search_textfield:focus {
-  border: solid 4px #ffb81c;
+    border: solid 4px #ffb81c;
 }
 .wh_search_button {
-  border: solid 4px #003087;
-  border-radius: 0 0 0 0;
-  padding: 0.5em 1em;
-  background-color: #003087;
-  color: #ffffff;
+    border: solid 4px #003087;
+    border-radius: 0 0 0 0;
+    padding: 0.5em 1em;
+    background-color: #003087;
+    color: #ffffff;
 }
 /* Search autocomplete */
 .ui-menu-item {
-  font-size: 1.4em;
+    font-size: 1.4em;
 }
 .ui-menu-item .ui-state-active {
-  background-color: #346ec5;
+    background-color: #346ec5;
 }
 /*  Nicholas: burger menu toggler */
 .custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 .custom-toggler {
-  border-color: #ffb81c;
+    border-color: #ffb81c;
 }
 .navbar-dark .navbar-toggler {
-  color: #005eb8;
-  border-color: #005eb8;
+    color: #005eb8;
+    border-color: #005eb8;
 }
 /* Search relative path */
 .searchresult li .relativePath a {
-  color: #006621;
+    color: #006621;
 }
 /* Search autocomplete icons */
 .search-autocomplete-proposal-type-history a,
 .search-autocomplete-proposal-type-history a:hover,
 .search-autocomplete-proposal-type-history a:visited,
 .search-autocomplete-proposal-type-history a:active {
-  text-decoration: none;
-  color: inherit;
-  font-size: 0.8em;
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.8em;
 }
 .ui-state-active .search-autocomplete-proposal-type-history a,
 .ui-state-active .search-autocomplete-proposal-type-history a:hover,
 .ui-state-active .search-autocomplete-proposal-type-history a:visited,
 .ui-state-active .search-autocomplete-proposal-type-history a:active {
-  color: #fff;
+    color: #fff;
 }
 /* Active search page */
 #wh-search-pagination > ul > li.active > a {
-  background-color: #330072;
+    background-color: #330072;
 }
 .pagination > .active > a,
 .pagination > .active > a:focus,
@@ -449,7 +449,7 @@ Example:
 .pagination > .active > span,
 .pagination > .active > span:focus,
 .pagination > .active > span:hover {
-  border-color: #346ec5 !important;
+    border-color: #346ec5 !important;
 }
 /*
  * ------------------------------------------------------------------
@@ -458,35 +458,35 @@ Example:
  * 
  */
 .wh_publication_toc {
-  border-radius: 3px;
-  border-color: #003087;
-  border-width: thin;
-  background-color: #e8edee;
-  color: #003087;
-  padding: 1.5em 2em;
-  line-height: 2em;
+    border-radius: 3px;
+    border-color: #003087;
+    border-width: thin;
+    background-color: #e8edee;
+    color: #003087;
+    padding: 1.5em 2em;
+    line-height: 2em;
 }
 .wh_publication_toc .active > .topicref a {
-  font-weight: bold;
+    font-weight: bold;
 }
 .wh_publication_toc span,
 .wh_publication_toc a,
 .wh_publication_toc a:visited,
 .wh_publication_toc a:hover {
-  color: #003087;
+    color: #003087;
 }
 .wh_publication_toc a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 .topictitle3 {
-  font-weight: 400;
+    font-weight: 400;
 }
-@media only screen and (max-width: 767px) {
-  .wh_publication_toc {
-    border-radius: 0;
-    padding: 1em 0.5em;
-    margin-top: 10px;
-  }
+@media only screen and (max-width : 767px) {
+    .wh_publication_toc {
+        border-radius: 0;
+        padding: 1em 0.5em;
+        margin-top: 10px;
+    }
 }
 /*
  * ------------------------------------------------------------------
@@ -495,12 +495,12 @@ Example:
  * 
  */
 .wh_footer {
-  text-align: left;
-  padding: 0.5em;
-  clear: both;
-  background-color: #d4e4f3;
-  color: #003087;
-  width: 100%;
+    text-align: left;
+    padding: 0.5em;
+    clear: both;
+    background-color: #d4e4f3;
+    color: #003087;
+    width: 100%;
 }
 /*
  * ------------------------------------------------------------------
@@ -510,21 +510,21 @@ Example:
  */
 .wh_topic_content,
 .wh_content_area {
-  color: #000000;
-  line-height: 1.7em;
+    color: #000000;
+    line-height: 1.7em;
 }
 .wh_related_links,
 .wh_child_links,
 .wh_topic_content .related-links {
-  background-color: #dfe2e5;
-  padding: 1.5em;
-  margin-top: 1.5em;
+    background-color: #dfe2e5;
+    padding: 1.5em;
+    margin-top: 1.5em;
 }
 .related-links a,
 .related-links a:visited {
-  color: #005eb8;
-  padding-bottom: 0.3em;
-  display: inline-block;
+    color: #005eb8;
+    padding-bottom: 0.3em;
+    display: inline-block;
 }
 /*
  * ------------------------------------------------------------------
@@ -533,16 +533,16 @@ Example:
  * 
  */
 .searchresult {
-  list-style: none;
+    list-style: none;
 }
 .searchresult li a {
-  color: #003087;
+    color: #003087;
 }
 .searchresult .shortdesclink {
-  margin: 0.3em 0.5em 0 0;
+    margin: 0.3em 0.5em 0 0;
 }
 .wh_search_expression {
-  font-weight: bold;
+    font-weight: bold;
 }
 /*
  * ------------------------------------------------------------------
@@ -551,10 +551,10 @@ Example:
  * 
  */
 .wh_index_terms span.wh_first_letter {
-  color: #003087;
+    color: #003087;
 }
 .wh_index_terms #indexList {
-  padding: 0;
+    padding: 0;
 }
 /*
  * ------------------------------------------------------------------
@@ -568,21 +568,21 @@ Example:
  * 
  */
 section.section {
-  border: none;
-  padding: 0.5em 1em 1em 1em;
-  background-color: inherit;
+    border: none;
+    padding: 0.5em 1em 1em 1em;
+    background-color: inherit;
 }
 h2.sectiontitle {
-  font-size: 150%;
-  font-weight: normal;
-  margin-bottom: 1em;
-  margin-top: 0.2em;
+    font-size: 150%;
+    font-weight: normal;
+    margin-bottom: 1em;
+    margin-top: 0.2em;
 }
 span.wh_expand_btn {
-  left: 0.7em;
-  color: #ffb81c;
-  border: none;
-  font-weight: 800;
+    left: 0.7em;
+    color: #ffb81c;
+    border: none;
+    font-weight: 800;
 }
 /* 
  * 
@@ -590,18 +590,18 @@ span.wh_expand_btn {
  * 
  */
 .table {
-  border: 1px solid #425563 !important;
-  margin-left: 0;
+    border: 1px solid #425563 !important;
+    margin-left: 0;
 }
 .table .thead-light {
-  background-color: #003087 !important;
-  color: white;
-  border: 1px solid #425563 !important;
+    background-color: #003087 !important;
+    color: white;
+    border: 1px solid #425563 !important;
 }
 .table .thead-light th {
-  background-color: #003087 !important;
-  color: white;
-  border: 1px solid #425563 !important;
+    background-color: #003087 !important;
+    color: white;
+    border: 1px solid #425563 !important;
 }
 /* 
  * 

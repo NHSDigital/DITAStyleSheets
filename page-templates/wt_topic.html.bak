@@ -1,0 +1,105 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components" whc:version="21.1">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet"  type="text/css" 
+            href="${oxygen-webhelp-assets-dir}/lib/bootstrap/css/bootstrap.min.css" />
+
+        <link rel="stylesheet" href="${oxygen-webhelp-assets-dir}/lib/jquery-ui/jquery-ui.min.css" />
+
+        <!-- Template default styles  -->
+        <link rel="stylesheet" type="text/css"
+              href="${oxygen-webhelp-assets-dir}/app/topic-page.css?buildId=${oxygen-webhelp-build-number}" />
+        
+
+        <script type="text/javascript" src="${oxygen-webhelp-assets-dir}/lib/jquery/jquery-3.4.1.min.js"><!----></script>
+
+        <script data-main="${oxygen-webhelp-assets-dir}/app/topic-page.js"
+                src="${oxygen-webhelp-assets-dir}/lib/requirejs/require.js"></script>
+        
+        <!-- Skin resources -->
+        <whc:webhelp_skin_resources/>
+        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        <whc:include_html href="${args.hdf}"/>
+        <whc:include_html href="${webhelp.fragment.head}"/>
+    </head>
+
+    <body class="wh_topic_page">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable"><whc:macro value="${i18n(jump.to.content)}" /></a>
+        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+        <whc:include_html href="${args.hdr}"/>
+        <whc:include_html href="${webhelp.fragment.before.body}"/>
+        
+        <whc:include_html href="${webhelp.fragment.header}"/>
+        
+        <whc:webhelp_search_input/>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md">
+                    <whc:webhelp_breadcrumb/>
+
+                    <div class="wh_right_tools">
+                        <whc:webhelp_toggle_highlight/>
+                        <whc:webhelp_expand_collapse_sections/>
+                        <whc:webhelp_navigation_links/>
+                        <whc:webhelp_print_link class="print d-none d-md-inline-block"/>
+                        
+                        <!-- Expand/Collapse publishing TOC 
+                             The menu button for mobile devices is copied in the output only when the publication TOC is available
+                        -->
+                        <button type="button" data-target="#wh_publication_toc" id="wh_toc_button"
+                            data-toggle="collapse" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false"
+                            aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="wh_content_area">
+                <div class="row">
+                    <whc:webhelp_publication_toc data-tooltip-position="${webhelp.publication.toc.tooltip.position}">
+                        <nav role="navigation"  id="wh_publication_toc" 
+                            class="collapse col-lg-3 col-md-3 col-sm-12 d-md-block">
+                            <whc:component_content/>
+                        </nav>
+                    </whc:webhelp_publication_toc>
+                    
+                    <div id="wh_topic_body" class="col-lg-7 col-md-9 col-sm-12">
+                        <whc:webhelp_topic_content class="body"/>
+                        <whc:webhelp_child_links/>
+                        <whc:webhelp_related_links/>
+                        <whc:webhelp_feedback/>
+                        <whc:include_html href="${webhelp.fragment.feedback}"/>
+                    </div>
+                    <whc:webhelp_topic_toc>
+                        <nav role="navigation"  id="wh_topic_toc" 
+                            class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <whc:component_content/>
+                        </nav>
+                    </whc:webhelp_topic_toc>
+                </div>
+            </div>
+        </div> 
+        <whc:include_html href="footer.xml"/>
+        
+        <div id="go2top">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <!-- The modal container for images -->
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="modal-img"/>
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        
+        <whc:include_html href="${webhelp.fragment.after.body}"/>
+    </body>
+</html>

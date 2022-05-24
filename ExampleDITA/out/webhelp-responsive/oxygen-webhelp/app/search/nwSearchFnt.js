@@ -1,75 +1,76 @@
-define(["index", "options", "stemmer", "util"], function(index, options, stemmer, util) {
+define([ "index", "options", "stemmer", "util"], function (index, options, stemmer, util) {
     /*
-
+    
      David Cramer
      <david AT thingbag DOT net>
-
+    
      Kasun Gajasinghe
      <kasunbg AT gmail DOT com>
-
+    
      Copyright © 2008-2012 Kasun Gajasinghe, David Cramer
-
+    
      Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
+    
      1. The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
+    
      2. Except as contained in this notice, the names of individuals credited with contribution to this software shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Software without prior written authorization from the individuals in question.
-
+    
      3. Any stylesheet derived from this Software that is publicly distributed will be identified with a different name and the version strings in any derived Software will be changed so that no possibility of confusion between the derived package and this Software will exist.
-
+    
      Warranty: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL DAVID CRAMER, KASUN GAJASINGHE, OR ANY OTHER CONTRIBUTOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
+    
      */
-
-
+    
+    
     /*
      List of modifications added by the Oxygen Webhelp plugin:
-
+    
      1. Make sure the space-separated words from the search query are
      passed to the search function searchSingleWord() in all cases (the
      total number of words can be less than or greater than 10 words).
-
+    
      2. Accept as valid search words a sequence of two words separated
      by ':', '.' or '-'.
-
+    
      3. Convert the search query to lowercase before executing the search.
-
+    
      4. Do not omit words between angle brackets from the title of the
      search results.
-
+    
      5. Normalize search results HREFs and add '#' for no-frames webhelp
-
+    
      6. Keep custom footer in TOC after searching some text
-
+    
      7. Accept as valid search words that contains only 2 characters
-
+    
      */
-
+    
     /**
      * Is set to true when the CJK tokenizer is used.
      * @type {boolean}
      */
     var useCJKTokenizing = false;
-
+    
     /**
      * The map with indexed words.
      *
      * w[word] = topicID*score, topicID*score;
      */
-    var w = {};
-
+    var w = {
+    };
+    
     /**
      * Array with excluded words from search.
      *
      * @type {[string]}
      */
-    var excluded = [];
-
+    var excluded =[];
+    
     /**
      * The search query used in search process, after it was filtered.
      */
     var realSearchQuery;
-
+    
     /**
      * It is true when the user searches for a single word between quotes, like "flower".
      * In this case only this word will be displayed as search result.
@@ -79,7 +80,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      * @type {boolean}
      */
     var singleWordExactMatch = false;
-
+    
     /**
      * It is true when the search query seems to be a part of am URL or file path.
      * For this situation we will search using 'contains' method.
@@ -87,59 +88,57 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      * @type {boolean}
      */
     var searchInsideFilePath = false;
-
+    
     /**
      * It is true when original search expression contains boolean operators.
      *
      * @type {boolean}
      */
     var booleanSearch = false;
-
+    
     /**
      * The default boolean search operator.
      * @type {string}
      */
     var defaultOperator = "or";
-
-
+    
+    
     /**
      * List of all known operators.
      * @type {string[]}
      */
-    var knownOperators = ["and", "or", "not"];
-
+    var knownOperators =[ "and", "or", "not"];
+    
     /**
      * A hashtable which maps stems to query words
      */
-    var stemQueryMap = [];
-
+    var stemQueryMap =[];
+    
     /**
      * A map that contains search results organized by categories.
      *
      * @type {}
      */
-    var resultCategoriesMap = {};
-
+    var resultCategoriesMap = {
+    };
+    
     /**
      * The number of result categories already counted.
      *
      * @type {number}
      */
     var resultCategoriesCount = 0;
-
+    
     /**
      * Arrays with file IDs that were already in search result.
      *
      * @type {Array}
      */
-    var resultCategoriesMapFiles = [];
-
+    var resultCategoriesMapFiles =[];
+    
     var localNote =
-        '<div class="alert alert-warning alert-dismissible fade show" role="alert">'
-        + '<strong>WARNING!</strong> Due to security reasons, the Japanese Morphological Analyzer (Kuromoji) '
-        + 'is disabled while browsing WebHelp output locally. <a href="#" style="font-size: 0.9em"> [ Read more ]</a>'
-        + '</div>';
-
+    '<div class="alert alert-warning alert-dismissible fade show" role="alert">' + '<strong>WARNING!</strong> Due to security reasons, the Japanese Morphological Analyzer (Kuromoji) ' + 'is disabled while browsing WebHelp output locally. <a href="#" style="font-size: 0.9em"> [ Read more ]</a>' + '</div>';
+    
     /**
      * An object describing the topic information. It contains the title of the topic, the relative path to the output directory,
      * the topic's short description.
@@ -155,7 +154,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         this.relativePath = relativePath;
         this.shortDescription = shortDescription;
     }
-
+    
     /**
      * An object describing the search result. It contains a string with the search expression and a list with documents
      * where search terms were found.
@@ -176,7 +175,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         this.originalSearchExpression = originalSearchExpression;
         this.error = errorMsg;
     }
-
+    
     /**
      * An object containing the search result for a single topic/HTML page.
      * Contains pointer to the topicID, title, short description and the list of words that were found.
@@ -200,47 +199,45 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         this.scoring = scoring;
         this.breadcrumb = breadcrumb;
     }
-
+    
     function performSearchDriver(searchQuery, _callback) {
         var indexerLanguage = options.getIndexerLanguage();
-        var useKuromoji = indexerLanguage.indexOf("ja") != -1 && options.getBoolean('webhelp.enable.search.kuromoji.js')
-                && !util.isLocal();
-
+        var useKuromoji = indexerLanguage.indexOf("ja") != -1 && options.getBoolean('webhelp.enable.search.kuromoji.js') && ! util.isLocal();
+        
         if (indexerLanguage.indexOf("ja") != -1 && util.isLocal() && options.getBoolean('webhelp.enable.search.kuromoji.js')) {
-            var note = $('<div/>').addClass('col-xs-12 col-sm-12 col-md-12 col-lg-12')
-                .html(localNote);
+            var note = $('<div/>').addClass('col-xs-12 col-sm-12 col-md-12 col-lg-12').html(localNote);
             $('#searchResults').before(note);
         }
-
+        
         if (useKuromoji) {
-            require(["kuromoji"], function (kuromoji) {
-                kuromoji.builder({ dicPath: "oxygen-webhelp/lib/kuromoji/dict" }).build(function (err, tokenizer) {
+            require([ "kuromoji"], function (kuromoji) {
+                kuromoji.builder({ dicPath: "oxygen-webhelp/lib/kuromoji/dict"
+                }).build(function (err, tokenizer) {
                     // tokenizer is ready
                     var tokens = tokenizer.tokenize(searchQuery);
-
-                    var finalWordsList = [];
+                    
+                    var finalWordsList =[];
                     for (var w in tokens) {
                         var word = tokens[w].surface_form;
-                        if (word!=" ") {
+                        if (word != " ") {
                             finalWordsList.push(word);
                         }
                     }
-
+                    
                     if (finalWordsList.length) {
                         var finalWordsString = finalWordsList.join(" ");
-
+                        
                         _callback(performSearchInternal(finalWordsString));
                     } else {
                         util.debug("Empty set");
                     }
                 });
             })
-
         } else {
             _callback(performSearchInternal(searchQuery));
         }
     }
-
+    
     /**
      * This is the main function of the WH search library used to execute a search query.
      * The stop words are filtered.
@@ -252,25 +249,26 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
     function performSearchInternal(searchQuery) {
         util.debug("searchQuery", searchQuery);
         init();
-
+        
         var initialSearchExpression = searchQuery;
         var phraseSearch = false;
         searchQuery = searchQuery.trim();
-        if (searchQuery.length > 2 && !useCJKTokenizing) {
+        if (searchQuery.length > 2 && ! useCJKTokenizing) {
             var firstChar = searchQuery.charAt(0);
             var lastChar = searchQuery.charAt(searchQuery.length - 1);
             phraseSearch =
-                (firstChar == "'" || firstChar == '"') &&
-                (lastChar == "'" || lastChar == '"');
+            (firstChar == "'" || firstChar == '"') &&
+            (lastChar == "'" || lastChar == '"');
         }
-
+        
         // Remove ' and " characters
         searchQuery = searchQuery.replace(/"/g, " ").replace(/'/g, " ");
-
+        
         var errorMsg;
         try {
             realSearchQuery = preprocessSearchQuery(searchQuery, phraseSearch);
-        } catch (e) {
+        }
+        catch (e) {
             errorMsg = e.message;
             util.debug(e);
         }
@@ -278,40 +276,39 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         if (realSearchQuery.trim().length != 0) {
             // Add the default boolean operator between words if it is missing
             searchQuery = normalizeQuery(realSearchQuery);
-
+            
             var searchWordCount = 1;
-            if (!useCJKTokenizing) {
+            if (! useCJKTokenizing) {
                 var sw = searchQuery.split(" ");
                 searchWordCount = sw.length;
                 singleWordExactMatch = phraseSearch && searchWordCount == 1;
-
-                if (!singleWordExactMatch && !phraseSearch) {
+                
+                if (! singleWordExactMatch && ! phraseSearch) {
                     searchInsideFilePath = isURLorFilePath(realSearchQuery);
                 }
             }
-
+            
             // Convert to RPN notation
             var rpnExpression = convertToRPNExpression(searchQuery);
-
+            
             // Perform search with RPN expression
             var res = calculateRPN(rpnExpression);
             var sRes = res.value;
-
+            
             if (searchWordCount == 1) {
                 // single word search
                 var doStem = options.getBoolean('use.stemming');
-                if (!singleWordExactMatch && !doStem && !useCJKTokenizing) {
+                if (! singleWordExactMatch && ! doStem && ! useCJKTokenizing) {
                     // Perform exact match first
                     singleWordExactMatch = true;
                     var exactMatchRes = calculateRPN(rpnExpression);
                     addSearchResultCategory(exactMatchRes.value);
-
+                    
                     // Add other results with lower priority
                     addSearchResultCategory(sRes);
                 } else {
                     addSearchResultCategory(sRes);
                 }
-
             } else {
                 if (phraseSearch) {
                     sRes = filterResultsForPhraseSearch(res.value, realSearchQuery);
@@ -321,19 +318,19 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 } else {
                     // Search criterion was not specified
                     var phraseSearchResult =
-                        filterResultsForPhraseSearch(res.value, realSearchQuery);
+                    filterResultsForPhraseSearch(res.value, realSearchQuery);
                     addSearchResultCategory(phraseSearchResult);
-
+                    
                     groupResultsByWordCount(sRes);
                 }
             }
-
+            
             sRes = sortSearchResults();
-
-            var docInfos = [];
+            
+            var docInfos =[];
             for (var i = 0; i < sRes.length; i++) {
                 var cDoc = sRes[i];
-
+                
                 // Compute the topic information
                 var topicInfoString = index.fil[cDoc.filenb];
                 var topicInfo = computeTopicInfo(topicInfoString);
@@ -341,22 +338,22 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                     warn("There is no definition for topic with ID ", cDoc.filenb);
                     continue;
                 }
-
-                var wordsStrArray = [];
+                
+                var wordsStrArray =[];
                 for (var k in cDoc.wordsList) {
                     wordsStrArray.push(cDoc.wordsList[k].word);
                 }
                 var breadcrumb = computeBreadcrumbTopicInfos(cDoc.filenb);
                 var docInfo =
-                    new DocumentInfo(
-                        cDoc.filenb,
-                        topicInfo.relativePath,
-                        topicInfo.title,
-                        topicInfo.shortDescription,
-                        wordsStrArray,
-                        cDoc.scoring,
-                        breadcrumb);
-
+                new DocumentInfo(
+                cDoc.filenb,
+                topicInfo.relativePath,
+                topicInfo.title,
+                topicInfo.shortDescription,
+                wordsStrArray,
+                cDoc.scoring,
+                breadcrumb);
+                
                 docInfos.push(docInfo);
             }
         }
@@ -365,7 +362,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         var searchResult = new SearchResult(realSearchQuery, excluded, initialSearchExpression, docInfos, errorMsg);
         return searchResult;
     }
-
+    
     /**
      * Computes the topic associated information.
      *
@@ -382,14 +379,13 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         var relPath = topicInfoString.substring(0, pos1);
         // EXM-27709 START
         // Display words between '<' and '>' in title of search results.
-        var topicTitle = topicInfoString.substring(pos1 + 3, pos2)
-            .replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        var topicTitle = topicInfoString.substring(pos1 + 3, pos2).replace(/</g, "&lt;").replace(/>/g, "&gt;");
         var topicShortDesc = topicInfoString.substring(pos2 + 3, topicInfoString.length);
         // EXM-27709 END
-
+        
         return new TopicInfo(topicTitle, relPath, topicShortDesc);
     }
-
+    
     /**
      * Compute the list of topic indexes representing the path to the root for the given topic.
      *
@@ -398,7 +394,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      * @returns {Array} The array of indexes from the root to the topic.
      */
     function computePath2Root(topicID) {
-        var path2Root = [];
+        var path2Root =[];
         var parentTopicID = index.link2parent[topicID];
         while (parentTopicID !== undefined && parentTopicID !== -1) {
             path2Root.unshift(parentTopicID);
@@ -406,7 +402,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         }
         return path2Root;
     }
-
+    
     /**
      * Computes an array of TopicInfo objects representing the breadcrumb components for the given topic.
      *
@@ -416,7 +412,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      */
     function computeBreadcrumbTopicInfos(topicIndex) {
         var path2Root = computePath2Root(topicIndex);
-        var breadcrumbPaths = [];
+        var breadcrumbPaths =[];
         for (var i = 0; i < path2Root.length; i++) {
             var topicInfoString = index.fil[path2Root[i]];
             var topicInfo = computeTopicInfo(topicInfoString);
@@ -424,24 +420,25 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 breadcrumbPaths.push(topicInfo);
             }
         }
-
+        
         return breadcrumbPaths;
     }
-
+    
     /**
      * Initialize the library for search.
      */
     function init() {
         searchInsideFilePath = false;
-        excluded = [];
+        excluded =[];
         realSearchQuery = "";
         singleWordExactMatch = false;
         booleanSearch = false;
-        resultCategoriesMap = {};
+        resultCategoriesMap = {
+        };
         resultCategoriesCount = 0;
-        resultCategoriesMapFiles = [];
+        resultCategoriesMapFiles =[];
     }
-
+    
     /**
      * Add a search result category. This new added category has a lower priority.
      *
@@ -450,23 +447,23 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
     function addSearchResultCategory(searchCategory) {
         // Filter results that was already registered
         /*info("************ addSearchResultCategory ", searchCategory);*/
-        var filteredResults = [];
+        var filteredResults =[];
         for (var si = 0; si < searchCategory.length; si++) {
             // Make sure that score is greater than 0
             searchCategory[si].scoring = Math.max(1, searchCategory[si].scoring);
-
+            
             if (resultCategoriesMapFiles.indexOf(searchCategory[si].filenb) == -1) {
                 filteredResults.push(searchCategory[si]);
-
+                
                 resultCategoriesMapFiles.push(searchCategory[si].filenb);
             }
         }
-
+        
         if (filteredResults.length > 0) {
             resultCategoriesMap[resultCategoriesCount++] = filteredResults;
         }
     }
-
+    
     /**
      * Scale scoring to be between 0 and 100.
      *
@@ -477,51 +474,51 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         for (var i = 0; i < sortResult.length; i++) {
             maxScore = Math.max(maxScore, sortResult[i].scoring);
         }
-
+        
         if (maxScore != 0) {
             var ratio = 99 / maxScore;
-
+            
             for (var i = 0; i < sortResult.length; i++) {
                 var s = Math.ceil(sortResult[i].scoring * ratio);
-
+                
                 var s = Math.min(99, s);
                 sortResult[i].scoring = s;
             }
         }
     }
-
+    
     function sortSearchResults() {
-        var result = [];
-
-        var keys = [];
+        var result =[];
+        
+        var keys =[];
         for (var prop in resultCategoriesMap) {
             keys.push(prop);
         }
         keys.sort();
-
+        
         var catNumber = keys.length;
         for (var k = 0; k < keys.length; k++) {
             var r = resultCategoriesMap[k];
-
-
+            
+            
             scaleSortResultScoring(r);
-
-
+            
+            
             r.sort(function (first, second) {
                 return -(first.scoring - second.scoring);
             });
-
+            
             for (var ri = 0; ri < r.length; ri++) {
                 r[ri].scoring = r[ri].scoring + ((catNumber - 1 - k) * 100);
             }
-
+            
             result = result.concat(r);
         }
-
+        
         /*info("final result:", result);*/
         return result;
     }
-
+    
     /**
      * Filter results for phrase search.
      *
@@ -531,14 +528,14 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      */
     function filterResultsForPhraseSearch(resPerFileArray, realSearchQuery) {
         var searchWords = realSearchQuery.split(" ");
-
+        
         var doStem = options.getBoolean('use.stemming');
-        var fResult = [];
+        var fResult =[];
         // Iterate over all results
         for (var i = 0; i < resPerFileArray.length; i++) {
             // Test if number of words are the same
             if (searchWords.length == resPerFileArray[i].wordsList.length) {
-
+                
                 // Test if words are the same
                 var sameWords = true;
                 for (var j = 0; j < resPerFileArray[i].wordsList.length; j++) {
@@ -547,48 +544,47 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                         sj = stemmer(sj);
                     }
                     sj = sj.toLowerCase();
-
+                    
                     if (sj != resPerFileArray[i].wordsList[j].word) {
                         sameWords = false;
                         break;
                     }
-
                 }
-
+                
                 if (sameWords) {
                     // Test if indices are consecutive
-
+                    
                     var firstWordIndices = resPerFileArray[i].wordsList[0].indices;
-
+                    
                     for (var fi in firstWordIndices) {
                         var cidx = parseInt(firstWordIndices[fi], 32);
                         if (cidx == -1) {
                             continue;
                         }
-
+                        
                         var consecutiveIndices = true;
                         // Test if next words indices are consecutive
                         for (var ii = 1; ii < resPerFileArray[i].wordsList.length; ii++) {
-
+                            
                             var nextIndices = resPerFileArray[i].wordsList[ii].indices;
-
+                            
                             var nextIdxFound = false;
                             for (var nIdx in nextIndices) {
                                 var cRes = parseInt(nextIndices[nIdx], 32);
-
+                                
                                 if (cRes != -1 && cidx == cRes - 1) {
                                     cidx = cRes;
                                     nextIdxFound = true;
                                     break;
                                 }
                             }
-
-                            if (!nextIdxFound) {
+                            
+                            if (! nextIdxFound) {
                                 consecutiveIndices = false;
                                 break;
                             }
                         }
-
+                        
                         if (consecutiveIndices) {
                             fResult.push(resPerFileArray[i]);
                             break;
@@ -599,7 +595,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         }
         return fResult;
     }
-
+    
     /**
      * Filter the original search query to avoid cross site scripting possibility.
      *
@@ -608,28 +604,20 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      */
     function filterOriginalSearchExpression(searchTextField) {
         // Eliminate the cross site scripting possibility.
-        searchTextField = searchTextField.replace(/</g, " ")
-            .replace(/>/g, " ")
-            .replace(/"/g, " ")
-            .replace(/'/g, " ")
-            .replace(/=/g, " ")
-            .replace(/0\\/g, " ")
-            .replace(/\\/g, " ")
-            .replace(/\//g, " ")
-            .replace(/  +/g, " ");
-
+        searchTextField = searchTextField.replace(/</g, " ").replace(/>/g, " ").replace(/"/g, " ").replace(/'/g, " ").replace(/=/g, " ").replace(/0\\/g, " ").replace(/\\/g, " ").replace(/\//g, " ").replace(/  +/g, " ");
+        
         /*  START - EXM-20414 */
         searchTextField =
-            searchTextField.replace(/<\//g, "_st_").replace(/\$_/g, "_di_").replace(/%2C|%3B|%21|%3A|@|\/|\*/g, " ").replace(/(%20)+/g, " ").replace(/_st_/g, "</").replace(/_di_/g, "%24_");
+        searchTextField.replace(/<\//g, "_st_").replace(/\$_/g, "_di_").replace(/%2C|%3B|%21|%3A|@|\/|\*/g, " ").replace(/(%20)+/g, " ").replace(/_st_/g, "</").replace(/_di_/g, "%24_");
         /*  END - EXM-20414 */
-
+        
         searchTextField = searchTextField.replace(/  +/g, " ");
         searchTextField = searchTextField.replace(/ $/, "").replace(/^ /, " ");
-
+        
         return searchTextField;
     }
-
-
+    
+    
     /**
      * Pre-process the search query before it is used as search expression. It removes the stop words.
      *
@@ -639,27 +627,27 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      */
     function preprocessSearchQuery(query, phraseSearch) {
         var searchTextField = trim(query);
-
+        
         /**
          * Validate brackets
          */
-        var openBracket = [],
-            closedBracket = [];
-
+        var openBracket =[],
+        closedBracket =[];
+        
         var idx = 0, oIndex;
         while (query.indexOf("(", idx) !== -1) {
             idx = query.indexOf("(", idx);
             openBracket.push(idx);
             idx++;
         }
-
+        
         idx = 0;
         while (query.indexOf(")", idx) !== -1) {
             idx = query.indexOf(")", idx);
             closedBracket.push(idx);
             idx++;
         }
-
+        
         if (openBracket.length != closedBracket.length) {
             throw new Error("Invalid expression!");
         } else {
@@ -670,33 +658,33 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 }
             }
         }
-
+        
         // Add a space between '(' or ')' and the real word
         searchTextField = searchTextField.replace(/\((\S*)/g, '( $1');
         searchTextField = searchTextField.replace(/\)(\S*)/g, ') $1');
         searchTextField = searchTextField.replace(/(\S*)\)/g, '$1 )');
-
+        
         // EXM-39245 - Remove punctuation marks
         // w1,w2 -> w1 w2
         searchTextField = searchTextField.replace(/[,]/g, ' ');
-
+        
         // w1. w2 -> w1 w2
         searchTextField = searchTextField.replace(/\s\./g, ' ');
         searchTextField = searchTextField.replace(/\.\s/g, ' ');
-
+        
         // w1! w2 -> w1 w2
         searchTextField = searchTextField.replace(/\s!/g, ' ');
         searchTextField = searchTextField.replace(/!\s/g, ' ');
-
+        
         // w1? w2 -> w1 w2
         searchTextField = searchTextField.replace(/\s\?/g, ' ');
         searchTextField = searchTextField.replace(/\?\s/g, ' ');
-
+        
         var expressionInput = searchTextField;
-
-        var wordsArray = [];
+        
+        var wordsArray =[];
         var splitExpression = expressionInput.split(" ");
-
+        
         // Exclude/filter stop words
         for (var t in splitExpression) {
             var cw = splitExpression[t].toLowerCase();
@@ -704,10 +692,10 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 // Empty string
                 continue;
             }
-
+            
             var isParenthesis =
-                "(" == cw || ")" == cw;
-
+            "(" == cw || ")" == cw;
+            
             if (contains(knownOperators, cw)) {
                 // Boolean operators are excluded from phrase search
                 if (phraseSearch) {
@@ -729,46 +717,47 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 wordsArray.push(cw);
             }
         }
-
+        
         expressionInput = wordsArray.join(" ");
-
+        
         realSearchQuery = expressionInput;
         return expressionInput.trim();
     }
-
+    
     /**
      * Group the search results by word count.
      *
      * @param {[ResultPerFile]} searchResults The search results to be grouped.
      */
     function groupResultsByWordCount(searchResults) {
-        var resultsByWordCount = {};
-
+        var resultsByWordCount = {
+        };
+        
         for (var sri = 0; sri < searchResults.length; sri++) {
             var csr = searchResults[sri];
-
+            
             var wc = csr.wordsList.length;
             if (resultsByWordCount[wc] == undefined) {
-                resultsByWordCount[wc] = [];
+                resultsByWordCount[wc] =[];
             }
             resultsByWordCount[wc].push(csr);
         }
         /*info("Results by words count:", resultsByWordCount);*/
-
-        var keys = [];
+        
+        var keys =[];
         for (var prop in resultsByWordCount) {
             keys.push(prop);
         }
         keys.sort();
         /*info("Sorted keys", keys);*/
-
+        
         for (var k = keys.length - 1; k >= 0; k--) {
             var ck = keys[k];
-
+            
             addSearchResultCategory(resultsByWordCount[ck]);
         }
     }
-
+    
     /**
      * @description Combine two selectors into one
      * e.g: "and or" => "or"
@@ -780,16 +769,16 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         if (op1 == op2) {
             return op1;
         }
-
+        
         if (op1 == "not" || op2 == "not") {
             return "not";
         }
-
+        
         if (op1 == "or" || op2 == "or") {
             return "or";
         }
     }
-
+    
     /**
      * @param word Word to check if is an known operator or not
      * @returns {boolean} TRUE if searched word is a known operator
@@ -798,7 +787,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
     function isKnownOperator(word) {
         return inArray(word, knownOperators);
     }
-
+    
     /**
      * @description Normalize query so that we have an operator between each two adjacent search terms. We'll add the defaultOperator if the
      * operator is missing.
@@ -809,8 +798,8 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      */
     function normalizeQuery(query) {
         util.debug("normalizeQuery(" + query + ")");
-        var toReturn = [];
-
+        var toReturn =[];
+        
         // Remove whitespaces from the beginning and from the end of the expression
         query = query.toLowerCase().trim();
         // Consider "-" (dash) character to be "and" operator
@@ -821,7 +810,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         query = query.replace(/\( /g, '(');
         // Remove space before right bracket
         query = query.replace(/ \)/g, ')');
-
+        
         var queryParts = query.split(" ");
         for (var i = 0; i < queryParts.length; i++) {
             // Skip empty parts
@@ -829,12 +818,12 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
             if (currentWord == "") {
                 continue;
             }
-
+            
             var knownOperator = isKnownOperator(currentWord);
             booleanSearch = booleanSearch || knownOperator;
             if (toReturn.length == 0) {
                 // First item in result should be a term, not an operator
-                if (!knownOperator) {
+                if (! knownOperator) {
                     toReturn.push(currentWord);
                 }
             } else {
@@ -843,21 +832,21 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                     toReturn[toReturn.length - 1] = combineOperators(toReturn[toReturn.length - 1], currentWord);
                 }
                 // Add default operator when no operator is specified
-                if (!isKnownOperator(toReturn[toReturn.length - 1]) && !knownOperator) {
+                if (! isKnownOperator(toReturn[toReturn.length - 1]) && ! knownOperator) {
                     toReturn.push(defaultOperator);
                     toReturn.push(currentWord);
                 }
                 // Add operator after term
-                if (!isKnownOperator(toReturn[toReturn.length - 1]) && knownOperator) {
+                if (! isKnownOperator(toReturn[toReturn.length - 1]) && knownOperator) {
                     toReturn.push(currentWord);
                 }
                 // Add term after operator
-                if (isKnownOperator(toReturn[toReturn.length - 1]) && !knownOperator) {
+                if (isKnownOperator(toReturn[toReturn.length - 1]) && ! knownOperator) {
                     toReturn.push(currentWord);
                 }
             }
         }
-
+        
         // Remove the last operators from the list
         for (i = toReturn.length - 1; i >= 0; i--) {
             if (isKnownOperator(toReturn[i])) {
@@ -866,10 +855,10 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 break;
             }
         }
-
+        
         return toReturn.join(" ");
     }
-
+    
     /**
      * @description Convert search expression from infix notation to reverse polish notation (RPN): iris and flower => iris flower and
      * @param {string} search Search expression to be converted. e.g.: iris and flower or (gerbera not salvia)
@@ -878,9 +867,9 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
     function convertToRPNExpression(search) {
         util.debug("convertToRPNExpression(" + search + ")");
         var stringToStore = "";
-        var stack = [];
+        var stack =[];
         var item = "";
-        var items = [];
+        var items =[];
         for (var i = 0; i < search.length; i++) {
             if (search[i] != " " && search[i] != "(" && search[i] != ")") {
                 item += search[i];
@@ -910,11 +899,11 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 }
             }
         }
-
+        
         if (item != "") {
             items.push(item);
         }
-
+        
         for (i = 0; i < items.length; i++) {
             if (isTerm(items[i])) {
                 stringToStore += items[i] + " ";
@@ -934,14 +923,14 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 }
             }
         }
-
+        
         while (stack.length > 0) {
             stringToStore += stack.pop() + " ";
         }
-
+        
         return stringToStore.trim();
     }
-
+    
     /**
      * @description Compute results from a RPN expression
      * @param {string} rpn Expression in Reverse Polish notation
@@ -953,19 +942,19 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         var rpnTokens = trim(rpn);
         rpnTokens = rpnTokens.split(' ');
         var result;
-
-        var stackResults = [];
-
-        var realSearchWords = [];
+        
+        var stackResults =[];
+        
+        var realSearchWords =[];
         for (var i = 0; i < rpnTokens.length; i++) {
             var token = rpnTokens[i];
-
+            
             if (isTerm(token)) {
                 result = searchSingleWord(token);
-
+                
                 util.debug(token, " -- single word search result -- ", result);
                 realSearchWords.push(token);
-
+                
                 if (result.length > 0) {
                     stackResults.push(new BooleanSearchOperand(result));
                 } else {
@@ -974,45 +963,45 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
             } else {
                 switch (token) {
                     case "and":
-                        // debug("Implement AND operator");
-                        lastResult2 = stackResults.pop();
-                        lastResult1 = stackResults.pop();
-
-                        if (lastResult1.value == undefined || !inArray(token, knownOperators)) {
-                            util.debug("Error in calculateRPN(string) Method!");
-                        } else {
-                            stackResults.push(lastResult1.and(lastResult2));
-                        }
-                        break;
-                    case "or":
-                        lastResult2 = stackResults.pop();
-                        lastResult1 = stackResults.pop();
-                        if (lastResult1.value == undefined || !inArray(token, knownOperators)) {
-                            util.debug("Error in calculateRPN(string) Method!");
-                        } else {
-                            stackResults.push(lastResult1.or(lastResult2));
-                        }
-                        break;
-                    case "not":
-                        lastResult2 = stackResults.pop();
-                        lastResult1 = stackResults.pop();
-                        if (lastResult1.value == undefined || !inArray(token, knownOperators)) {
-                            util.debug("Error in calculateRPN(string) Method!");
-                        } else {
-                            stackResults.push(lastResult1.not(lastResult2));
-                        }
-                        break;
-                    default:
+                    // debug("Implement AND operator");
+                    lastResult2 = stackResults.pop();
+                    lastResult1 = stackResults.pop();
+                    
+                    if (lastResult1.value == undefined || ! inArray(token, knownOperators)) {
                         util.debug("Error in calculateRPN(string) Method!");
-                        break;
+                    } else {
+                        stackResults.push(lastResult1.and(lastResult2));
+                    }
+                    break;
+                    case "or":
+                    lastResult2 = stackResults.pop();
+                    lastResult1 = stackResults.pop();
+                    if (lastResult1.value == undefined || ! inArray(token, knownOperators)) {
+                        util.debug("Error in calculateRPN(string) Method!");
+                    } else {
+                        stackResults.push(lastResult1.or(lastResult2));
+                    }
+                    break;
+                    case "not":
+                    lastResult2 = stackResults.pop();
+                    lastResult1 = stackResults.pop();
+                    if (lastResult1.value == undefined || ! inArray(token, knownOperators)) {
+                        util.debug("Error in calculateRPN(string) Method!");
+                    } else {
+                        stackResults.push(lastResult1.not(lastResult2));
+                    }
+                    break;
+                    default:
+                    util.debug("Error in calculateRPN(string) Method!");
+                    break;
                 }
             }
         }
-
+        
         realSearchQuery = realSearchWords.join(" ");
         return stackResults[0];
     }
-
+    
     /**
      * Tests if a given string is a valid search term or not.
      *
@@ -1021,9 +1010,9 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      *                   FALSE if the search string is not a search term
      */
     function isTerm(string) {
-        return !inArray(string, knownOperators) && string.indexOf("(") == -1 && string.indexOf(")") == -1;
+        return ! inArray(string, knownOperators) && string.indexOf("(") == -1 && string.indexOf(")") == -1;
     }
-
+    
     /**
      * @description Search for an element into an array
      * @param needle Searched element
@@ -1036,10 +1025,10 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         for (var i = 0; i < length; i++) {
             if (haystack[i] == needle) return true;
         }
-
+        
         return false;
     }
-
+    
     /**
      * Search for a single word/term.
      *
@@ -1048,26 +1037,26 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      */
     function searchSingleWord(wordToFind) {
         util.debug('searchSingleWord("' + wordToFind + '")');
-
+        
         wordToFind = trim(wordToFind);
         wordToFind = wordToFind.toLowerCase();
-
+        
         var txt_wordsnotfound = "";
-        var wordsList = [wordToFind];
+        var wordsList =[wordToFind];
         util.debug('words from search:', wordsList);
-
+        
         var indexerLanguage = options.getIndexerLanguage();
         // set the tokenizing method
-        useCJKTokenizing = !!(typeof indexerLanguage != "undefined" && (indexerLanguage == "zh" || indexerLanguage == "ko"));
+        useCJKTokenizing = ! !(typeof indexerLanguage != "undefined" && (indexerLanguage == "zh" || indexerLanguage == "ko"));
         //If Lucene CJKTokenizer was used as the indexer, then useCJKTokenizing will be true. Else, do normal tokenizing.
         // 2-gram tokenizing happens in CJKTokenizing,
         // If doStem then make tokenize with Stemmer
         //var finalArray;
-
+        
         /**
          * data initialisation
          */
-        var finalWordsList = []; // Array with the words to look for after removing spaces
+        var finalWordsList =[]; // Array with the words to look for after removing spaces
         var doStem = options.getBoolean('use.stemming');
         if (doStem) {
             if (useCJKTokenizing) {
@@ -1082,19 +1071,19 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
             finalWordsList = cjkTokenize(wordsList);
             util.debug('CJKTokenizing, finalWordsList: ' + finalWordsList);
         } else {
-            finalWordsList = [wordToFind];
+            finalWordsList =[wordToFind];
         }
-
+        
         // Add the words that start with the searched words.
-        if (!useCJKTokenizing) {
+        if (! useCJKTokenizing) {
             /**
              * Compare with the indexed words (in the w[] array), and push words that are in it to tempTab.
              */
-            var tempTab = [];
-
+            var tempTab =[];
+            
             var wordsArray = '';
             for (var t in finalWordsList) {
-                if (!contains(index.stopWords, finalWordsList[t])) {
+                if (! contains(index.stopWords, finalWordsList[t])) {
                     if (doStem || finalWordsList[t].toString().length == 2) {
                         if (index.w[finalWordsList[t].toString()] == undefined) {
                             txt_wordsnotfound += finalWordsList[t] + " ";
@@ -1104,15 +1093,14 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                     } else {
                         var searchedValue = finalWordsList[t].toString();
                         var listOfWordsStartWith = searchedValue + ",";
-                        if (!singleWordExactMatch) {
+                        if (! singleWordExactMatch) {
                             if (searchInsideFilePath) {
                                 listOfWordsStartWith = wordsContains(searchedValue);
                             } else {
                                 listOfWordsStartWith = wordsStartsWith(searchedValue);
                             }
-
                         }
-
+                        
                         if (listOfWordsStartWith != undefined) {
                             listOfWordsStartWith = listOfWordsStartWith.substr(0, listOfWordsStartWith.length - 1);
                             wordsArray = listOfWordsStartWith.split(",");
@@ -1126,30 +1114,30 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
             finalWordsList = tempTab;
             finalWordsList = removeDuplicate(finalWordsList);
         }
-
-        var fileAndWordList = [];
+        
+        var fileAndWordList =[];
         if (finalWordsList.length) {
             fileAndWordList = searchStartWith(finalWordsList, wordToFind);
         }
-
+        
         return fileAndWordList;
     }
-
-// Return true if "word" value is an element of "arrayOfWords"
+    
+    // Return true if "word" value is an element of "arrayOfWords"
     function contains(arrayOfWords, word) {
         var found = false;
-
+        
         for (var w in arrayOfWords) {
             if (arrayOfWords[w] === word) {
                 found = true;
                 break;
             }
         }
-
+        
         return found;
     }
-
-// Look for elements that start with searchedValue.
+    
+    // Look for elements that start with searchedValue.
     function wordsStartsWith(searchedValue) {
         var toReturn = '';
         for (var sv in index.w) {
@@ -1157,10 +1145,10 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 toReturn += sv + ",";
             }
         }
-        return toReturn.length > 0 ? toReturn : undefined;
+        return toReturn.length > 0 ? toReturn: undefined;
     }
-
-// Look for indexed words that contains the searchedValue.
+    
+    // Look for indexed words that contains the searchedValue.
     function wordsContains(searchedValue) {
         var toReturn = '';
         for (var sv in index.w) {
@@ -1168,13 +1156,13 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 toReturn += sv + ",";
             }
         }
-        return toReturn.length > 0 ? toReturn : undefined;
+        return toReturn.length > 0 ? toReturn: undefined;
     }
-
+    
     function tokenize(wordsList) {
         util.debug('tokenize(' + wordsList + ')');
-        var stemmedWordsList = []; // Array with the words to look for after removing spaces
-        var cleanwordsList = []; // Array with the words to look for
+        var stemmedWordsList =[]; // Array with the words to look for after removing spaces
+        var cleanwordsList =[]; // Array with the words to look for
         var doStem = options.getBoolean('use.stemming');
         for (var j in wordsList) {
             var word = wordsList[j];
@@ -1186,7 +1174,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 stemQueryMap[word] = word;
             }
         }
-
+        
         //stemmedWordsList is the stemmed list of words separated by spaces.
         for (var t in wordsList) {
             if (wordsList.hasOwnProperty(t)) {
@@ -1196,7 +1184,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 }
             }
         }
-
+        
         if (typeof stemmer != "undefined" && doStem) {
             //Do the stemming using Porter's stemming algorithm
             for (var i = 0; i < cleanwordsList.length; i++) {
@@ -1208,11 +1196,11 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         }
         return stemmedWordsList;
     }
-
-//Invoker of CJKTokenizer class methods.
+    
+    //Invoker of CJKTokenizer class methods.
     function cjkTokenize(wordsList) {
-        var allTokens = [];
-        var notCJKTokens = [];
+        var allTokens =[];
+        var notCJKTokens =[];
         util.debug('in cjkTokenize(), wordsList: ', wordsList);
         for (var j = 0; j < wordsList.length; j++) {
             var word = wordsList[j];
@@ -1230,28 +1218,28 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         allTokens = allTokens.concat(tokenize(notCJKTokens));
         return allTokens;
     }
-
-//A simple way to determine whether the query is in english or not.
+    
+    //A simple way to determine whether the query is in english or not.
     function getAvgAsciiValue(word) {
         var tmp = 0;
-        var num = word.length < 5 ? word.length : 5;
+        var num = word.length < 5 ? word.length: 5;
         for (var i = 0; i < num; i++) {
             if (i == 5) break;
             tmp += word.charCodeAt(i);
         }
         return tmp / num;
     }
-
-//CJKTokenizer
+    
+    //CJKTokenizer
     function CJKTokenizer(input) {
         this.input = input;
         this.offset = -1;
-        this.tokens = [];
+        this.tokens =[];
         this.incrementToken = incrementToken;
         this.tokenize = tokenize;
         this.getAllTokens = getAllTokens;
         this.unique = unique;
-
+        
         function incrementToken() {
             if (this.input.length - 2 <= this.offset) {
                 return false;
@@ -1260,11 +1248,11 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 return true;
             }
         }
-
+        
         function tokenize() {
             return this.input.substring(this.offset, this.offset + 2);
         }
-
+        
         function getAllTokens() {
             while (this.incrementToken()) {
                 var tmp = this.tokenize();
@@ -1272,10 +1260,10 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
             }
             return this.unique(this.tokens);
         }
-
+        
         function unique(a) {
-            var r = [];
-            o:for (var i = 0, n = a.length; i < n; i++) {
+            var r =[];
+            o: for (var i = 0, n = a.length; i < n; i++) {
                 for (var x = 0, y = r.length; x < y; x++) {
                     if (r[x] == a[i]) continue o;
                 }
@@ -1284,8 +1272,8 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
             return r;
         }
     }
-
-
+    
+    
     /**
      * Array.unique( strict ) - Remove duplicate values
      *
@@ -1294,26 +1282,25 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      */
     function unique(array) {
         util.debug("unique(", array, ")");
-        var a = [];
+        var a =[];
         var i;
         var l = array.length;
-
+        
         if (array[0] != undefined) {
             a[0] = array[0];
-        }
-        else {
+        } else {
             return -1;
         }
-
+        
         for (i = 1; i < l; i++) {
             if (indexof(a, array[i], 0) < 0) {
                 a.push(array[i]);
             }
         }
-
+        
         return a;
     }
-
+    
     /**
      * Finds the index of an element in an array.
      *
@@ -1329,13 +1316,12 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
             }
         }
         return -1;
-
     }
-
+    
     /* end of Array functions */
-
-
-    /**
+    
+    
+     /**
      * Searches in the indexed words for the terms in words and sort the mathes by scoring.
      *
      * @param {Array} words - list of words to look for.
@@ -1346,46 +1332,47 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         if (words.length == 0 || words[0].length == 0) {
             return null;
         }
-
+        
         // In generated js file we add scoring at the end of the word
         // Example word1*scoringForWord1,word2*scoringForWord2 and so on
         // Split after * to obtain the right values
-
+        
         // Group the words by topicID -> {word, indices}
-        var fileAndWordList = {};
+        var fileAndWordList = {
+        };
         for (var t in words) {
             // get the list of the indices of the files.
             var topicIDAndScore = index.w[words[t]];
-
+            
             if (topicIDAndScore != undefined) {
                 var topicInfoArray = topicIDAndScore.split(",");
-
+                
                 //for each file (file's index):
                 for (var t2 in topicInfoArray) {
                     var tmp = '';
-
+                    
                     var temp = topicInfoArray[t2].toString();
                     var idx = temp.indexOf('*');
                     if (idx != -1) {
                         var tid = temp.substring(0, idx);
-
+                        
                         // Extract word indices
                         var starLastIdx = temp.indexOf("*", idx + 1);
-                        var wordIndices = [];
+                        var wordIndices =[];
                         if (starLastIdx != -1) {
                             var indicesStr = temp.substr(starLastIdx + 1);
                             wordIndices = indicesStr.split('$');
                         }
-
+                        
                         if (fileAndWordList[tid] == undefined) {
-                            fileAndWordList[tid] = [];
+                            fileAndWordList[tid] =[];
                         }
-
+                        
                         var wAndIdx = {
                             word: words[t],
                             indices: wordIndices
                         };
-
+                        
                         fileAndWordList[tid].push(wAndIdx);
                     } else {
                         warn("Unexpected writing format, '*' delimiter is missing.");
@@ -1393,37 +1380,37 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 }
             }
         }
-
-
+        
+        
         // An array with TopicIDAndWordList objects
-        var tidWordsArray = [];
+        var tidWordsArray =[];
         for (t in fileAndWordList) {
             tidWordsArray.push(new TopicIDAndWordList(t, fileAndWordList[t]));
         }
         tidWordsArray = removeDerivates(tidWordsArray, searchedWord);
-
+        
         // Compute the array with results per file
-        var resultsPerFileArrays = [];
+        var resultsPerFileArrays =[];
         for (t in tidWordsArray) {
             var cTopicIDAndWordList = tidWordsArray[t];
-
+            
             var scoring =
-                computeScoring(fileAndWordList[cTopicIDAndWordList.filesNo], cTopicIDAndWordList.filesNo);
+            computeScoring(fileAndWordList[cTopicIDAndWordList.filesNo], cTopicIDAndWordList.filesNo);
             resultsPerFileArrays.push(
-                new ResultPerFile(
-                    cTopicIDAndWordList.filesNo,
-                    cTopicIDAndWordList.wordList,
-                    scoring));
+            new ResultPerFile(
+            cTopicIDAndWordList.filesNo,
+            cTopicIDAndWordList.wordList,
+            scoring));
         }
-
+        
         // Sort by score
         resultsPerFileArrays.sort(function (a, b) {
             return b.scoring - a.scoring;
         });
-
+        
         return resultsPerFileArrays;
     }
-
+    
     /**
      * Remove derivatives words from the list of words with the original word.
      *
@@ -1432,14 +1419,15 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      * @return {Array} Clean array results without duplicated and derivatives words
      */
     function removeDerivates(obj, searchedWord) {
-
-        var toResultObject = [];
+        
+        var toResultObject =[];
         for (var i in obj) {
             var filesNo = obj[i].filesNo;
             var wordList = obj[i].wordList;
-
+            
             // concat word results if word starts with the original word
-            var wordIndicesMap = {};
+            var wordIndicesMap = {
+            };
             for (var j = 0; j < wordList.length; j++) {
                 var w = wordList[j].word;
                 if (searchInsideFilePath) {
@@ -1451,30 +1439,28 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                         w = searchedWord;
                     }
                 }
-
+                
                 if (wordIndicesMap[w] == undefined) {
                     wordIndicesMap[w] = wordList[j].indices;
                 } else {
                     wordIndicesMap[w] = wordIndicesMap[w].concat(wordList[j].indices);
                 }
             }
-
-            var newWordsAray = [];
+            
+            var newWordsAray =[];
             for (var w in wordIndicesMap) {
-                newWordsAray.push(
-                    {
-                        word: w,
-                        indices: wordIndicesMap[w]
-                    }
-                );
+                newWordsAray.push({
+                    word: w,
+                    indices: wordIndicesMap[w]
+                });
             }
-
+            
             toResultObject.push(new TopicIDAndWordList(filesNo, newWordsAray));
         }
-
+        
         return toResultObject;
     }
-
+    
     /**
      * Object to keep the topicID and a list of words that was found in that topic.
      *
@@ -1486,11 +1472,11 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         this.filesNo = filesNo;
         this.wordList = wordList;
     }
-
-
-// Object.
-// Add a new parameter - scoring.
-
+    
+    
+    // Object.
+    // Add a new parameter - scoring.
+    
     /**
      * An object containing the search result for a single topic.
      * Contains pointer to the topicID and the list of words found.
@@ -1507,7 +1493,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         this.wordsList = wordsList;
         this.scoring = scoring;
     }
-
+    
     /**
      * Compute score for one or more words for a given topic ID.
      *
@@ -1517,7 +1503,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      */
     function computeScoring(words, topicID) {
         var sum = 0;
-
+        
         for (var jj = 0; jj < words.length; jj++) {
             var cWord = words[jj].word;
             // Check if the word was indexed
@@ -1534,7 +1520,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         }
         return sum;
     }
-
+    
     function compareWords(s1, s2) {
         var t1 = s1.split(',');
         var t2 = s2.split(',');
@@ -1546,11 +1532,11 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
             return -1;
         }
     }
-
-// Remove duplicate values from an array
+    
+    // Remove duplicate values from an array
     function removeDuplicate(arr) {
-        var r = [];
-        o:for (var i = 0, n = arr.length; i < n; i++) {
+        var r =[];
+        o: for (var i = 0, n = arr.length; i < n; i++) {
             for (var x = 0, y = r.length; x < y; x++) {
                 if (r[x] == arr[i]) continue o;
             }
@@ -1558,26 +1544,26 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         }
         return r;
     }
-
+    
     function trim(str, chars) {
         util.debug("Trim a string... " + str);
         return ltrim(rtrim(str, chars), chars);
     }
-
+    
     function ltrim(str, chars) {
         chars = chars || "\\s";
         return str.replace(new RegExp("^[" + chars + "]+", "g"), "");
     }
-
+    
     function rtrim(str, chars) {
         chars = chars || "\\s";
         return str.replace(new RegExp("[" + chars + "]+$", "g"), "");
     }
-
+    
     /**
      * PATCH FOR BOOLEAN SEARCH
      */
-
+    
     /**
      * @description Object with resulted pages as array
      * @param {[ResultPerFile]}resPerFileArray Array that contains partial results
@@ -1585,28 +1571,28 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
      */
     function BooleanSearchOperand(resPerFileArray) {
         this.value = resPerFileArray;
-
+        
         this.toString = function () {
             var stringResult = "";
-
+            
             stringResult += "INDEX\t|\tfilenb\t|\tscoring\n";
             for (var i = 0; i < this.value.length; i++) {
                 stringResult += i + ".\t\t|\t" + this.value[i].filenb + "\t\t|\t" + this.value[i].scoring + "\n";
             }
-
+            
             return stringResult;
         };
-
+        
         this.writeIDs = function () {
             var stringResult = "";
-
+            
             for (var i = 0; i < this.value.length; i++) {
                 stringResult += this.value[i].filenb + " | ";
             }
-
+            
             return stringResult;
         };
-
+        
         /**
          * Combine two search results using AND function.
          *
@@ -1617,8 +1603,8 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
             if (typeof secondOperand == "undefined" || secondOperand == null) {
                 return this;
             }
-            var result = [];
-
+            var result =[];
+            
             for (var x = 0; x < this.value.length; x++) {
                 var found = false;
                 for (var y = 0; y < secondOperand.value.length; y++) {
@@ -1633,12 +1619,12 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                     result.push(this.value[x]);
                 }
             }
-
+            
             this.value = result;
-
+            
             return this;
         };
-
+        
         /**
          * Conbine two search results using OR operator.
          *
@@ -1650,8 +1636,8 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                 return this;
             }
             this.value = this.value.concat(operand.value);
-            var result = [];
-
+            var result =[];
+            
             for (var i = 0; i < this.value.length; i++) {
                 var unique = true;
                 for (var j = 0; j < result.length; j++) {
@@ -1667,18 +1653,18 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                     result.push(this.value[i]);
                 }
             }
-
+            
             this.value = result;
-
+            
             return this;
         };
-
+        
         this.not = function not(newArray) {
             if (typeof newArray == "undefined" || newArray == null) {
                 return this;
             }
-            var result = [];
-
+            var result =[];
+            
             for (var x = 0; x < this.value.length; x++) {
                 var found = false;
                 for (var y = 0; y < newArray.value.length; y++) {
@@ -1686,17 +1672,17 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
                         found = true;
                     }
                 }
-                if (!found) {
+                if (! found) {
                     result.push(this.value[x]);
                 }
             }
-
+            
             this.value = result;
-
+            
             return this;
         };
     }
-
+    
     /**
      * Utility method to debug a message. By default delegated to the console.log, but it can be overwritten
      * by other scripts.
@@ -1709,7 +1695,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
             console.warn(console, arguments);
         }
     }
-
+    
     /**
      * Utility method to debug a message. By default delegated to the console.log, but it can be overwritten
      * by other scripts.
@@ -1722,8 +1708,8 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
             console.info.apply(console, arguments);
         }
     }
-
-
+    
+    
     // Return true if "word1" starts with "word2"
     function startsWith(word1, word2) {
         var prefix = false;
@@ -1744,7 +1730,7 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         }
         return prefix;
     }
-
+    
     /**
      * Detect if a search token seems to be an URL or file path.
      *
@@ -1755,9 +1741,8 @@ define(["index", "options", "stemmer", "util"], function(index, options, stemmer
         var re = new RegExp('[\./\\\-:_]');
         return re.test(toTest);
     }
-
+    
     return {
         performSearch: performSearchDriver
     }
-
 });

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<project basedir="D:\Branding\DITAStyleSheets" name="Copy template resources" default="copy-template-resources">
+<project basedir="D:\Branding\DITAStyleSheets" name="Copy template resources"
+    default="copy-template-resources">
     <target name="copy-template-resources">
-        <mkdir dir="D:\Branding\DITAStyleSheets\page-templates\out\webhelp-responsive\oxygen-webhelp\template"/>
-        <copy todir="D:\Branding\DITAStyleSheets\page-templates\out\webhelp-responsive\oxygen-webhelp\template" overwrite="yes" failonerror="yes" verbose="yes">
+        <mkdir
+            dir="D:\Branding\DITAStyleSheets\page-templates\out\webhelp-responsive\oxygen-webhelp\template"/>
+        <copy
+            todir="D:\Branding\DITAStyleSheets\page-templates\out\webhelp-responsive\oxygen-webhelp\template"
+            overwrite="yes" failonerror="yes" verbose="yes">
             <fileset dir=".">
                 <include name="NHSD.css"/>
             </fileset>
