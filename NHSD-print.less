@@ -58,7 +58,7 @@
 
 body {
      background: transparent;
-     font-size: 10pt !important;
+     font-size: 8pt !important;
 
 }
 
@@ -163,7 +163,7 @@ body {
 
 *[class ~= "toc/title"],
 *[class~="topic/topic"] > *[class~="topic/title"] {
-    margin-bottom: 1cm;
+    margin-bottom: 0.5em;
     margin-top: 1cm;
     color: @NHSBlue !important;
     font-weight: bold !important;
@@ -205,7 +205,7 @@ booktitle:after {
 }
 
 *[class~="topic/li"] {
-  margin-left: 1cm;
+  margin-left: 1em;
 }
 
 *[class ~= "topic/xref"][href],
@@ -218,18 +218,29 @@ booktitle:after {
     content: none !important;
 }
 
-*[class ~= "new"] {
+*[class ~= "new"],
+*[class ~= "diff-html-added"] {
     background-color: @NHSBlue3;
 }
 
-*[class ~= "retired"] {
+*[class ~= "retired"]{
     color: @DarkGrey;
 }
 
-*[class ~= "deleted"] {
+*[class ~= "deleted"],
+*[class ~= "diff-html-deleted"] {
     text-decoration: line-through !important;
     text-decoration-style: solid;
     text-decoration-color: red;
     text-decoration-thickness: 2px;
     text-rendering: unset !important;
+}
+
+.shortdesc {
+    padding: 0 0 1em 0 !important;
+    font-size: 150% !important!;
+}
+
+ul {
+    padding-left: 1em;
 }
