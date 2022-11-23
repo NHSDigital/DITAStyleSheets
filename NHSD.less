@@ -138,7 +138,7 @@ padding-left:20px;
 
 .element {
     color:@DarkGreen;
-    font-weight:normal;
+    font-weight:bold;
 }
 
 .element:after {
@@ -148,16 +148,16 @@ padding-left:20px;
 } 
 .attribute {
     color:@Purple;
-        font-weight:normal;
-        }
+    font-weight:bold;
+}
 .attribute:after {
     color:@Purple;
     border-color: @Purple;
-     content: 'a';
+    content: 'a';
 }
 .class {
     color:@DarkRed;
-    font-weight:normal;
+    font-weight:bold;
 }
 .class:after {
     color:@DarkRed;
@@ -172,7 +172,7 @@ a[data-id*="classes"] {
 
 .dataSet {
     color:@NHSOrange;
-    font-weight:normal;
+    font-weight:bold;
 }
 .dataSet:after {
     color:@NHSOrange;
@@ -181,7 +181,7 @@ a[data-id*="classes"] {
 } 
 .businessDefinition {
     color:@NHSDarkBlue;
-    font-weight:normal;
+    font-weight:bold;
 }
 
 .businessDefinition:after {
@@ -191,7 +191,7 @@ a[data-id*="classes"] {
 } 
 .supportingDefinition {
     color:@NHSDarkBlue;
-    font-weight:normal;
+    font-weight:bold;
 }
 
 .supportingDefinition:after {  color:@NHSDarkBlue;
@@ -201,7 +201,7 @@ a[data-id*="classes"] {
 
 .supportingInformation {
     color:@NHSDarkBlue;
-    font-weight:normal;
+    font-weight:bold;
 }
 
 .supportingInformation:after {  
@@ -212,7 +212,7 @@ a[data-id*="classes"] {
 
 .xmlSchemaConstraint {
     color:@NHSDarkBlue;
-    font-weight:normal;
+    font-weight:bold;
 }
 
 .xmlSchemaConstraint:after {  
@@ -376,7 +376,8 @@ tr.retired {
  */
  
 .breadcrumb-sticky {
-    position: relative !important;
+    /*  position: relative !important; */
+    top: unset !important;
 }
 .wh_tools {
   background-color: @NHSDarkBlue;
@@ -703,6 +704,10 @@ span.wh_expand_btn {
   background-color: #003087 !important;
   color: white;
   border: 1px solid @DarkGrey !important;
+}
+
+td {
+    vertical-align: middle !important;
 }
 
 td.gray {
