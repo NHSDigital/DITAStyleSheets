@@ -302,6 +302,9 @@ tr.retired {
  * Tools and navigation
  * 
  */
+.header-sticky {
+  position: unset !important;
+}
 .breadcrumb-sticky {
   /*  position: relative !important; */
   top: unset !important;
