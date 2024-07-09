@@ -1,9 +1,5 @@
 <div xmlns:whc="http://www.oxygenxml.com/webhelp/components">
-  <img class="ISOcert" alt="ISO 9001 CERTIFICATION EUROPE"
-    onerror="this.src='/oxygen-webhelp/template/resources/images/iso-9001-certification-europe-v1.png'; 
-    this.onerror=null;"
-    src="/oxygen-webhelp/template/resources/images/iso-9001-certification-europe-v1.svg"
-    id="iso-9001"/>
+ 
   <div class="footer-container">
 
     <footer class="wh_footer">
