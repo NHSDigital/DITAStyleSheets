@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <publishing-template>
-    <name>NHS England - NHS Data Model and Dictionary</name>
-    <description> NHS England Website - NHS Data Model and Dictionary</description>
+    <name>NHS Digital - Data Dictionary</name>
+    <description> NHS Digital Website - Data Dictionary</description>
     <author>
         <name>Nicholas Oughtibridge</name>
         <email>datadictionary@nhs.net</email>
-        <organization>NHS England</organization>
-        <organizationUrl>https://www.england.nhs.uk/</organizationUrl>
+        <organization>NHS Digital</organization>
+        <organizationUrl>https://digital.nhs.uk</organizationUrl>
     </author>
     <webhelp>
         <preview-image file="NHSDD.png"/>
-        
+        <!--<html-page-layout-files>
+            <page-layout-file page="search" file="page-templates/wt_search.html"/>
+            <page-layout-file page="topic" file="page-templates/wt_topic.html"/>
+            <page-layout-file page="index-terms" file="page-templates/wt_terms.html"/>
+            <page-layout-file page="main" file="page-templates/wt_index.html"/>
+        </html-page-layout-files>-->
         <parameters>
            <!-- 
             <parameter name="webhelp.logo.image" value="resources/images/NHS-Logo.svg"/>
@@ -50,7 +55,7 @@
                 <exclude name="resources/**/*.git"/>
             </fileset>
         </resources>
-        <online-preview-url>https://www.datadictionary.nhs.uk/index.html</online-preview-url>
+        <online-preview-url>https://beta.datadictionary.nhs.uk</online-preview-url>
 
         <tags>
             <tag type="layout">tiles</tag>

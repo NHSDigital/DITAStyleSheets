@@ -5,8 +5,8 @@
     <author>
         <name>Nicholas Oughtibridge</name>
         <email>datadictionary@nhs.net</email>
-        <organization>NHS Digital</organization>
-        <organizationUrl>https://digital.nhs.uk</organizationUrl>
+        <organization>NHS England</organization>
+        <organizationUrl>https://www.england.nhs.uk/</organizationUrl>
     </author>
     <webhelp>
         <preview-image file="NHSDD.png"/>
@@ -18,7 +18,7 @@
         </html-page-layout-files>
         <html-fragments>
             <fragment placeholder="webhelp.fragment.before.body" file="page-templates/preview_header.xml"/>
-            <fragment placeholder="webhelp.fragment.head" file="page-templates/Analytics.xml"/>
+            
         </html-fragments>
         <parameters>
             <parameter name="webhelp.show.main.page.tiles" value="yes"/>
