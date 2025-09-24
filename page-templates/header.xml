@@ -2,9 +2,9 @@
 <header class="navbar navbar-default wh_header"
      xmlns="http://www.w3.org/1999/xhtml"
      xmlns:whc="http://www.oxygenxml.com/webhelp/components" 
-     whc:version="21.1">
-    <div class="container-fluid">
-        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+     whc:version="27.1">
+    <div class="container-fluid navbar-expand-md">
+        <div class="wh_header_flex_container navbar-nav navbar-dark">
             <div class="wh_logo_and_publication_title_container">
                 <div class="wh_logo_and_publication_title">
                     <whc:include_html href="${webhelp.fragment.before.logo_and_title}"/>
@@ -19,10 +19,9 @@
                 </div>
                 
                 <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
-                <button type="button" data-target="#wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" 
-                    data-toggle="collapse" class="navbar-toggler collapsed wh_toggle_button"
+                <button type="button" id="wh_menu_mobile_button" class="navbar-toggler collapsed wh_toggle_button"
                     aria-expanded="false" aria-label="${i18n(toggle.menu)}"
-                    aria-controls="wh_top_menu_and_indexterms_link">
+                    aria-controls="wh_top_menu_and_indexterms_link" data-bs-target="#wh_top_menu_and_indexterms_link" data-bs-toggle="collapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
