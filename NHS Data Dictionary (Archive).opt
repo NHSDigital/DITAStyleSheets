@@ -10,12 +10,6 @@
     </author>
     <webhelp>
         <preview-image file="NHSDD.png"/>
-        <html-page-layout-files>
-            <page-layout-file page="search" file="page-templates/wt_search.html"/>
-            <page-layout-file page="topic" file="page-templates/wt_topic.html"/>
-            <page-layout-file page="index-terms" file="page-templates/wt_terms.html"/>
-            <page-layout-file page="main" file="page-templates/wt_index.html"/>
-        </html-page-layout-files>
         <html-fragments>
             <fragment placeholder="webhelp.fragment.before.body" file="page-templates/webhelp.fragment.before.body.xml"/>
             
