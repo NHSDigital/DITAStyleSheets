@@ -160,7 +160,8 @@ booktitle:after {
 *[class~="retired"] {
   color: #425563;
 }
-*[class~="deleted"] {
+*[outputclass~="deleted"],
+*[outputclass~="diff-html-removed"] {
   text-decoration: line-through !important;
   text-decoration-style: solid;
   text-decoration-color: red;
