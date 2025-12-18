@@ -167,3 +167,7 @@ booktitle:after {
   text-decoration-thickness: 2px;
   text-rendering: unset !important;
 }
+*[outputclass~="info-message"] {
+  background-color: #f9e1be;
+    padding: 8px;
+}
