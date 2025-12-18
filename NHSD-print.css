@@ -83,7 +83,7 @@ body {
   text-align: right;
   background-color: transparent;
 }
-*[class~="front-page/front-page-title"]:after(1) {
+/*[class~="front-page/front-page-title"]:after(1) {
   display: block;
   margin-top: 20mm;
   content: "Draft publication";
@@ -91,7 +91,7 @@ body {
   color: #005EB8;
   text-align: right;
   background-color: transparent;
-}
+}*/
 *[class~="front-page/front-page-title"]:after(2) {
   content: url("resources/images/iso-9001-certification-europe-v1.svg");
   display: block;
