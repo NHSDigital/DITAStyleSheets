@@ -167,6 +167,7 @@ booktitle:after {
   text-decoration-color: red;
   text-decoration-thickness: 2px;
   text-rendering: unset !important;
+  background-color: rgb(255, 187, 187);
 }
 *[outputclass~="info-message"] {
   background-color: #f9e1be;
