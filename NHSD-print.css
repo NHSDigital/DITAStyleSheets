@@ -50,7 +50,7 @@ body {
   margin-left: 2cm;
   background-color: transparent;
   @bottom-left {
-    content: "Copyright © NHS Digital";
+    content: "Copyright © NHS England";
     padding-bottom: 2cm;
   }
   @top-right {
