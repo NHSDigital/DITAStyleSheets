@@ -55,7 +55,7 @@ body {
   }
   @top-right {
     content: '';
-    background-image: url("resources/images/NHS Digital logo_NHS Blue_RGB-01.svg");
+    background-image: url("resources/images/NHS-Logo.svg");
     background-repeat: no-repeat;
     background-position: right;
   }
