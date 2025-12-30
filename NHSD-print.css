@@ -154,7 +154,7 @@ booktitle:after {
 *[class~="topic/link"][href]:after {
   content: none !important;
 }
-*[class~="new"] {
+*[class~="new"] ,*[outputclass~="diff-html-added"]{
   background-color: #D4E4F3;
 }
 *[class~="retired"] {
