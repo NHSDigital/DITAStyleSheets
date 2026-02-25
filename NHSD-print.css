@@ -50,12 +50,12 @@ body {
   margin-left: 2cm;
   background-color: transparent;
   @bottom-left {
-    content: "Copyright © NHS Digital";
+    content: "Copyright © NHS England";
     padding-bottom: 2cm;
   }
   @top-right {
     content: '';
-    background-image: url("resources/images/NHS Digital logo_NHS Blue_RGB-01.svg");
+    background-image: url("resources/images/NHS-Blue-logo.jpg");
     background-repeat: no-repeat;
     background-position: right;
   }
@@ -83,7 +83,7 @@ body {
   text-align: right;
   background-color: transparent;
 }
-*[class~="front-page/front-page-title"]:after(1) {
+/*[class~="front-page/front-page-title"]:after(1) {
   display: block;
   margin-top: 20mm;
   content: "Draft publication";
@@ -91,15 +91,15 @@ body {
   color: #005EB8;
   text-align: right;
   background-color: transparent;
-}
-*[class~="front-page/front-page-title"]:after(2) {
+}*/
+/*[class~="front-page/front-page-title"]:after(2) {
   content: url("resources/images/iso-9001-certification-europe-v1.svg");
   display: block;
   position: absolute;
   bottom: 2cm;
   left: 140mm;
   text-align: right;
-}
+}*/
 /* Remove the "chapter" prefix */
 *[class~="map/topicmeta"] > *[class~="topic/navtitle"]:before {
   display: none !important;
@@ -154,16 +154,22 @@ booktitle:after {
 *[class~="topic/link"][href]:after {
   content: none !important;
 }
-*[class~="new"] {
+*[class~="new"] ,*[outputclass~="diff-html-added"]{
   background-color: #D4E4F3;
 }
 *[class~="retired"] {
   color: #425563;
 }
-*[class~="deleted"] {
+*[outputclass~="deleted"],
+*[outputclass~="diff-html-removed"] {
   text-decoration: line-through !important;
   text-decoration-style: solid;
   text-decoration-color: red;
   text-decoration-thickness: 2px;
   text-rendering: unset !important;
+  background-color: rgb(255, 187, 187);
+}
+*[outputclass~="info-message"] {
+  background-color: #f9e1be;
+    padding: 8px;
 }
